@@ -11,5 +11,6 @@
 	 <mappers>
 		<mapper resource="mappers/MemberMapper.xml" />
 		<mapper resource="mappers/testMapper.xml" />
+		<mapper resource="mappers/DataMapper2.xml" />
 	</mappers> 
 </configuration>
