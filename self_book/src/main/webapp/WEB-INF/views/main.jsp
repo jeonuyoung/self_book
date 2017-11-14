@@ -52,12 +52,16 @@
 <!-- Jquery start -->
 <script>
  $(function () {
-       $("#login").click(function(){
+       $(".login").click(function(){
            $("#myModal").modal();
        });
        
        $("#join").click(function(){
            $("#myModal2").modal();
+       });
+       
+       $("#find_pw_form").click(function(){
+           $("#myModal3").modal();
        });
        
  
@@ -122,6 +126,25 @@
 		
 	}
 
+	$(function(){
+		$("#findbtn").click(function(){
+			$.ajax({
+				url : "find_pw",
+				type : "POST",
+				data : {
+					id : $("#findId").val()
+				},
+				success : function(result) {
+					alert(result);
+				},
+				error: function(e){
+					console.log(e);
+				}
+			})
+		});
+	});
+
+
 
 </script>
 
@@ -135,7 +158,7 @@
           <li><a href="#services" id="login" class="login">Login</a></li> 
       </ul>
     </nav>
-  <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  <a href="#" class="nav-toggle login">Menu<span></span></a> </div>
   </header>
 </section>
 
@@ -213,7 +236,7 @@
       </div>
       <div class="modal-footer">
         <p>Not a member? <a href="#" id="join" data-dismiss="modal">Sign Up</a></p>
-        <p>Forgot <a href="find_pw_form">Password?</a></p>
+        <p>Forgot <a href="#" id="find_pw_form" data-dismiss="modal">Password?</a></p>
       </div>
     </div>
       
@@ -259,6 +282,29 @@
   </div>
  </div> 
 </div>
+
+
+<!--find pw  -->
+<div class="modal fade" id="myModal3" role="dialog">
+  <div class="modal-dialog">
+    
+    Modal content
+    <div class="modal-content">
+      <div class="modal-header" style="padding:35px 50px;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 class="h5bold">Sign Up</h5>
+      </div>
+      <div class="modal-body" style="padding:40px 50px;">
+          <div class="form-group">
+            <label for="username">ID</label>
+            <input type="text" class="form-control" name = "id" id="findId" placeholder="Enter Email Address">
+          </div>
+            <button type="button" id ="findbtn" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">임시비밀번호 받기</button>
+      </div>
+    </div>
+      
+  </div>
+ </div> 
 
 
 </body>

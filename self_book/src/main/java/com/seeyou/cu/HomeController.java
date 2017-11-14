@@ -66,4 +66,27 @@ public class HomeController {
 		session.setAttribute("member", member);
 		return "menu";
 	}
+
+	// 로그아웃
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public void logout(HttpSession session, HttpServletResponse response) throws Exception {
+		session.invalidate();
+		service.logout(response);
+	}
+
+	// 비밀번호 찾기
+	@RequestMapping(value = "/find_pw", method = RequestMethod.POST)
+	public void find_pw(@ModelAttribute MemberVO member, HttpServletResponse response) throws Exception {
+		service.find_pw(response, member);
+	}
+
+	// 회원탈퇴
+	@RequestMapping(value = "/withdrawal", method = RequestMethod.POST)
+	public String withdrawal_form(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response)
+			throws Exception {
+		if (service.withdrawal(member, response)) {
+			session.invalidate();
+		}
+		return "redirect:/";
+	}
 }
