@@ -44,6 +44,15 @@ public class HomeController {
 		return "main";
 	}
 
+	// 메뉴화면
+	@RequestMapping(value = "/menu", method = RequestMethod.GET)
+	public String menu(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response)
+			throws Exception {
+/*		member = service.login(member, response);
+		session.setAttribute("member", member);*/
+		return "menu";
+	}
+
 	// 회원 가입
 	@RequestMapping(value = "join_member", method = RequestMethod.POST)
 	public String join_member(@ModelAttribute MemberVO member, RedirectAttributes rttr, HttpServletResponse response)
@@ -68,7 +77,7 @@ public class HomeController {
 	}
 
 	// 로그아웃
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
 	public void logout(HttpSession session, HttpServletResponse response) throws Exception {
 		session.invalidate();
 		service.logout(response);
@@ -89,4 +98,20 @@ public class HomeController {
 		}
 		return "redirect:/";
 	}
+
+	// 마이페이지 이동
+	@RequestMapping(value = "/mypage")
+	public String mypage() throws Exception {
+		return "mypage";
+	}
+
+	// mypage 수정
+	@RequestMapping(value = "update_mypage", method = RequestMethod.POST)
+	public String update_mypage(@ModelAttribute MemberVO member, HttpSession session, RedirectAttributes rttr, HttpServletResponse response)throws Exception {
+		System.out.println(member + "control");
+		session.setAttribute("member", service.update_mypage(member, response));
+		rttr.addFlashAttribute("msg", "회원정보 수정 완료!");
+		return "menu";
+	}
+
 }

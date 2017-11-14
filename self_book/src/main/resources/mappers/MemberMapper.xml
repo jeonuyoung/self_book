@@ -34,15 +34,10 @@
 		= now() where id = #{id}
 	</update>
 
-	<!-- 비밀번호 변경 -->
-	<update id="update_pw" parameterType="MemberVO">
-		update member set pw
-		= #{pw} where id = #{id}
-	</update>
-
 	<update id="update_mypage" parameterType="MemberVO">
-		update member set
-		nickname = #{nickname} where id = #{id}
+		update member set nickname = #{nickname}, 
+		pw = #{pw} 
+		where id = #{id}
 	</update>
 
 	<!-- 회원탈퇴 -->
