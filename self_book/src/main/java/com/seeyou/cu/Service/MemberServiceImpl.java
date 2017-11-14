@@ -174,7 +174,7 @@ public class MemberServiceImpl implements MemberService {
 				out.println("<script>");
 				out.println("alert('등록된 아이디가 없습니다.');");
 				//out.println("history.go(-1);");
-				out.println("location.href='main.jsp';");
+				out.println("location.href='/cu';");
 				out.println("</script>");
 				out.close();
 				return null;
@@ -185,7 +185,7 @@ public class MemberServiceImpl implements MemberService {
 				if(!member.getPw().equals(pw)) {
 					out.println("<script>");
 					out.println("alert('비밀번호가 다릅니다.');");
-					out.println("location.href='main.jsp';");
+					out.println("location.href='/cu';");
 					out.println("</script>");
 					out.close();
 					return null;
