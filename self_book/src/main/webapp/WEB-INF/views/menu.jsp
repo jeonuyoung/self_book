@@ -83,19 +83,10 @@
 <!-- Header Section -->
 <section class="tophead" role="tophead"> 
 <header id="header">
-  <div class="header-content clearfix"> <a class="logo" href="#">Self-Tourbook</a>
+  <div class="header-content clearfix"> <a class="logo" href="#">Self-TourBook</a>
     <nav class="navigation" role="navigation">
       <ul class="primary-nav">
-       <c:choose>
-         <c:when test="${sessionScope.custid != null}"> <!-- 테스트 후 조건 변경 할 것  -->
-          <li><a href="">Home</a></li>
-          <li><a href="#services" id="login" class="login">Login</a></li> 
-         </c:when>
-         <c:otherwise>
-         	  <li><a href="menu">Menu</a></li>
-	          <li><a href="#services">Logout</a></li> 	
-         </c:otherwise>
-         </c:choose>        
+	          <li><a href="logout">Logout</a></li>
       </ul>
     </nav>
   <a href="#" class="nav-toggle">Menu<span></span></a> </div>
@@ -118,7 +109,7 @@
                             </div>
                             <div class="work-content">
                                 <h3 class="color-white margin-b-5">My page</h3>
-                                <p class="color-white margin-b-0">password,leave</p>
+                                <p class="color-white margin-b-0">修正・会員脱退</p>
                             </div>
                             <a class="content-wrapper-link" href="mypage"></a>
                         </div>
@@ -159,6 +150,8 @@
         <!-- End Work -->
 
 
+</body>
+
 <!-- footer section -->
 <footer id="contact" class="footer">
   <div class="container-fluid">
@@ -177,6 +170,4 @@
     </div>
   </div>
 </footer>
-
-</body>
 </html>

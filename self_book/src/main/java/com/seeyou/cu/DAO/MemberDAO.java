@@ -51,4 +51,10 @@ public class MemberDAO {
 		return sqlsession.delete("withdrawal", member);
 	}
 
+	// 마이페이지
+	@Transactional
+	public int update_mypage(MemberVO member) throws Exception {
+		return sqlsession.update("update_mypage", member);
+	}
+
 }
