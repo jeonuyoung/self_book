@@ -979,15 +979,19 @@ Vvveb.Gui = {
 		
 		alert("뀨");
 
+		$(function (){
+			$.ajax({
+				url:"makehtml",
+				type:"post",
+				data:{
+					id:"coolpark93@gmail.com",
+					title:"title",
+					html: Vvveb.Builder.getHtml()
+				}
+			})
 		
-		Vvveb.Builder.init('./resources/demo/index.html', function() {
-			//load code after page is loaded here
-			Vvveb.Gui.init();
 		});
-		
-		
-		
-		
+
 	},
 	
 	viewport : function () {

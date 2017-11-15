@@ -5,10 +5,18 @@
 <mapper namespace="com.seeyou.cu.DAO.DataMapper2">  <!-- namespace로 Mapper를 확인한다. -->
 
 	<!-- get html-->
-	<insert id="inserthtml" parameterType="String">
+	<insert id="inserthtml" parameterType="String" >
 		insert into data
 		values(#{0}, #{1})
 	</insert>
+	
+	
+		<!-- get html-->
+	<insert id="makefile" parameterType="String" >
+		insert into file
+		values(#{0}, #{1})
+	</insert>
+	
 
 <!-- 
 	<select id="gethtml" parameterType="String">

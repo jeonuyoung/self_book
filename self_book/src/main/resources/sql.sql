@@ -8,3 +8,8 @@ create table member(
   approval_status varchar(10) not null,
   approval_key varchar(10)
 );
+
+create table file(
+ id varchar(80) primary key,
+ title varchar(100) not null
+);

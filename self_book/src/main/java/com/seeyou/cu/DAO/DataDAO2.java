@@ -1,9 +1,13 @@
 package com.seeyou.cu.DAO;
 
 
+import java.io.FileInputStream;
+import java.io.File;
+import java.io.IOException;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import com.seeyou.cu.file.makefile;
 
 import com.seeyou.cu.VO.DataVO;
 
@@ -19,7 +23,13 @@ public class DataDAO2 {
 		System.out.println(html.toString());
 	}
 	
-
-
-
+	public String makehtml(String id, String title, String html) {
+		DataMapper2 mapper2 = sqlSession.getMapper(DataMapper2.class);
+		makefile mf = new makefile();
+		mf.makeafile(id, title, html);
+		mapper2.makefile(id, title);
+		
+		return "success";
+	}
+	
 }
