@@ -121,10 +121,10 @@ function openTab(tab) {
 							</ul>
 							</div>
 							<div class="tab-panels tab" id="Map" style="display:none">
-								sdfsafsdfa
+								지도 들어가기
 							</div>
 							<div class="tab-panels tab" id="Info" style="display:none">
-								sdfsafsdfaadf
+								정보 들어가기
 							</div>
 
 						  </div>
