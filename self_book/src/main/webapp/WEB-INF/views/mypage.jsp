@@ -74,6 +74,7 @@
     <nav class="navigation" role="navigation">
       <ul class="primary-nav">
          	  <li><a href="http://localhost:8888/cu/menu">Menu</a></li>
+         	  <li><a href="#" id="withdrawal">Withdrawal</a></li> 	
 	          <li><a href="logout">Logout</a></li> 	
       </ul>
     </nav>
@@ -110,6 +111,10 @@ $(function(){
 		}
 		
 	}));
+	
+	  $("#withdrawal").click(function(){
+          $("#myModal4").modal();
+      });
 });
 	
 
@@ -120,6 +125,7 @@ $(function(){
 <div class="container">
 <div class="row divposition">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" position="relative" top="80px">
+    
 		<form role="form" id="editForm" action="update_mypage" method="post">
 			<hr class="colorgraph">
 			
@@ -144,6 +150,7 @@ $(function(){
 			<div class="row">
 			</div>
 			<hr class="colorgraph">
+		
 			<div class="row">
 				<div class="col-xs-6 col-md-6"><a href="menu" class="btn btn-success btn-block btn-lg">취소</a></div>
 				<div class="col-xs-6 col-md-6"><input type="submit" value="변경하기" class="btn btn-primary btn-block btn-lg" id="formSubmit" tabindex="7"></div>
@@ -154,18 +161,44 @@ $(function(){
 </div>
 </div>
 </div>
+
+<div class="modal fade" id="myModal4" role="dialog">
+  <div class="modal-dialog">
+    Modal content
+    <div class="modal-content">
+      <div class="modal-header" style="padding:35px 50px;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 class="h5bold">회원탈퇴</h5>
+      </div>
+      <div class="modal-body" style="padding:40px 50px;">
+          <div class="form-group">
+            <label for="username">한 번 더 정보를 입력해주세요</label>
+            <label for="usrname"></label>
+            <form action="withdrawal" method="post">
+            <label for="usrname">ID</label>
+             <input type="text" class="form-control" name = "id" id="withdrawalId" placeholder="Enter ID">
+             <label for="usrname"> </label>
+             <label for="usrname">Password</label>
+             <input type="password" class="form-control" name = "pw" id="withdrawalPw" placeholder="Enter Password">
+          </div>
+            <button type="submit" id ="withdrawlSubmit" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">회원탈퇴하기</button>
+            </form>
+      </div>
+    </div>
+      
+  </div>
+ </div> 
+ 
 </body>
 <!-- footer section -->
 
-<footer id="contact" class="footer footer2">
+<footer id="contact" class="footer">
   <div class="container-fluid">
     <div class="col-md-2 left">
       <h4>Office Location</h4>
-<!--       <p> Collins Street West Victoria 8007 Australia.</p> -->
     </div>
     <div class="col-md-2 left">
       <h4>Contact</h4>
-
         Email : <a href="mailto:hello@agency.com"> hello@agency.com </a></p>
     </div>
     <div class="col-md-6 right">

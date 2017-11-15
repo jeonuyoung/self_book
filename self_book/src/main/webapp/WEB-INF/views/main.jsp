@@ -52,7 +52,7 @@
 <!-- Jquery start -->
 <script>
  $(function () {
-       $(".login").click(function(){
+       $("#login").click(function(){
            $("#myModal").modal();
        });
        
