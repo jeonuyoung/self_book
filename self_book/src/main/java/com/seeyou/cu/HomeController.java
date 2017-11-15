@@ -91,12 +91,13 @@ public class HomeController {
 
 	// 회원탈퇴
 	@RequestMapping(value = "/withdrawal", method = RequestMethod.POST)
-	public String withdrawal_form(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response)
-			throws Exception {
+	public String withdrawal_form(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response) throws Exception {
+		System.out.println(member + "controller");
 		if (service.withdrawal(member, response)) {
 			session.invalidate();
 		}
-		return "redirect:/";
+		
+		return "redirect:/cu";
 	}
 
 	// 마이페이지 이동

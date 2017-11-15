@@ -23,7 +23,5 @@ public interface MemberService {
 
 	public boolean withdrawal(MemberVO member, HttpServletResponse response) throws Exception;
 
-//	public MemberVO update_mypage(MemberVO member) throws Exception;
-
 	public MemberVO update_mypage(MemberVO member, HttpServletResponse response) throws Exception;
 }

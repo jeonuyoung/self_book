@@ -157,8 +157,8 @@ public class MemberServiceImpl implements MemberService {
 			out.close();
 		} else { // 이메일 인증을 성공하였을 경우
 			out.println("<script>");
+			out.println("location.href='/cu';");
 			out.println("alert('인증이 완료되었습니다. 로그인 후 이용하세요.');");
-			out.println("location.href='/';");
 			out.println("</script>");
 			out.close();
 		}
@@ -251,6 +251,7 @@ public class MemberServiceImpl implements MemberService {
 	// 회원탈퇴
 	@Override
 	public boolean withdrawal(MemberVO member, HttpServletResponse response) throws Exception {
+		System.out.println(member);
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		if (manager.withdrawal(member) != 1) {
@@ -261,6 +262,11 @@ public class MemberServiceImpl implements MemberService {
 			out.close();
 			return false;
 		} else {
+			out.println("<script>");
+			out.println("alert('회원탈퇴가 완료되었습니다.');");
+			out.println("location.href='/cu';");
+			out.println("</script>");
+			out.close();
 			return true;
 		}
 	}
@@ -270,7 +276,6 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO update_mypage(MemberVO member, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		
 		manager.update_mypage(member);
 		out.println("<script>");
 		out.println("alert('회원정보 수정 완료');");
