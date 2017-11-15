@@ -21,10 +21,13 @@ import com.seeyou.cu.DAO.MemberDAO;
 import com.seeyou.cu.Service.MemberServiceImpl;
 import com.seeyou.cu.VO.MemberVO;
 
+/**
+ * Handles requests for the application home page.
+ */
 @Controller
-public class HomeController {
+public class MemberController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 
 	@Autowired
 	DataDAO dao;
@@ -88,12 +91,13 @@ public class HomeController {
 
 	// 회원탈퇴
 	@RequestMapping(value = "/withdrawal", method = RequestMethod.POST)
+	public String withdrawal_form(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response) throws Exception {
+		System.out.println(member + "controller");
 		if (service.withdrawal(member, response)) {
 			session.invalidate();
 		}
 		
 		return "redirect:/cu";
-		return "redirect:/";
 	}
 
 	// 마이페이지 이동
