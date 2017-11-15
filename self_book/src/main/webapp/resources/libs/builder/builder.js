@@ -387,15 +387,12 @@ Vvveb.Builder = {
 		self.selectedEl = null;
 		self.highlightEl = null;
 		self.initCallback = callback;
-		
         self.documentFrame = $("#iframe-wrapper > iframe");
         self.canvas = $("#canvas");
-
-		self._loadIframe(url);
-		
+		self._loadIframe(url);		
 		self._initDragdrop();
-
 		self.dragElement = null;
+		
 	},
 	
 /* controls */    	
@@ -436,6 +433,8 @@ Vvveb.Builder = {
 /* iframe */
 	_loadIframe : function(url) {	
 	
+		//여기인거같은데 
+		
 		self.iframe = this.documentFrame.get(0);
 		self.iframe.src = url;
 
@@ -450,17 +449,31 @@ Vvveb.Builder = {
 
                 return self._frameLoaded();
         });		
+
+	    
+	    
+	    
+	    
+	   
+	    
         
 	},	
     
     _frameLoaded : function() {
-		
+    	
+    	/// 수정 의미 x
 		self.frameDoc = $(window.FrameDocument);
+		console.log(self.frameDoc);
 		self.frameHtml = $(window.FrameDocument).find("html");
+		console.log(self.frameHtml);
 		self.frameBody = $(window.FrameDocument).find("body");
-
+		console.log(self.frameBody);
 		this._initHightlight();
     },	
+	
+
+	
+	
     
     _getElementType: function(el) {
 		
@@ -931,8 +944,50 @@ Vvveb.Gui = {
 	},
 	
 	save : function () {
+		
 		$('#textarea-modal textarea').val(Vvveb.Builder.getHtml());
+		
 		$('#textarea-modal').modal();
+		
+		
+	},
+	
+	save2 : function () {
+		    
+			var a = Vvveb.Builder.getHtml();
+			alert(a);
+		   
+			$(function (){
+				$.ajax({
+					url:"inserthtml",
+					type:"post",
+					data :{
+						id : "coolpark93@gmail.com",
+						html : Vvveb.Builder.getHtml()
+					}
+				})
+				
+			});
+			
+		    //데이터로 연결 
+			
+			
+		},
+		
+		
+	test : function (){
+		
+		alert("뀨");
+
+		
+		Vvveb.Builder.init('./resources/demo/index.html', function() {
+			//load code after page is loaded here
+			Vvveb.Gui.init();
+		});
+		
+		
+		
+		
 	},
 	
 	viewport : function () {
@@ -940,9 +995,12 @@ Vvveb.Gui = {
 	},
 	
 	preview : function () {
+
 		$("#iframe-layer").toggle();
 		$("#vvveb-builder").toggleClass("preview");
+
 	},
+
 	
 	fullscreen : function () {
 		launchFullScreen(document); // the whole page
