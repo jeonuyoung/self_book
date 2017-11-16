@@ -34,15 +34,6 @@ public class SIWONController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-	/*@RequestMapping(value = "menu", method = RequestMethod.GET)
-	public String menu() {
-		return "menu";
-	}*/
-
-	@RequestMapping(value = "mypage", method = RequestMethod.GET)
-	public String mypage() {
-		return "mypage";
-	}
 
 	@RequestMapping(value = "makeabook", method = RequestMethod.GET)
 	public String makeabook() {
