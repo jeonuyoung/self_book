@@ -35,7 +35,7 @@ public class SIWONController {
 	public String menu() {
 		return "menu";
 	}*/
-	@RequestMapping(value = "menu", method = RequestMethod.GET)
+/*	@RequestMapping(value = "menu", method = RequestMethod.GET)
 	public String menu() {
 		return "menu";
 	}
@@ -43,7 +43,7 @@ public class SIWONController {
 	@RequestMapping(value = "mypage", method = RequestMethod.GET)
 	public String mypage() {
 		return "mypage";
-	}
+	}*/
 
 	@RequestMapping(value = "makeabook", method = RequestMethod.GET)
 	public String makeabook() {

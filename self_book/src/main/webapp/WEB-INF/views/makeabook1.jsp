@@ -6,7 +6,7 @@
 <head>
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 
  <meta name="description" content="">
  <meta name="author" content="">
@@ -36,6 +36,9 @@
 <!-- components-->
 <script src="./resources/libs/builder/components-bootstrap4.js"></script>	
 <script src="./resources/libs/builder/components-widgets.js"></script>	
+<script src="./resources/js/map.js"></script>	<!--google api  -->
+
+
 
 <script>
 
@@ -48,6 +51,69 @@ function openTab(tab) {
     document.getElementById(tab).style.display = "block"; 
 }
 </script>
+
+<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 300px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      .pac-container {
+        font-family: Roboto;
+      }
+
+      #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #type-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+      #target {
+        width: 345px;
+      }
+    </style>
+
+
+
+
+
 </head>
 <body>
 
@@ -109,9 +175,9 @@ function openTab(tab) {
 					  <input type="radio" name="tabset" id="tab1" aria-controls="Elements" checked onclick="openTab('Elements');">
 					  <label for="tab1">Elements</label>
 					 	 <!-- Tab 2 -->
-					  <input type="radio" name="tabset" id="tab2" aria-controls="Map" onclick="openTab('Map');">
+					  <input type="radio" name="tabset" id="tab2" aria-controls="Map1" onclick="openTab('Map1');">
 					  <label for="tab2">Map</label>
-					  <input type="radio" name="tabset" id="tab3" aria-controls="Information" onclick="openTab('Info');">
+					  <input type="radio" name="tabset" id="tab3" aria-controls="Info" onclick="openTab('Info');">
 					  <label for="tab3">Info</label>
 							
 						<div id="components-sidepane" class="sidepane">
@@ -120,8 +186,10 @@ function openTab(tab) {
 							<ul id="components-list" class="clearfix">
 							</ul>
 							</div>
-							<div class="tab-panels tab" id="Map" style="display:none">
-								지도 들어가기
+							<div class="tab-panels tab" id="Map1" style="display:none" width="500px">
+							hhhhhhhhhhhhyrrrrrrrrtyyyyyyyyyyyyyy
+								<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    							<div id="map"></div>
 							</div>
 							<div class="tab-panels tab" id="Info" style="display:none">
 								정보 들어가기
@@ -387,8 +455,7 @@ function openTab(tab) {
  -->
 
 <!--// end templates -->
-
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1SXZMCJFk4dRd7MZCDWHk0jINUtI9v2Y&libraries=places&callback=initAutocomplete" async defer></script>
 
 
 
@@ -403,5 +470,7 @@ $(document).ready(function()
 
 	
 </script>
+
+
 </body>
 </html>

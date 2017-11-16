@@ -1,18 +1,14 @@
 /*
 Copyright 2017 Ziadin Givan
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
-
    http://www.apache.org/licenses/LICENSE-2.0
-
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
 https://github.com/givan/Vvvebjs
 */
 
@@ -69,7 +65,7 @@ function changeNodeName(node, newNodeName)
 }
 
 Vvveb.ComponentsGroup['Bootstrap 4'] =
-["html/products", "html/categories", "html/search", "html/user", "html/product_gallery", "html/cart", "html/checkout", "html/filters", "html/product", "html/slider", "html/gridrow", "html/button", "html/buttongroup", "html/buttontoolbar", "html/heading", "html/image", "html/jumbotron", "html/alert", "html/card", "html/listgroup", "html/hr", "html/taglabel", "html/badge", "html/progress", "html/navbar", "html/breadcrumbs", "html/pagination", "html/form", "html/textinput", "html/textareainput", "html/selectinput", "html/fileinput", "html/checkbox", "html/radiobutton", "html/table", "html/container"];
+["html/products", "html/categories", "html/search", "html/user", "html/product_gallery", "html/cart", "html/checkout", "html/filters", "html/product", "html/slider", "html/gridrow", "html/button", "html/heading", "html/image", "html/jumbotron", "html/alert", "html/card", "html/listgroup", "html/hr", "html/taglabel", "html/badge", "html/progress", "html/navbar", "html/textinput", "html/textareainput", "html/fileinput", "html/checkbox", "html/table", "html/container", "html/googlemaps"];
 
 
 
@@ -87,6 +83,69 @@ Vvveb.Components.add("_base", {
         inputtype: TextInput
     }]
 });    
+
+
+Vvveb.Components.add("html/googlemaps", {
+    name: "Google Maps",
+    attributes: ["data-component-maps"],
+    image: "icons/map.svg",
+    html: '<img src="../libs/builder/icons/maps.png">',
+    
+    //url parameters
+    z:3, //zoom
+    q:'Paris',//location
+    t: 'q', //map type q = roadmap, w = satellite
+    
+    onChange: function (node, property, value)
+    {
+		map_iframe = jQuery('iframe', node);
+		
+		this[property.key] = value;
+		
+		mapurl = 'https://maps.google.com/maps?&q=' + this.q + '&z=' + this.z + '&t=' + this.t + '&output=embed';
+		
+		map_iframe.attr("src",mapurl);
+		
+		return node;
+	},
+    
+    //use an image for dragging for performance reasons, iframes elements don't drag well
+    afterDrop: function (node)
+	{
+		newnode = $('<div data-component-maps><iframe frameborder="0" src="https://maps.google.com/maps?&z=1&t=q&output=embed" width="100" height="200" style="width:100%;height:200%;pointer-events:none"></iframe></div>')
+		node.replaceWith(newnode);
+		return newnode;
+	},
+    properties: [{
+        name: "Address",
+        key: "q",
+        inputtype: TextInput
+    }, 
+	{
+        name: "Map type",
+        key: "t",
+        inputtype: SelectInput,
+        data:{
+			options: [{
+                value: "q",
+                text: "Roadmap"
+            }, {
+                value: "w",
+                text: "Satellite"
+            }]
+       },
+    },
+    {
+        name: "Zoom",
+        key: "z",
+        inputtype: RangeInput,
+        data:{
+			max: 20, //max zoom level
+			min:1,
+			step:1
+       },
+    }]
+});
 
 Vvveb.Components.extend("_base", "html/container", {
     classes: ["container", "container-fluid"],
@@ -1314,4 +1373,6 @@ Vvveb.Components.add("html/gridrow", {
 			 return node;
 		}
 	}]
+	
+	
 });
