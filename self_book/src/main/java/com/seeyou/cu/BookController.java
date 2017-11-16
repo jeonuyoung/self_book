@@ -67,8 +67,8 @@ public class BookController {
 	
 	/*作った本を選択した時本をロードする*/
 	@RequestMapping(value = "loadbook", method = RequestMethod.GET)
-	public String loadbook(String title,Model model) {
-		System.out.println(title);
+	public String loadbook(String title,Model model,HttpSession session) {
+		/*model.addAttribute("id", session.getAttribute("id"));*/
 		model.addAttribute("id", "coolpark93@gmail.com");
 		model.addAttribute("title",title);
 		return "loadbookpage";

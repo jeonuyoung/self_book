@@ -940,16 +940,16 @@ Vvveb.Gui = {
 		Vvveb.Builder.selectNode();
 	},
 	
-	save : function () {
+/*	save : function () {
 		
 		$('#textarea-modal textarea').val(Vvveb.Builder.getHtml());
 		
 		$('#textarea-modal').modal();
 		
 		
-	},
+	},*/
 	
-	save2 : function () {
+/*	save2 : function () {
 		    
 			var a = Vvveb.Builder.getHtml();
 			alert(a);
@@ -970,19 +970,19 @@ Vvveb.Gui = {
 			
 			
 		},
+		*/
 		
-		
-	test : function (){
+	savebook : function (){
 		
 		alert("뀨");
 
 		$(function (){
 			$.ajax({
-				url:"makehtml",
+				url:"savebook",
 				type:"post",
 				data:{
 					id:"coolpark93@gmail.com",
-					title:"title",
+					title:"title4",
 					html: Vvveb.Builder.getHtml()
 				}
 			})

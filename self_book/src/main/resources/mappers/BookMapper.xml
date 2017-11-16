@@ -11,7 +11,9 @@
 	</insert>
 	
 	<select id="booklist" parameterType="String" resultType="String">
-		select title from book where id=#{id} 
+		select title 
+			from book 
+			where id=#{id} 
 	</select>
 	
 </mapper>

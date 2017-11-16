@@ -9,7 +9,7 @@ create table member(
   approval_key varchar(10)
 );
 
-create table file(
+create table book(
  id varchar(80) primary key,
- title varchar(100) not null
+ title varchar(200) not null
 );

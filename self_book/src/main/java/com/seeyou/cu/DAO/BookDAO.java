@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.ibatis.session.SqlSession;
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.seeyou.cu.file.savebook;
@@ -19,7 +20,7 @@ public class BookDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public String savebook(String id, String title, String html) {
+	public void savebook(String id, String title, String html) {
 		
 		BookMapper Bmapper = sqlSession.getMapper(BookMapper.class);
 		
@@ -27,10 +28,18 @@ public class BookDAO {
 		savebook mf = new savebook();
 		mf.saveabook(id, title, html);
 		
-		//セーブした本の記録をデータベースに集める
+		ArrayList<String> booklist = booklist(id);
 		Bmapper.savebook(id, title);
-		booklist(id);
-		return "success";
+		
+/*		for(int i=0;i<booklist.size();i++){
+			
+			if(booklist.get(i)!=title){
+				
+				//セーブした本の記録をデータベースに集める
+				Bmapper.savebook(id, title);
+			}	
+		}*/
+
 	}
 	
 	public ArrayList<String> booklist(String id){
