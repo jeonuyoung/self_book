@@ -69,7 +69,7 @@ function changeNodeName(node, newNodeName)
 }
 
 Vvveb.ComponentsGroup['Bootstrap 4'] =
-["html/products", "html/categories", "html/search", "html/user", "html/product_gallery", "html/cart", "html/checkout", "html/filters", "html/product", "html/slider", "html/gridrow", "html/button", "html/buttongroup", "html/buttontoolbar", "html/heading", "html/image", "html/jumbotron", "html/alert", "html/card", "html/listgroup", "html/hr", "html/taglabel", "html/badge", "html/progress", "html/navbar", "html/breadcrumbs", "html/pagination", "html/form", "html/textinput", "html/textareainput", "html/selectinput", "html/fileinput", "html/checkbox", "html/radiobutton", "html/table", "html/container"];
+["html/products", "html/categories", "html/search", "html/user", "html/product_gallery", "html/cart", "html/checkout", "html/filters", "html/product", "html/slider", "html/gridrow", "html/heading", "html/image", "html/jumbotron", "html/alert", "html/card", "html/hr", "html/taglabel", "html/badge", "html/progress", "html/textinput", "html/textareainput", "html/fileinput", "html/checkbox","html/table", "html/container","widgets/googlemaps"];
 
 
 
