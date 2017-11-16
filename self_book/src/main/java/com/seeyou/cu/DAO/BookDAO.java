@@ -21,7 +21,6 @@ public class BookDAO {
 	private SqlSession sqlSession;
 	
 	public void savebook(String id, String title, String html) {
-		
 		BookMapper Bmapper = sqlSession.getMapper(BookMapper.class);
 		
 		//実際の本のファイルを作る機能
@@ -29,24 +28,30 @@ public class BookDAO {
 		mf.saveabook(id, title, html);
 		
 		ArrayList<String> booklist = booklist(id);
-		Bmapper.savebook(id, title);
+		System.out.println(title);
 		
-/*		for(int i=0;i<booklist.size();i++){
+		if(booklist.size()==0){
+			Bmapper.savebook(id, title);
 			
-			if(booklist.get(i)!=title){
+		}else{
+			for(int i=0;i<booklist.size();i++){
+				String titlecheck = null;
 				
-				//セーブした本の記録をデータベースに集める
-				Bmapper.savebook(id, title);
-			}	
-		}*/
-
+				if(booklist.get(i).equals(title)){
+					titlecheck=title;
+				}
+				
+				if(titlecheck==null){
+					Bmapper.savebook(id, title);
+				}
+			}
+		}
 	}
 	
 	public ArrayList<String> booklist(String id){
 		ArrayList<String> booklist = new ArrayList<String>();
 		BookMapper mapper2 = sqlSession.getMapper(BookMapper.class);
 		booklist = mapper2.booklist(id);		
-		System.out.println(booklist);
 		return booklist;
 	}
 	
