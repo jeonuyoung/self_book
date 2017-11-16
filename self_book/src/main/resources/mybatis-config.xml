@@ -6,11 +6,12 @@
 	<typeAliases>
 		<typeAlias type="com.seeyou.cu.VO.MemberVO" alias="MemberVO" />
 		<typeAlias type="com.seeyou.cu.VO.DataVO" alias="DataVO"/>
+		<typeAlias type="com.seeyou.cu.VO.BookVO" alias="BookVO"/>
 	</typeAliases>
 	
 	 <mappers>
 		<mapper resource="mappers/MemberMapper.xml" />
 		<mapper resource="mappers/testMapper.xml" />
-		<mapper resource="mappers/DataMapper2.xml" />
+		<mapper resource="mappers/BookMapper.xml" />
 	</mappers> 
 </configuration>

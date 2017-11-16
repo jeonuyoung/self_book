@@ -100,18 +100,16 @@
     <div class="content-md container">
   <!-- Masonry Grid -->
     <div class="masonry-grid">
-  <c:forEach var="item" items="${booklist}">
- 	   <a href="getfile"> 제목 : ${item}</a>
-
-	</c:forEach>
 
     </div>
    <!-- End Masonry Grid -->
      </div>
     </div>
   <!-- End Work -->
-
-
+  <c:forEach var="item" items="${booklist}">
+	<a href="loadbook?title=${item}">  제목 : ${item} </a>
+		
+	</c:forEach>
 </body>
 
 <!-- footer section -->

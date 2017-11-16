@@ -65,7 +65,7 @@
 					  <button class="btn btn-light" title="Preview" id="preview-btn" type="button" data-toggle="button" aria-pressed="false" data-vvveb-action="preview">
 						  <i class="la la-eye"></i>
 					  </button>
-					 
+
 					 <button class="btn btn-light" title="savebook" id="save-btn" data-vvveb-action="savebook" data-vvveb-shortcut="ctrl+e">
 						  <i class="la la-save"></i> <!--  여긴그냥 이미지-->
 					  </button>
@@ -353,12 +353,21 @@
 
 
 <script>
+
+
 $(document).ready(function() 
 {
-	Vvveb.Builder.init('./resources/demo/firstpage/firstpage.html', function() {
+	
+	var id = "${id}";
+	var title = "${title}";
+	
+	Vvveb.Builder.init('./resources/demo/'+id+'/'+title+'.html', function() {
 		//load code after page is loaded here
 		Vvveb.Gui.init();
 	});
+
+
+	
 });
 
 	

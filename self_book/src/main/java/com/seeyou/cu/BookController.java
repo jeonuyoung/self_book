@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.seeyou.cu.DAO.DataDAO2;
+import com.seeyou.cu.DAO.BookDAO;
 import com.seeyou.cu.VO.Member;
 
 
@@ -25,42 +25,55 @@ import com.seeyou.cu.VO.Member;
  * Handles requests for the application home page.
  */
 @Controller
-public class SIWONController {
+public class BookController {
 
 	@Autowired
-	DataDAO2 dao2;
+	BookDAO Bdao;
 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 
 
-	@RequestMapping(value = "makeabook", method = RequestMethod.GET)
-	public String makeabook() {
-		return "makeabook";
+	@RequestMapping(value = "mypage", method = RequestMethod.GET)
+	public String mypage() {
+		return "mypage";
+	}
+
+	/*初めて本を作る時*/
+	@RequestMapping(value = "firstmakebook", method = RequestMethod.GET)
+	public String firstmakebook() {
+		//セッションを使ってデータベースでせセッション
+		return "firstmakebook";
 	}
 	
+	
+	/*作った本がある時に本の目録をリターン*/
 	@RequestMapping(value = "booklist", method = RequestMethod.GET)
 	public String booklist(HttpSession session, Model model) {
 		String id = (String) session.getAttribute("id");
 		id = "coolpark93@gmail.com";
-		ArrayList<String> booklist = dao2.booklist(id);
+		ArrayList<String> booklist = Bdao.booklist(id);
 		model.addAttribute("booklist", booklist);
 		
 		return "booklist";
 	}
-
-
-	@ResponseBody
-	@RequestMapping(value = "inserthtml", method = RequestMethod.POST)
-	public void inserthtml(String id, String html) {
-		dao2.inserthtml(id, html);
-	}
 	
 	@ResponseBody
-	@RequestMapping(value = "makehtml", method = RequestMethod.POST)
-	public void makehtml(String id, String title, String html) {
-		dao2.makehtml(id, title, html);
+	@RequestMapping(value = "savebook", method = RequestMethod.POST)
+	public void savebook(String id, String title, String html) {
+		Bdao.savebook(id, title, html);
 	}	
+	
+	/*作った本を選択した時本をロードする*/
+	@RequestMapping(value = "loadbook", method = RequestMethod.GET)
+	public String loadbook(String title,Model model) {
+		System.out.println(title);
+		model.addAttribute("id", "coolpark93@gmail.com");
+		model.addAttribute("title",title);
+		return "loadbookpage";
+	}	
+
+
 
 }

@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class makefile {
+public class savebook {
 
 	
-	public void makeafile(String id,String title,String html){
+	public void saveabook(String id,String title,String html){
 
 		FileOutputStream fop = null;
 		File file;
@@ -35,6 +35,7 @@ public class makefile {
 			fop.close();
 
 			System.out.println("Done");
+
 
 		} catch (IOException e) {
 			e.printStackTrace();
