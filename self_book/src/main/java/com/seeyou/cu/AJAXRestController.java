@@ -36,7 +36,7 @@ public class AJAXRestController {
 	@Autowired
 	private MemberServiceImpl service;
 
-	// 아이디 중복 검사(AJAX)
+	// 아이디 중복 검사(AJAX)　IDの重複検査
 	@RequestMapping(value = "check_id", method = RequestMethod.POST)
 	public void check_id(@RequestParam("id") String id, HttpServletResponse response) throws Exception {
 		service.check_id(id, response);

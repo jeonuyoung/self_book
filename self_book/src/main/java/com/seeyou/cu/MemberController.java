@@ -1,11 +1,8 @@
 package com.seeyou.cu;
 
-import java.util.Random;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.mail.HtmlEmail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.seeyou.cu.DAO.DataDAO;
@@ -44,7 +40,7 @@ public class MemberController {
 		return "main";
 	}
 
-	// 메뉴화면
+	// 메뉴화면 メニュー
 	@RequestMapping(value = "/menu", method = RequestMethod.GET)
 	public String menu(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response)
 			throws Exception {
@@ -53,7 +49,7 @@ public class MemberController {
 		return "menu";
 	}
 
-	// 회원 가입
+	// 회원 가입　会員加入
 	@RequestMapping(value = "join_member", method = RequestMethod.POST)
 	public String join_member(@ModelAttribute MemberVO member, RedirectAttributes rttr, HttpServletResponse response)
 			throws Exception {
@@ -61,13 +57,13 @@ public class MemberController {
 		return "main";
 	}
 
-	// 회원 인증
+	// 회원 인증 会員認証
 	@RequestMapping(value = "/approval_member", method = RequestMethod.POST)
 	public void approval_member(@ModelAttribute MemberVO member, HttpServletResponse response) throws Exception {
 		service.approval_member(member, response);
 	}
 
-	// 로그인
+	// 로그인 login
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response)
 			throws Exception {
@@ -76,20 +72,20 @@ public class MemberController {
 		return "menu";
 	}
 
-	// 로그아웃
+	// 로그아웃 logout
 	@RequestMapping(value = "logout", method = RequestMethod.GET)
 	public void logout(HttpSession session, HttpServletResponse response) throws Exception {
 		session.invalidate();
 		service.logout(response);
 	}
 
-	// 비밀번호 찾기
+	// 비밀번호 찾기 パスワード忘れ
 	@RequestMapping(value = "/find_pw", method = RequestMethod.POST)
 	public void find_pw(@ModelAttribute MemberVO member, HttpServletResponse response) throws Exception {
 		service.find_pw(response, member);
 	}
 
-	// 회원탈퇴
+	// 회원탈퇴　会員脱退
 	@RequestMapping(value = "/withdrawal", method = RequestMethod.POST)
 	public String withdrawal_form(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response) throws Exception {
 		System.out.println(member + "controller");
@@ -100,18 +96,18 @@ public class MemberController {
 		return "redirect:/cu";
 	}
 
-	// 마이페이지 이동
+	// 마이페이지 이동 mypageに移動
 	@RequestMapping(value = "/mypage")
 	public String mypage() throws Exception {
 		return "mypage";
 	}
 
-	// mypage 수정
+	// mypage 수정　mypage修正
 	@RequestMapping(value = "update_mypage", method = RequestMethod.POST)
 	public String update_mypage(@ModelAttribute MemberVO member, HttpSession session, RedirectAttributes rttr, HttpServletResponse response)throws Exception {
 		System.out.println(member + "control");
 		session.setAttribute("member", service.update_mypage(member, response));
-		rttr.addFlashAttribute("msg", "회원정보 수정 완료!");
+		rttr.addFlashAttribute("msg", "会員情報修正完了しました。");
 		return "menu";
 	}
 

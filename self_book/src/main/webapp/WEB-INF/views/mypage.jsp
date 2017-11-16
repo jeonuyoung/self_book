@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Self Tour Book </title>
+<title>Self Tour Guide Book </title>
 
 <!-- CSS FILES --> 
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
@@ -70,15 +70,15 @@
 <!-- Header Section -->
 <section class="tophead" role="tophead"> 
 <header id="header">
-  <div class="header-content clearfix"> <a class="logo" href="/cu/menu">Self-Tourbook</a>
+  <div class="header-content clearfix"> <a class="logo" href="/cu/menu">Self Tour Guide book</a>
     <nav class="navigation" role="navigation">
       <ul class="primary-nav">
          	  <li><a href="http://localhost:8888/cu/menu">Menu</a></li>
-         	  <li><a href="#" id="withdrawal">Withdrawal</a></li> 	
-	          <li><a href="logout">Logout</a></li> 	
+         	  <li><a href="#" id="withdrawal">会員脱会</a></li> 	
+	          <li><a href="logout">ログアウト</a></li> 	
       </ul>
     </nav>
-  <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  <a href="#" class="nav-toggle">メニュー<span></span></a> </div>
   </header>
 </section>
 </head>
@@ -96,17 +96,17 @@ $(function(){
 	
 	if($("#editForm").submit(function(){
 		if($("#pw").val() !== $("#pw2").val()){
-			alert("비밀번호가 다릅니다.");
+			alert("パスワードが異なります。");
 			$("#pw").val("").focus();
 			$("#pw2").val("");
 			return false;
 		}
 		else if ($("#pw").val().length < 8) {
-			alert("비밀번호는 8자 이상으로 설정해야 합니다.");
+			alert("パスワードは8桁以上設定可能です。");
 			$("#pw").val("").focus();
 			return false; 
 		}else if($.trim($("#pw").val()) !== $("#pw").val()){
-			alert("공백은 입력이 불가능합니다.");
+			alert("空白は入力できません。");
 			return false;
 		}
 		
@@ -152,8 +152,8 @@ $(function(){
 			<hr class="colorgraph">
 		
 			<div class="row">
-				<div class="col-xs-6 col-md-6"><a href="menu" class="btn btn-success btn-block btn-lg">취소</a></div>
-				<div class="col-xs-6 col-md-6"><input type="submit" value="변경하기" class="btn btn-primary btn-block btn-lg" id="formSubmit" tabindex="7"></div>
+				<div class="col-xs-6 col-md-6"><a href="menu" class="btn btn-success btn-block btn-lg">キャンセル</a></div>
+				<div class="col-xs-6 col-md-6"><input type="submit" value="変更する" class="btn btn-primary btn-block btn-lg" id="formSubmit" tabindex="7"></div>
 			</div>
 		</form>
 	</div>
@@ -168,11 +168,11 @@ $(function(){
     <div class="modal-content">
       <div class="modal-header" style="padding:35px 50px;">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h5 class="h5bold">회원탈퇴</h5>
+        <h5 class="h5bold">会員脱退</h5>
       </div>
       <div class="modal-body" style="padding:40px 50px;">
           <div class="form-group">
-            <label for="username">한 번 더 정보를 입력해주세요</label>
+            <label for="username">もう一度情報を入力してください。</label>
             <label for="usrname"></label>
             <form action="withdrawal" method="post">
             <label for="usrname">ID</label>
@@ -181,7 +181,7 @@ $(function(){
              <label for="usrname">Password</label>
              <input type="password" class="form-control" name = "pw" id="withdrawalPw" placeholder="Enter Password">
           </div>
-            <button type="submit" id ="withdrawlSubmit" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">회원탈퇴하기</button>
+            <button type="submit" id ="withdrawlSubmit" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">会員脱退する</button>
             </form>
       </div>
     </div>
@@ -199,7 +199,7 @@ $(function(){
     </div>
     <div class="col-md-2 left">
       <h4>Contact</h4>
-        Email : <a href="mailto:hello@agency.com"> hello@agency.com </a></p>
+        Email : <a href="mailto:hello@ascom.com.co"> hello@ascom.com.co </a></p>
     </div>
     <div class="col-md-6 right">
       <p>© 2015 All rights reserved. All Rights Reserved<br>
