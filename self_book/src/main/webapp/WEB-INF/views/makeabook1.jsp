@@ -12,7 +12,7 @@
  <meta name="author" content="">
  <link rel="icon" href="favicon.ico">
  <base href="">
- <title>VvvebJs</title>
+ <title>Self Tour Guide Book</title>
     
  <link href="./resources/css/editor.css" rel="stylesheet">
  <link href="./resources/css/line-awesome.css" rel="stylesheet">
@@ -56,7 +56,7 @@ function openTab(tab) {
 				
 				<div id="top-panel">
 				
-					<div alt="Vvveb" class="float-left" id="logo"> self tourbook</div>
+					<div alt="Vvveb" class="float-left" id="logo"> Self Tour Guide Book</div>
 					
 					
 					<div class="btn-group mr-3" role="group">

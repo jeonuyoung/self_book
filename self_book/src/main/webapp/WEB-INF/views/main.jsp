@@ -74,7 +74,7 @@
 			},
 			success : function(result) {
 				if (result == 1) {
-					$("#id_check").html("중복된 이메일 주소가 있습니다.");
+					$("#id_check").html("メールアドレスが重複しています。");
 					$("#joinSubmit").attr("disabled", "disabled");
 				} else {
 					$("#id_check").html("");
@@ -90,16 +90,16 @@
  
  $("#joinForm").submit(function(){
 		if($("#joinPw").val() !== $("#joinPw2").val()){
-			alert("비밀번호가 다릅니다.");
+			alert("パスワードが異なります。");
 			$("#joinPw").val("").focus();
 			$("#joinPw2").val("");
 			return false;
 		}else if ($("#pw").val().length < 8) {
-			alert("비밀번호는 8자 이상으로 설정해야 합니다.");
+			alert("パスワードは8桁以上設定可能です。");
 			$("#pw").val("").focus();
 			return false;
 		}else if($.trim($("#joinPw").val()) !== $("#joinPw").val() || $.trim($("#joinNickname").val()) !== $("#joinNickname").val() || $.trim($("#joinId").val()) !== $("#joinId").val()){
-			alert("공백은 입력이 불가능합니다.");
+			alert("空白は入力できません。");
 			return false;
 		}
 		return true;
@@ -117,7 +117,7 @@
 		if (idCheck.length == 0 || pwCheck.length == 0) {
 			sweetAlert({
 	             title: "!", 
-	              text: "값을 입력해주세요", 
+	              text: "値を入力してください", 
 	              type: "error"
 	          });
 			return false;
@@ -172,13 +172,13 @@
     </ol>
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active"> <img src="./resources/images/slider/slid4.png" alt="Chania">
-        <div class="carousel-caption">
+      <div class="item active"> <img src="./resources/images/slider/slide6.jpg" alt="Chania">
+        <div class="carousel-caption" font-color="white">
           <h3>Make your own book</h3>
           <p>Do it your self</p>
         </div>
       </div>
-      <div class="item"> <img src="./resources/images/slider/slid3.png" alt="Chania">
+      <div class="item"> <img src="./resources/images/slider/slide5.jpg" alt="Chania">
         <div class="carousel-caption">
           <h3>Make your own book</h3>
           <p>Do it your self</p>
@@ -201,7 +201,7 @@
     <div class="col-md-2 left">
       <h4>Contact</h4>
 
-        Email : <a href="mailto:hello@agency.com"> hello@agency.com </a></p>
+        Email : <a href="mailto:hello@ascom.com.co"> hello@ascom.com.co </a></p>
     </div>
     <div class="col-md-6 right">
       <p>© 2015 All rights reserved. All Rights Reserved<br>
@@ -225,18 +225,18 @@
         <form id ="loginForm" action="login" onsubmit="return loginCheck()" method="post">
           <div class="form-group">
             <label for="usrname">ID</label>
-            <input type="text" class="form-control" id="loginId" name="id" placeholder="Enter email">
+            <input type="text" class="form-control" id="loginId" name="id" placeholder="メールアドレス">
           </div>
           <div class="form-group">
             <label for="psw">Password</label>
-            <input type="password" class="form-control" id="loginPw" name="pw" placeholder="Enter password">
+            <input type="password" class="form-control" id="loginPw" name="pw" placeholder="パソワード">
           </div>
-            <button type="submit" id="login_submit" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700"> Login</button>
+            <button type="submit" id="login_submit" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">ログイン</button>
         </form>
       </div>
       <div class="modal-footer">
-        <p>Not a member? <a href="#" id="join" data-dismiss="modal">Sign Up</a></p>
-        <p>Forgot <a href="#" id="find_pw_form" data-dismiss="modal">Password?</a></p>
+        <p><a href="#" id="join" data-dismiss="modal">新規取得</a></p>
+        <p><a href="#" id="find_pw_form" data-dismiss="modal">パスワードを探す?</a></p>
       </div>
     </div>
       
@@ -253,28 +253,28 @@
     <div class="modal-content">
       <div class="modal-header" style="padding:35px 50px;">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h5 class="h5bold">Sign Up</h5>
+        <h5 class="h5bold">会員加入</h5>
       </div>
       <div class="modal-body" style="padding:40px 50px;">
         <form role="form" id="joinForm" action="join_member" method="post">
           <div class="form-group">
             <label for="username">ID</label>
-            <input type="text" class="form-control" name = "id" id="joinId" placeholder="Enter Email Address">
+            <input type="text" class="form-control" name = "id" id="joinId" placeholder="メールアドレス">
             <span id="id_check" class="w3-text-red"></span>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" name="pw" id="joinPw" placeholder="Enter Password">
+            <input type="password" class="form-control" name="pw" id="joinPw" placeholder="パソワード">
           </div>
           <div class="form-group">
             <label for="password">Check Password</label>
-            <input type="password" class="form-control" id="joinPw2" placeholder="Enter Password">
+            <input type="password" class="form-control" id="joinPw2" placeholder="パソワード">
           </div>
           <div class="form-group">
             <label for="psw">Nickname</label>
-            <input type="text" class="form-control" name="nickname" id="joinNickname" placeholder="Enter Nickname">
+            <input type="text" class="form-control" name="nickname" id="joinNickname" placeholder="ニックネーム">
           </div>          
-            <button type="submit" id ="joinSubmit" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">Sign up</button>
+            <button type="submit" id ="joinSubmit" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">新規取得</button>
         </form>
       </div>
     </div>
@@ -297,9 +297,9 @@
       <div class="modal-body" style="padding:40px 50px;">
           <div class="form-group">
             <label for="username">ID</label>
-            <input type="text" class="form-control" name = "id" id="findId" placeholder="Enter Email Address">
+            <input type="text" class="form-control" name = "id" id="findId" placeholder="メールアドレス">
           </div>
-            <button type="button" id ="findbtn" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">임시비밀번호 받기</button>
+            <button type="button" id ="findbtn" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">臨時の暗証番号をもらえる</button>
       </div>
     </div>
       

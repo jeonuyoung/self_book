@@ -18,7 +18,7 @@ public class MemberServiceImpl implements MemberService {
 	@Inject
 	private MemberDAO manager;
 
-	// 아이디 중복 검사(AJAX)
+	// 아이디 중복 검사(AJAX)　IDの重複検査
 	@Override
 	public void check_id(String id, HttpServletResponse response) throws Exception {
 		PrintWriter out = response.getWriter();
@@ -26,7 +26,7 @@ public class MemberServiceImpl implements MemberService {
 		out.close();
 	}
 
-	// 회원가입
+	// 회원가입　会員加入
 	@Override
 	public int join_member(MemberVO member, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html;charset=utf-8");
@@ -53,6 +53,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
+	//인증번호 만들기 認証番号作り
 	@Override
 	public String create_key() throws Exception {
 		String key = "";
@@ -64,16 +65,16 @@ public class MemberServiceImpl implements MemberService {
 		return key;
 	}
 
-	// 이메일 발송
+	// 이메일 발송 メール発送
 	@Override
 	public void send_mail(MemberVO member, String div) throws Exception {
-		// Mail Server 설정
+		// Mail Server 設定
 		String charSet = "utf-8";
 		String hostSMTP = "smtp.naver.com";
 		String hostSMTPid = "foremailauth";
 		String hostSMTPpwd = "seeyou12";
 
-		// 보내는 사람 EMail, 제목, 내용
+		// 보내는 사람 EMail, タイトル、内容
 		String fromEmail = "foremailauth@naver.com";
 		String fromName = "Self Tour Guide Book";
 		String subject = "";
@@ -81,19 +82,19 @@ public class MemberServiceImpl implements MemberService {
 
 		if (div.equals("join")) {
 
-			// 회원가입 메일 내용
-			subject = "Self Tour Guide Book 회원가입 인증 메일입니다.";
+			// 회원가입 메일 내용　メール内容
+			subject = "Self Tour Guide Book 会員加入認証メールです。";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
-			msg += member.getNickname() + "님 회원가입을 환영합니다.</h3>";
+			msg += member.getNickname() + "様の 会員加入を歓迎します。</h3>";
 			msg += "<div style='font-size: 130%'>";
-			msg += "하단의 인증 버튼 클릭 시 정상적으로 회원가입이 완료됩니다.</div><br/>";
+			msg += "下段の認証ボタンをくりっくすると正常に会員加入が完了されます。</div><br/>";
 			msg += "<form method='post' action='http://localhost:8888/cu/approval_member'>";
 			msg += "<input type='hidden' name='id' value='" + member.getId() + "'>";
 			msg += "<input type='hidden' name='approval_key' value='" + member.getApproval_key() + "'>";
-			msg += "<input type='submit' value='인증'></form><br/></div>";
+			msg += "<input type='submit' value='認証'></form><br/></div>";
 
-			// 받는 사람 E-Mail 주소
+			// 받는 사람 E-Mail 주소　メールアドレス
 			String mail = member.getId();
 			try {
 				HtmlEmail email = new HtmlEmail();
@@ -111,17 +112,17 @@ public class MemberServiceImpl implements MemberService {
 				email.setHtmlMsg(msg);
 				email.send();
 			} catch (Exception e) {
-				System.out.println("메일발송 실패 : " + e);
+				System.out.println("メール発送失敗 : " + e);
 			}
 		} else if (div.equals("find_pw")) {
-			subject = "Spring Homepage 임시 비밀번호 입니다.";
+			subject = "Spring Homepage 臨時パスワードです。";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
-			msg += member.getId() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
-			msg += "<p>임시 비밀번호 : ";
+			msg += member.getId() + "様の臨時パスワードです。パソワードを変更して使用して下さい。</h3>";
+			msg += "<p>臨時パスワード　: ";
 			msg += member.getPw() + "</p></div>";
 
-			// 받는 사람 E-Mail 주소
+			// 받는 사람 E-Mail 주소　e-mail　アドレス
 			String mail = member.getId();
 			try {
 				HtmlEmail email = new HtmlEmail();
@@ -139,41 +140,40 @@ public class MemberServiceImpl implements MemberService {
 				email.setHtmlMsg(msg);
 				email.send();
 			} catch (Exception e) {
-				System.out.println("메일발송 실패 : " + e);
+				System.out.println("メール発送失敗　: " + e);
 			}
 		}
 	}
 
-	// 회원 인증
+	// 회원인증 会員認証
 	@Override
 	public void approval_member(MemberVO member, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		if (manager.approval_member(member) == 0) { // 이메일 인증에 실패하였을 경우
+		if (manager.approval_member(member) == 0) { // 이메일 인증에 실패하였을 경우 メール認証に失敗した場合
 			out.println("<script>");
-			out.println("alert('잘못된 접근입니다.');");
+			out.println("alert('誤った処理です。');");
 			out.println("history.go(-1);");
 			out.println("</script>");
 			out.close();
-		} else { // 이메일 인증을 성공하였을 경우
+		} else { // 이메일 인증을 성공하였을 경우  メール認証を成功した場合
 			out.println("<script>");
 			out.println("location.href='/cu';");
-			out.println("alert('인증이 완료되었습니다. 로그인 후 이용하세요.');");
+			out.println("alert('認証が完了しました。 ログイン後利用してください。');");
 			out.println("</script>");
 			out.close();
 		}
 	}
 
-	// 로그인
+	// 로그인　ログイン
 	@Override
 	public MemberVO login(MemberVO member, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		// 등록된 아이디가 없으면
+		// 등록된 아이디가 없으면 登録されたIDがない場合
 		if (manager.check_id(member.getId()) == 0) {
 			out.println("<script>");
-			out.println("alert('등록된 아이디가 없습니다.');");
-			// out.println("history.go(-1);");
+			out.println("alert('登録されたIDがありません。');");
 			out.println("location.href='/cu';");
 			out.println("</script>");
 			out.close();
@@ -181,10 +181,10 @@ public class MemberServiceImpl implements MemberService {
 		} else {
 			String pw = member.getPw();
 			member = manager.login(member.getId());
-			// 비밀번호가 다를 경우
+			// 비밀번호가 다를 경우　パソワードが異なる場合
 			if (!member.getPw().equals(pw)) {
 				out.println("<script>");
-				out.println("alert('비밀번호가 다릅니다.');");
+				out.println("alert('パソワードが違います。');");
 				out.println("location.href='/cu';");
 				out.println("</script>");
 				out.close();
@@ -192,7 +192,7 @@ public class MemberServiceImpl implements MemberService {
 				// 이메일 인증을 하지 않은 경우
 			} else if (!member.getApproval_status().equals("true")) {
 				out.println("<script>");
-				out.println("alert('이메일 인증 후 로그인 하세요.');");
+				out.println("alert('メール認証後のログインしてください。');");
 				out.println("history.go(-1);");
 				out.println("</script>");
 				out.close();
@@ -205,7 +205,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
-	// 로그아웃
+	// 로그아웃　ログアウト
 	@Override
 	public void logout(HttpServletResponse response) throws Exception {
 		response.setContentType("text/html;charset=utf-8");
@@ -216,39 +216,32 @@ public class MemberServiceImpl implements MemberService {
 		out.close();
 	}
 
-	// 비밀번호 찾기
+	// 비밀번호 찾기　パスワード忘れ
 	@Override
 	public void find_pw(HttpServletResponse response, MemberVO member) throws Exception {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		// 아이디가 없으면
+		// 아이디가 없으면　アイディ-がない場合
 		if (manager.check_id(member.getId()) == 0) {
-			out.print("아이디가 없습니다.");
+			out.print("IDがありません");
 			out.close();
 		}
-		// 가입에 사용한 이메일이 아니면
-		else if (!member.getId().equals(manager.login(member.getId()).getId())) {
-			System.out.println(manager.login(member.getId()));
-			out.print("잘못된 이메일 입니다.");
-			out.close();
-		} else {
-			// 임시 비밀번호 생성
+			// 임시 비밀번호 생성　臨時秘密番号の生成
 			String pw = "";
 			for (int i = 0; i < 12; i++) {
 				pw += (char) ((Math.random() * 26) + 97);
 			}
 			member.setPw(pw);
-			// 비밀번호 변경
+			// 비밀번호 변경　暗証番号変更
 			manager.update_pw(member);
-			// 비밀번호 변경 메일 발송
+			// 비밀번호 변경 메일 발송　暗証番号の変更メール発送
 			send_mail(member, "find_pw");
 
-			out.print("이메일로 임시 비밀번호를 발송하였습니다.");
+			out.print("メールで臨時秘密番号を発送しました。");
 			out.close();
-		}
 	}
 
-	// 회원탈퇴
+	// 회원탈퇴　会員脱退
 	@Override
 	public boolean withdrawal(MemberVO member, HttpServletResponse response) throws Exception {
 		System.out.println(member);
@@ -256,14 +249,14 @@ public class MemberServiceImpl implements MemberService {
 		PrintWriter out = response.getWriter();
 		if (manager.withdrawal(member) != 1) {
 			out.println("<script>");
-			out.println("alert('회원탈퇴 실패');");
+			out.println("alert('会員離脱を失敗しました。');");
 			out.println("history.go(-1);");
 			out.println("</script>");
 			out.close();
 			return false;
 		} else {
 			out.println("<script>");
-			out.println("alert('회원탈퇴가 완료되었습니다.');");
+			out.println("alert('退会処理が完了しました。');");
 			out.println("location.href='/cu';");
 			out.println("</script>");
 			out.close();
@@ -271,14 +264,14 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
-	// 회원정보 수정
+	// 회원정보 수정　会員情報修正
 	@Override
 	public MemberVO update_mypage(MemberVO member, HttpServletResponse response) throws Exception {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		manager.update_mypage(member);
 		out.println("<script>");
-		out.println("alert('회원정보 수정 완료');");
+		out.println("alert('会員情報修正が完了しました。');");
 		out.println("location.href='/cu/menu';");
 		out.println("</script>");
 		out.close();

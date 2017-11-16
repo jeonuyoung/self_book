@@ -4,49 +4,50 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.seeyou.cu.DAO.MemberMapper">  <!-- namespace로 Mapper를 확인한다. -->
 
-	<!-- 회원 가입 -->
+	<!-- 회원 가입 会員加入-->
 	<insert id="join_member" parameterType="MemberVO">
 		insert into member
 		values(#{id}, #{pw}, #{nickname}, now(), now(), 'false',
 		#{approval_key})
 	</insert>
 
-	<!--check password -->
+	<!--check password　パスワードチェック -->
 	<select id="checkPassword" parameterType="String" resultType="MemberVO">
 		select id, pw, nickname from member where id = #{id}
 	</select>
 
-	<!-- 이메일 중복 검사 -->
+	<!-- 이메일 중복 검사 メールの重複検査　-->
 	<select id="check_id" parameterType="String" resultType="int">
 		select
 		count(*) from member where id = #{id}
 	</select>
 
-	<!-- 로그인 -->
+	<!-- 로그인 　ログイン-->
 	<select id="login" parameterType="String" resultType="MemberVO">
 		select *
 		from member where id = #{id}
 	</select>
 
-	<!-- 로그인 접속일자 수정 -->
+	<!-- 로그인 접속일자 수정 ログイン接続の日付修正-->
 	<update id="update_log" parameterType="String">
 		update member set log_date
 		= now() where id = #{id}
 	</update>
 
+	<!--mypage あぷでアップデート  -->
 	<update id="update_mypage" parameterType="MemberVO">
 		update member set nickname = #{nickname}, 
 		pw = #{pw} 
 		where id = #{id}
 	</update>
 
-	<!-- 회원탈퇴 -->
+	<!-- 회원탈퇴  会員脱退-->
 	<delete id="withdrawal" parameterType="MemberVO">
 		delete from member where
 		id = #{id} and pw = #{pw}
 	</delete>
 
-	<!-- 이메일 인증 -->
+	<!-- 이메일 인증 メール認証 -->
 	<update id="approval_member" parameterType="MemberVO">
 		update member set
 		approval_status = 'true' where id = #{id} and approval_key =

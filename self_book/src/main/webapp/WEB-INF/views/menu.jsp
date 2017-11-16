@@ -123,7 +123,7 @@
                             </div>
                             <div class="work-content">
                                 <h3 class="color-white margin-b-5">Make a book</h3>
-                                <p class="color-white margin-b-0">newbookeulmandurobaba</p>
+                                <p class="color-white margin-b-0">本作り</p>
                             </div>
                             <a class="content-wrapper-link" href="booklist"></a>
                         </div>
@@ -136,8 +136,8 @@
                                 <img class="full-width img-responsive" src="./resources/img/595x240/02.jpg" alt="Portfolio Image">
                             </div>
                             <div class="work-content">
-                                <h3 class="color-white margin-b-5">Load a book</h3>
-                                <p class="color-white margin-b-0">bullowababa</p>
+                                <h3 class="color-white margin-b-5">Saved Books</h3>
+                                <p class="color-white margin-b-0">保存された本</p>
                             </div>
                             <a class="content-wrapper-link" href="#"></a>
                         </div>
@@ -162,7 +162,7 @@
     <div class="col-md-2 left">
       <h4>Contact</h4>
 
-        Email : <a href="mailto:hello@agency.com"> hello@agency.com </a></p>
+        Email : <a href="mailto:hello@ascom.com.co"> hello@ascom.com.co</a></p>
     </div>
     <div class="col-md-6 right">
       <p>© 2015 All rights reserved. All Rights Reserved<br>
