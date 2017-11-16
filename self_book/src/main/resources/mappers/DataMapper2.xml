@@ -17,6 +17,10 @@
 		values(#{0}, #{1})
 	</insert>
 	
+	<select id="booklist" parameterType="String" resultType="String">
+		select title from file where id=#{id} 
+	</select>
+	
 
 <!-- 
 	<select id="gethtml" parameterType="String">

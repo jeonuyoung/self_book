@@ -359,7 +359,7 @@
 <script>
 $(document).ready(function() 
 {
-	Vvveb.Builder.init('./resources/demo/firstpage/firstpage.html', function() {
+	Vvveb.Builder.init('./resources/demo/'+${sessionScope.id}+'/'+${sessionScope.title}+'.html', function() {
 		//load code after page is loaded here
 		Vvveb.Gui.init();
 	});

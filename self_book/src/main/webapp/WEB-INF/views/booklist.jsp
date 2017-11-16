@@ -94,60 +94,22 @@
 </section>
 
 
-       <!--========== PAGE LAYOUT ==========-->
-        <!-- Work -->
-        <div class="bg-color-sky-light">
-            <div class="content-md container">
-                <!-- Masonry Grid -->
-                <div class="masonry-grid">
-                    <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-6"></div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-6">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="./resources/img/595x483/01.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">My page</h3>
-                                <p class="color-white margin-b-0">修正・会員脱退</p>
-                            </div>
-                            <a class="content-wrapper-link" href="mypage"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-6">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="./resources/img/595x240/01.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Make a book</h3>
-                                <p class="color-white margin-b-0">newbookeulmandurobaba</p>
-                            </div>
-                            <a class="content-wrapper-link" href="booklist"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-6">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="./resources/img/595x240/02.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Load a book</h3>
-                                <p class="color-white margin-b-0">bullowababa</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                </div>
-                <!-- End Masonry Grid -->
-            </div>
-        </div>
-        <!-- End Work -->
+  <!--========== PAGE LAYOUT ==========-->
+  <!-- Work -->
+   <div class="bg-color-sky-light">
+    <div class="content-md container">
+  <!-- Masonry Grid -->
+    <div class="masonry-grid">
+  <c:forEach var="item" items="${booklist}">
+ 	   <a href="getfile"> 제목 : ${item}</a>
+
+	</c:forEach>
+
+    </div>
+   <!-- End Masonry Grid -->
+     </div>
+    </div>
+  <!-- End Work -->
 
 
 </body>
@@ -161,7 +123,6 @@
     </div>
     <div class="col-md-2 left">
       <h4>Contact</h4>
-
         Email : <a href="mailto:hello@agency.com"> hello@agency.com </a></p>
     </div>
     <div class="col-md-6 right">

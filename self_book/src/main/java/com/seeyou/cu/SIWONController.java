@@ -1,8 +1,11 @@
 package com.seeyou.cu;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.seeyou.cu.DAO.DataDAO2;
 import com.seeyou.cu.VO.Member;
 
+
 /**
  * Handles requests for the application home page.
  */
@@ -30,15 +34,10 @@ public class SIWONController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-
 	/*@RequestMapping(value = "menu", method = RequestMethod.GET)
 	public String menu() {
 		return "menu";
 	}*/
-	@RequestMapping(value = "menu", method = RequestMethod.GET)
-	public String menu() {
-		return "menu";
-	}
 
 	@RequestMapping(value = "mypage", method = RequestMethod.GET)
 	public String mypage() {
@@ -49,11 +48,28 @@ public class SIWONController {
 	public String makeabook() {
 		return "makeabook";
 	}
+	
+	@RequestMapping(value = "booklist", method = RequestMethod.GET)
+	public String booklist(HttpSession session, Model model) {
+		String id = (String) session.getAttribute("id");
+		id = "coolpark93@gmail.com";
+		ArrayList<String> booklist = dao2.booklist(id);
+		model.addAttribute("booklist", booklist);
+		
+		return "booklist";
+	}
+
 
 	@ResponseBody
 	@RequestMapping(value = "inserthtml", method = RequestMethod.POST)
 	public void inserthtml(String id, String html) {
 		dao2.inserthtml(id, html);
 	}
+	
+	@ResponseBody
+	@RequestMapping(value = "makehtml", method = RequestMethod.POST)
+	public void makehtml(String id, String title, String html) {
+		dao2.makehtml(id, title, html);
+	}	
 
 }

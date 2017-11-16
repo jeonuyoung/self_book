@@ -463,11 +463,8 @@ Vvveb.Builder = {
     	
     	/// 수정 의미 x
 		self.frameDoc = $(window.FrameDocument);
-		console.log(self.frameDoc);
 		self.frameHtml = $(window.FrameDocument).find("html");
-		console.log(self.frameHtml);
 		self.frameBody = $(window.FrameDocument).find("body");
-		console.log(self.frameBody);
 		this._initHightlight();
     },	
 	
