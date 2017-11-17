@@ -19,5 +19,15 @@ public class MapController {
 		return "makeabook1";
 	}
 	
+	@RequestMapping(value = "maptest", method = RequestMethod.GET)
+	public String maptest() {
+		return "maptest";
+	}
+	
+	@RequestMapping(value = "map2", method = RequestMethod.GET)
+	public String map2() {
+		return "map2";
+	}
+	
 	
 }

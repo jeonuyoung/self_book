@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 https://github.com/givanz/VvvebJs
-*/
+
 
 Vvveb.ComponentsGroup['Widgets'] = ["widgets/googlemaps", "widgets/video"];
 
@@ -195,3 +195,4 @@ Vvveb.Components.add("widgets/video", {
         inputtype: CheckboxInput
     }]
 });
+*/

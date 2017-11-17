@@ -16,11 +16,14 @@
     
  <link href="./resources/css/editor.css" rel="stylesheet">
  <link href="./resources/css/line-awesome.css" rel="stylesheet">
+  <link href="./resources/css/mapCss.css" rel="stylesheet">
     
 <!-- jquery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
 <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="./resources/js/jquery.hotkeys.js"></script>
+<script src="./resources/js/tendina.js"></script>
+
 
 <!-- bootstrap-->
 <script src="./resources/js/popper.min.js"></script>
@@ -33,11 +36,17 @@
 
 <!-- inputs-->
 <script src="./resources/libs/builder/inputs.js"></script>	
+<script src="./resources/js/mapKanren.js"></script> 
 <!-- components-->
 <script src="./resources/libs/builder/components-bootstrap4.js"></script>	
 <script src="./resources/libs/builder/components-widgets.js"></script>	
 
+
 <script>
+$(function(){
+	$('#menu1').tendina();
+	
+});
 
 function openTab(tab) {
     var i;
@@ -48,6 +57,7 @@ function openTab(tab) {
     document.getElementById(tab).style.display = "block"; 
 }
 </script>
+
 </head>
 <body>
 
@@ -93,35 +103,58 @@ function openTab(tab) {
 				</div>	
 				
 				<div id="left-panel">
-
 					  <div id="components">
-						
 						<div class="header">
-						  
 							  <input class="form-control form-control-sm" placeholder="" type="text" id="component-search"  data-vvveb-action="componentSearch" data-vvveb-on="keyup">
 							  <button id="clear-backspace"  data-vvveb-action="clearComponentSearch">
 								  <i class="ion-backspace"></i>
 							  </button>
-						  
 						</div>
 						
 						  <div class="tabset">
 					  <input type="radio" name="tabset" id="tab1" aria-controls="Elements" checked onclick="openTab('Elements');">
 					  <label for="tab1">Elements</label>
-					 	 <!-- Tab 2 -->
-					  <input type="radio" name="tabset" id="tab2" aria-controls="Map" onclick="openTab('Map');">
+					  <input type="radio" name="tabset" id="tab2" aria-controls="MapDiv" onclick="openTab('MapDiv');">
 					  <label for="tab2">Map</label>
 					  <input type="radio" name="tabset" id="tab3" aria-controls="Information" onclick="openTab('Info');">
 					  <label for="tab3">Info</label>
 							
-						<div id="components-sidepane" class="sidepane">
-						
+							<div id="components-sidepane" class="sidepane">
 							<div class="tab-panels tab" id="Elements">
 							<ul id="components-list" class="clearfix">
 							</ul>
 							</div>
-							<div class="tab-panels tab" id="Map" style="display:none">
-								지도 들어가기
+							<div class="tab-panels tab" id="MapDiv" style="display:none">
+								<div id="map"></div>
+									<div class="map_row" id="map_div">
+								
+    							<p>経路を探す</p>
+									<input type="text" id="origin" placeholder="Start" class="pac-input controls"><br>
+									<input type="text" id="destination" placeholder="End" class="pac-input controls"><br>
+								<p>移動手段</p>
+									<select name="travelMode" id="travelMode">
+									    <option value="DRIVING">自動車</option>
+									    <option value="BICYCLING">自転車</option>
+									    <option value="TRANSIT">公共交通</option>
+									    <option value="WALKING">徒步</option>
+									</select><br>
+								<input type="checkbox" id="avoidHighways"">高速道路を探す<input type="checkbox" id="avoidTolls">有料道路を探す
+
+								<button type="button" id="searchMap" class="peter-river-flat-button">サーチ</button><br>
+								
+								<input type="text" id="search" placeholder="Search" class="pac-input controls"><br>
+								<button type="button" id="searchPlace" class = "peter-river-flat-button">場所サーチ</button>
+							</div>
+
+
+
+
+
+
+
+
+
+
 							</div>
 							<div class="tab-panels tab" id="Info" style="display:none">
 								정보 들어가기
@@ -167,6 +200,7 @@ function openTab(tab) {
 						
 						</div>
 						<iframe src="about:none" id="iframe1"></iframe>
+						
 					</div>
 					
 					
@@ -379,12 +413,6 @@ function openTab(tab) {
 	
 
 </script>
-<!-- 
-<script type="text/javascript">
-	$("#tab1").clicked(openTab("Elements"));
-	$("#tab2").clicked(openTab("Map"));
-</script>
- -->
 
 <!--// end templates -->
 
@@ -400,8 +428,9 @@ $(document).ready(function()
 		Vvveb.Gui.init();
 	});
 });
-
 	
 </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1SXZMCJFk4dRd7MZCDWHk0jINUtI9v2Y&libraries=places&callback=initMap"
+        async defer></script>
 </body>
 </html>

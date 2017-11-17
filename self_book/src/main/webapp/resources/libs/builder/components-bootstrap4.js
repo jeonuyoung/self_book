@@ -69,9 +69,75 @@ function changeNodeName(node, newNodeName)
 }
 
 Vvveb.ComponentsGroup['Bootstrap 4'] =
-["html/products", "html/categories", "html/search", "html/user", "html/product_gallery", "html/cart", "html/checkout", "html/filters", "html/product", "html/slider", "html/gridrow", "html/heading", "html/image", "html/jumbotron", "html/alert", "html/card", "html/hr", "html/taglabel", "html/badge", "html/progress", "html/textinput", "html/textareainput", "html/fileinput", "html/checkbox","html/table", "html/container","widgets/googlemaps"];
+["html/products", "html/categories", "html/search", "html/user", "html/product_gallery", "html/cart", "html/checkout", "html/filters", "html/product", "html/slider", "html/gridrow", "html/heading", "html/image", "html/jumbotron", "html/card", "html/hr", "html/taglabel", "html/progress", "html/textinput", "html/textareainput", "html/checkbox","html/table", "html/container","html/googlemaps"];
 
 
+Vvveb.Components.add("html/googlemaps", {
+    name: "Google Maps",
+    attributes: ["data-component-maps"],
+    image: "icons/map.svg",
+    html: '<img src="../libs/builder/icons/maps.png">',
+    
+    //url parameters
+    z:5, //zoom
+    q:'Tokyo',//location
+    t: 'q', //map type q = roadmap, w = satellite
+    
+    onChange: function (node, property, value)
+    {
+		map_iframe = jQuery('iframe', node);
+		
+		this[property.key] = value;
+		
+		mapurl = 'https://maps.google.com/maps?&q=' + this.q + '&z=' + this.z + '&t=' + this.t + '&output=embed';
+		
+		map_iframe.attr("src",mapurl);
+		
+		return node;
+	},
+    
+    //use an image for dragging for performance reasons, iframes elements don't drag well
+    afterDrop: function (node)
+	{
+		newnode = $('<div data-component-maps><iframe frameborder="0" src="https://maps.google.com/maps?&z=1&t=q&output=embed" width="100" height="100" style="width:100%;height:100%;pointer-events:none"></iframe></div>')
+		node.replaceWith(newnode);
+		return newnode;
+	},
+    properties: [{
+        name: "Address",
+        key: "q",
+        inputtype: TextInput
+    }, 
+	{
+        name: "Map type",
+        key: "t",
+        inputtype: SelectInput,
+        data:{
+			options: [{
+                value: "q",
+                text: "Roadmap"
+            }, {
+                value: "w",
+                text: "Satellite"
+            }]
+       },
+    },
+    {
+        name: "Zoom",
+        key: "z",
+        inputtype: RangeInput,
+        data:{
+			max: 20, //max zoom level
+			min:1,
+			step:1
+       },
+    },
+    {
+        name: "Address",
+        key: "q",
+        inputtype: TextInput
+    }]
+});
 
 Vvveb.Components.add("_base", {
     name: "Element",

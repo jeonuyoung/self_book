@@ -1,172 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
-    <title>Directions service</title>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 30%;
-        width: 100%
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #floating-panel {
-        position: absolute;
-        top: 10px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
-       #locationField, #controls {
-        position: relative;
-        width: 480px;
-      }
-      #autocomplete {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 99%;
-      }
-      .label {
-        text-align: right;
-        font-weight: bold;
-        width: 100px;
-        color: #303030;
-      }
-      #address {
-        border: 1px solid #000090;
-        background-color: #f0f0ff;
-        width: 480px;
-        padding-right: 2px;
-      }
-      #address td {
-        font-size: 10pt;
-      }
-      .field {
-        width: 99%;
-      }
-      .slimField {
-        width: 80px;
-      }
-      .wideField {
-        width: 200px;
-      }
-      #locationField {
-        height: 20px;
-        margin-bottom: 2px;
-      }
-            #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 300px;
-      }
+ 
 
-   /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-     
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      .controls {
-        margin-top: 10px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
-
-      .pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 300px;
-      }
-
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
-
-      .pac-container {
-        font-family: Roboto;
-      }
-
-      #type-selector {
-        color: #fff;
-        background-color: #4d90fe;
-        padding: 5px 11px 0px 11px;
-      }
-
-      #type-selector label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
-    </style>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1SXZMCJFk4dRd7MZCDWHk0jINUtI9v2Y&libraries=places"></script>
-     <script type="text/javascript">
-    // $("#map_div").
-   
-	 
-     </script>
-  </head>
-  <body>
-<div class="map_row" id="map_div">
-	<!-- <input id="pac-input" class="controls" type="text" placeholder="Enter a location"> -->
-    
-								<input type="text" id="origin" placeholder="Start" class="pac-input controls"><br>
-								<input type="text" id="destination" placeholder="end" class="pac-input controls"><br>
-								<p>이동수단</p>
-								<select name="travelMode" id="travelMode">
-								    <option value="DRIVING">car</option>
-								    <option value="BICYCLING">bike</option>
-								    <option value="TRANSIT">transit</option>
-								    <option value="WALKING">walk</option>
-								</select><br>
-								<input type="checkbox" id="provideRouteAlternatives">여러경로 찾기<br>
-								<input type="checkbox" id="avoidHighways">고속도로 제외<br>
-								<input type="checkbox" id="avoidTolls"> 유료도로 제외<br>
-
-								<button type="button" id="searchMap">Search</button><br>
-								
-								
-								<input type="text" id="search" placeholder="Search" class="pac-input controls"><br>
-								<button type="button" id="searchPlace">Search Places</button>
-							</div>
-    <div id="map"></div>
-    
-    <script>
-      
-      function initMap() {
+function initMap() {
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -230,6 +64,7 @@
 			 auto(input);
 		 });
 		 
+		  /* 장소검색 場所検索 */
 		 $("#search").focusin(function(){
 			 input = document.getElementById('search');
 			 autocomplete=new google.maps.places.Autocomplete(input);
@@ -267,15 +102,9 @@
 	            }
 	            
 	              });
-	            
-			 
-		 });
-         
+		 	});
      });
-        
-        /* 장소검색 場所検索 */
-        
-	        
+
 	        
 				
         var onChangeHandler = function() {
@@ -312,9 +141,3 @@
           }
         });
       }
-      
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1SXZMCJFk4dRd7MZCDWHk0jINUtI9v2Y&libraries=places&callback=initMap"
-        async defer></script>
-  </body>
-</html>
