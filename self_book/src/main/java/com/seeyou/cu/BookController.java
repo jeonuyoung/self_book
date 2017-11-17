@@ -74,6 +74,16 @@ public class BookController {
 		return "loadbookpage";
 	}	
 
+	
+	/*作った本を削除*/
+	@RequestMapping(value = "deletebook", method = RequestMethod.GET)
+	public String deletebook(String title,HttpSession session) {
+		//String id = (String) session.getAttribute("id");
+		String id = "coolpark93@gmail.com";
+		Bdao.deletebook(id, title);
+		
+		return "booklist";
+	}	
 
 
 }

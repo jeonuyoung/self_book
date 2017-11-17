@@ -982,7 +982,7 @@ Vvveb.Gui = {
 				type:"post",
 				data:{
 					id:"coolpark93@gmail.com",
-					title:"title6",
+					title:"title3",
 					html: Vvveb.Builder.getHtml()
 				}
 			})

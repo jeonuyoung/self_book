@@ -16,5 +16,10 @@
 			where id=#{id} 
 	</select>
 	
+	<delete id="deletebook" parameterType="BookVO">
+		delete 
+			from book 
+			where id=#{0} and title=#{1} 
+	</delete>
 </mapper>
 

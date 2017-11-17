@@ -107,7 +107,7 @@
     </div>
   <!-- End Work -->
   <c:forEach var="item" items="${booklist}">
-	<a href="loadbook?title=${item}">  제목 : ${item} </a>
+	<a href="loadbook?title=${item}">  제목 : ${item} </a> <a href="deletebook?title=${item}">삭제</a>
 		
 	</c:forEach>
 </body>

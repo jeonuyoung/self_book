@@ -4,6 +4,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import javax.security.auth.Refreshable;
+
+import org.apache.catalina.startup.ClassLoaderFactory.Repository;
+import org.springframework.scripting.support.RefreshableScriptTargetSource;
+
 public class savebook {
 
 	
@@ -29,7 +34,7 @@ public class savebook {
 
 			// get the content in bytes
 			byte[] contentInBytes = content.getBytes();
-
+			
 			fop.write(contentInBytes);
 			fop.flush();
 			fop.close();
@@ -50,5 +55,20 @@ public class savebook {
 		}
 		
 	 }
+	
+	public void deletebook(String id,String title){
+		
+		File file = new File("c:/Users/cool/git/self_book/self_book/src/main/webapp/resources/demo/"+id+"/"+title+".html");
+        
+        if( file.exists()){
+            if(file.delete()){
+                System.out.println("ファイルを削除成功");
+            }else{
+                System.out.println("ファイルを削除失敗");
+            }
+        }else{
+            System.out.println("ファイルがなし");
+        }
+	}
 
 }

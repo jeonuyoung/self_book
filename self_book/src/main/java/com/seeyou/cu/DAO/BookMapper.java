@@ -6,4 +6,5 @@ public interface BookMapper {
 
 	public void savebook(String id, String title);
 	public ArrayList<String> booklist(String id);
+	public void deletebook(String id,String title);
 }

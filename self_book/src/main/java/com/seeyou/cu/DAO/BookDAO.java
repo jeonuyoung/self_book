@@ -28,23 +28,26 @@ public class BookDAO {
 		mf.saveabook(id, title, html);
 		
 		ArrayList<String> booklist = booklist(id);
-		System.out.println(title);
 		
 		if(booklist.size()==0){
 			Bmapper.savebook(id, title);
 			
 		}else{
+			
+			String titlecheck = null;
+			
 			for(int i=0;i<booklist.size();i++){
-				String titlecheck = null;
+				titlecheck = null;
 				
 				if(booklist.get(i).equals(title)){
 					titlecheck=title;
 				}
-				
-				if(titlecheck==null){
-					Bmapper.savebook(id, title);
-				}
 			}
+			
+			if(titlecheck==null){
+				Bmapper.savebook(id, title);
+			}
+			
 		}
 	}
 	
@@ -55,4 +58,11 @@ public class BookDAO {
 		return booklist;
 	}
 	
+	public void deletebook(String id,String title){
+		System.out.println("여기는온당");
+		savebook mf = new savebook();
+		mf.deletebook(id, title);
+		BookMapper mapper2 = sqlSession.getMapper(BookMapper.class);
+		mapper2.deletebook(id, title);
+	}
 }
