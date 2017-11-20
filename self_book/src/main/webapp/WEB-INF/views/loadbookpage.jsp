@@ -379,7 +379,6 @@ function firstpageload (){
 		Vvveb.Builder.init('./resources/demo/firstpage/firstpage.html', function() {
 			//load code after page is loaded here
 			Vvveb.Gui.init();
-			
 		});	
 	
 }

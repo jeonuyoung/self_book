@@ -21,36 +21,44 @@ public class BookDAO {
 	private SqlSession sqlSession;
 	
 	
-	public void savebook(String id, String title, String html) {
+	public String savebook(String id, String title, String html,String saveflag) {
 		BookMapper Bmapper = sqlSession.getMapper(BookMapper.class);
-		
+		String result = null;
 		//実際の本のファイルを作る機能
 		savebook mf = new savebook();
-		mf.saveabook(id, title, html);
 		
 		ArrayList<String> booklist = booklist(id);
 		
 		if(booklist.size()==0){
+			mf.saveabook(id, title, html);
 			Bmapper.savebook(id, title);
-			System.out.println("암것도없음");
+			result ="success";
 			
 		}else{
 			
 			String titlecheck = null;
 			
 			for(int i=0;i<booklist.size();i++){
-				titlecheck = null;
-				
 				if(booklist.get(i).equals(title)){
 					titlecheck=title;
+					
+					if(saveflag.equals("firstsavebook")){
+						result = "samefile";
+					}else{
+						mf.saveabook(id, title, html);
+						result="covered";
+					}
 				}
 			}
 			
 			if(titlecheck==null){
+				mf.saveabook(id, title, html);
 				Bmapper.savebook(id, title);
+				result = "success";
 			}
 			
 		}
+		return result;
 	}
 	
 	public ArrayList<String> booklist(String id){

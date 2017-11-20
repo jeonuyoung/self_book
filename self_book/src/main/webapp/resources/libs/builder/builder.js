@@ -957,10 +957,17 @@ Vvveb.Gui = {
 					data:{
 						id:"coolpark93@gmail.com",
 						title:title,
-						html: Vvveb.Builder.getHtml()
-					}
+						html: Vvveb.Builder.getHtml(),
+						saveflag:saveflag
+					},
+					
+					success : function(data){
+	                     alert(data);
+	                     
+		               }
 				})
 				
+				$("#vvveb-builder").attr("saveflag","savebook");
 				$("#vvveb-builder").attr("title",title);
 			});	
 			
@@ -972,8 +979,14 @@ Vvveb.Gui = {
 					data:{
 						id:"coolpark93@gmail.com",
 						title:$("#vvveb-builder").attr("title"),
-						html: Vvveb.Builder.getHtml()
-					}
+						html: Vvveb.Builder.getHtml(),
+						saveflag:saveflag
+					},
+					
+					success : function(data){
+	                     alert(data);
+	                     
+		               }
 				})
 			});
 		}

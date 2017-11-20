@@ -60,27 +60,14 @@ public class BookController {
 		
 		return "booklist";
 	}
-	
-	
-/*	@RequestMapping(value = "firstsavebook", method = RequestMethod.POST)
-	public void firstsavebook(String id, String title, String html,Model model,HttpSession session) {
-		Bdao.savebook(id, title, html);
 		
-		System.out.println("firstsavebook");
-		model.addAttribute("id", "coolpark93@gmail.com");
-		System.out.println("title"+title);
-		model.addAttribute("title",title);
-		session.setAttribute("title", title);
-		model.addAttribute("saveflag", "savebook");
-		
-	}	*/
-	
 	
 	@ResponseBody
 	@RequestMapping(value = "savebook", method = RequestMethod.POST)
-	public void savebook(String id, String title, String html,Model model) {
+	public String savebook(String id, String title, String html,String saveflag,Model model) {
 		model.addAttribute("saveflag", "savebook");
-		Bdao.savebook(id, title, html);
+		String result = Bdao.savebook(id, title, html,saveflag);
+		return result;
 	}	
 	
 	/*作った本を選択した時本をロードする*/
