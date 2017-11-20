@@ -19,7 +19,7 @@
     
 <!-- jquery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
-<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+<script src="./resources/js/jquery-3.1.1.js"></script>
 <script src="./resources/js/jquery.hotkeys.js"></script>
 
 <!-- bootstrap-->
@@ -66,7 +66,7 @@
 						  <i class="la la-eye"></i>
 					  </button>
 					 
-					 <button class="btn btn-light" title="savebook" id="save-btn" data-vvveb-action="savebook" data-vvveb-shortcut="ctrl+e">
+					 <button class="btn btn-light" title="savebook" id="save-btn" data-vvveb-action="firstsavebook" data-vvveb-shortcut="ctrl+e">
 						  <i class="la la-save"></i> <!--  여긴그냥 이미지-->
 					  </button>
 					  

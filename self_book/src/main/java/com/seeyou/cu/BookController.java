@@ -42,9 +42,11 @@ public class BookController {
 
 	/*初めて本を作る時*/
 	@RequestMapping(value = "firstmakebook", method = RequestMethod.GET)
-	public String firstmakebook() {
+	public String firstmakebook(Model model) {
 		//セッションを使ってデータベースでせセッション
-		return "firstmakebook";
+		model.addAttribute("title","first");
+		model.addAttribute("saveflag", "firstsavebook");
+		return "loadbookpage";
 	}
 	
 	
@@ -59,9 +61,25 @@ public class BookController {
 		return "booklist";
 	}
 	
+	
+/*	@RequestMapping(value = "firstsavebook", method = RequestMethod.POST)
+	public void firstsavebook(String id, String title, String html,Model model,HttpSession session) {
+		Bdao.savebook(id, title, html);
+		
+		System.out.println("firstsavebook");
+		model.addAttribute("id", "coolpark93@gmail.com");
+		System.out.println("title"+title);
+		model.addAttribute("title",title);
+		session.setAttribute("title", title);
+		model.addAttribute("saveflag", "savebook");
+		
+	}	*/
+	
+	
 	@ResponseBody
 	@RequestMapping(value = "savebook", method = RequestMethod.POST)
-	public void savebook(String id, String title, String html) {
+	public void savebook(String id, String title, String html,Model model) {
+		model.addAttribute("saveflag", "savebook");
 		Bdao.savebook(id, title, html);
 	}	
 	
@@ -71,6 +89,8 @@ public class BookController {
 		/*model.addAttribute("id", session.getAttribute("id"));*/
 		model.addAttribute("id", "coolpark93@gmail.com");
 		model.addAttribute("title",title);
+		session.setAttribute("title", title);
+		model.addAttribute("saveflag", "savebook");
 		return "loadbookpage";
 	}	
 
@@ -82,7 +102,7 @@ public class BookController {
 		String id = "coolpark93@gmail.com";
 		Bdao.deletebook(id, title);
 		
-		return "booklist";
+		return "redirect:booklist";
 	}	
 
 

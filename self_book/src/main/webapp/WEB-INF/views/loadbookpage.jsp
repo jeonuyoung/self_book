@@ -39,7 +39,7 @@
 </head>
 <body>
 
-	<div id="vvveb-builder">
+	<div id="vvveb-builder" title=${title} saveflag=${saveflag}> 
 				
 				<div id="top-panel">
 				
@@ -66,9 +66,10 @@
 						  <i class="la la-eye"></i>
 					  </button>
 
-					 <button class="btn btn-light" title="savebook" id="save-btn" data-vvveb-action="savebook" data-vvveb-shortcut="ctrl+e">
+					  <button class="btn btn-light" title="savebook" id="save-btn" data-vvveb-action="savebook" data-vvveb-shortcut="ctrl+e">
 						  <i class="la la-save"></i> <!--  여긴그냥 이미지-->
 					  </button>
+					  
 					  
 					</div>	
 
@@ -354,21 +355,45 @@
 
 <script>
 
+var id = "${id}";
+var title = "${title}";
 
 $(document).ready(function() 
 {
-	
-	var id = "${id}";
-	var title = "${title}";
-	
-	Vvveb.Builder.init('./resources/demo/'+id+'/'+title+'.html', function() {
-		//load code after page is loaded here
-		Vvveb.Gui.init();
-	});
 
+	if(title=="first"){
+		
+		firstpageload();
+		
+	} else{
+		
+		notfirstpageload(id,title);
+		
+	}
 
 	
 });
+
+function firstpageload (){
+
+		Vvveb.Builder.init('./resources/demo/firstpage/firstpage.html', function() {
+			//load code after page is loaded here
+			Vvveb.Gui.init();
+			
+		});	
+	
+}
+
+function notfirstpageload(id,title){
+	Vvveb.Builder.init('./resources/demo/'+id+'/'+title+'.html', function() {
+		Vvveb.Gui.init();
+	});		
+	
+}
+
+/* $("#save-btn").click(function(){
+	alert(saveflag);
+}); */
 
 	
 </script>

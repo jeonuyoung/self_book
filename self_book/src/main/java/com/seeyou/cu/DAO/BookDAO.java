@@ -20,6 +20,7 @@ public class BookDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	
 	public void savebook(String id, String title, String html) {
 		BookMapper Bmapper = sqlSession.getMapper(BookMapper.class);
 		
@@ -31,6 +32,7 @@ public class BookDAO {
 		
 		if(booklist.size()==0){
 			Bmapper.savebook(id, title);
+			System.out.println("암것도없음");
 			
 		}else{
 			
@@ -59,7 +61,6 @@ public class BookDAO {
 	}
 	
 	public void deletebook(String id,String title){
-		System.out.println("여기는온당");
 		savebook mf = new savebook();
 		mf.deletebook(id, title);
 		BookMapper mapper2 = sqlSession.getMapper(BookMapper.class);

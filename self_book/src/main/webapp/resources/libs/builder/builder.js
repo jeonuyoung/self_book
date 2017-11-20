@@ -19,6 +19,7 @@ https://github.com/givan/VvvebJs
 
 // Simple JavaScript Templating
 // John Resig - https://johnresig.com/ - MIT Licensed
+
 (function(){
   var cache = {};
   
@@ -939,56 +940,49 @@ Vvveb.Gui = {
 		}
 		Vvveb.Builder.selectNode();
 	},
-	
-/*	save : function () {
-		
-		$('#textarea-modal textarea').val(Vvveb.Builder.getHtml());
-		
-		$('#textarea-modal').modal();
-		
-		
-	},*/
-	
-/*	save2 : function () {
-		    
-			var a = Vvveb.Builder.getHtml();
-			alert(a);
-		   
-			$(function (){
-				$.ajax({
-					url:"inserthtml",
-					type:"post",
-					data :{
-						id : "coolpark93@gmail.com",
-						html : Vvveb.Builder.getHtml()
-					}
-				})
-				
-			});
-			
-		    //데이터로 연결 
-			
-			
-		},
-		*/
 		
 	savebook : function (){
 		
-		alert("뀨");
-
-		$(function (){
-			$.ajax({
-				url:"savebook",
-				type:"post",
-				data:{
-					id:"coolpark93@gmail.com",
-					title:"title3",
-					html: Vvveb.Builder.getHtml()
-				}
-			})
+		var saveflag = $("#vvveb-builder").attr("saveflag");
+		alert(saveflag);
 		
-		});
+		if(saveflag=="firstsavebook"){
+			var title;
+			title=prompt("제목을 입력해주세요","입력");
+			
+			$(function (){
+				$.ajax({
+					url:"savebook",
+					type:"post",
+					data:{
+						id:"coolpark93@gmail.com",
+						title:title,
+						html: Vvveb.Builder.getHtml()
+					}
+				})
+				
+				$("#vvveb-builder").attr("title",title);
+			});	
+			
+		}else{
+			$(function (){
+				$.ajax({
+					url:"savebook",
+					type:"post",
+					data:{
+						id:"coolpark93@gmail.com",
+						title:$("#vvveb-builder").attr("title"),
+						html: Vvveb.Builder.getHtml()
+					}
+				})
+			});
+		}
 
+		
+	/*	$("#save-btn").attr("data-vvveb-action","savebook");
+		notfirstpageload("coolpark93@gmail.com",title);
+		alert("load");*/
+		
 	},
 	
 	viewport : function () {
