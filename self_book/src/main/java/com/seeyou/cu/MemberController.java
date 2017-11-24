@@ -65,8 +65,7 @@ public class MemberController {
 
 	// 로그인 login
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response)
-			throws Exception {
+	public String login(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response) throws Exception {
 		member = service.login(member, response);
 		session.setAttribute("member", member);
 		return "menu";

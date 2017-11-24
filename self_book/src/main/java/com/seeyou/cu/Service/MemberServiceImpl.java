@@ -34,7 +34,7 @@ public class MemberServiceImpl implements MemberService {
 
 		if (manager.check_id(member.getId()) == 1) {
 			out.println("<script>");
-			out.println("alert('동일한 아이디가 있습니다.');");
+			out.println("alert('同一のアイディ-があります。');");
 			out.println("history.go(-1);");
 			out.println("</script>");
 			out.close();
@@ -42,7 +42,7 @@ public class MemberServiceImpl implements MemberService {
 		} else {
 			member.setApproval_key(create_key());
 			out.println("<script>");
-			out.println("alert('이메일에서 인증을 완료해주세요.');");
+			out.println("alert('メールで認証を完了してください。');");
 			out.println("history.go(-1);");
 			out.println("</script>");
 			out.close();

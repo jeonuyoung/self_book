@@ -206,12 +206,15 @@ Vvveb.Components = {
 	},
 	
 	render: function(type) {
+			
+
 		component = this._components[type];
-		
+		//if (component.type == "html/googlemaps" || component.type == "html/progress") {
+			
 		rightPanel = jQuery("#right-panel #component-properties").html('');
 		
-		rightPanel.append('<h6 class="header">&ensp;' + component.name + '</h6><div class="p-1">');
-	
+		//rightPanel.append('<h6 class="header">&ensp;' + component.name + '</h6><div class="p-1">');
+		console.log(component);
 		if (component.beforeInit) component.beforeInit(Vvveb.Builder.selectedEl.get(0));
 		
 		fn = function(component, property) {
@@ -299,7 +302,8 @@ Vvveb.Components = {
 		}
 		
 		if (component.init) component.init(Vvveb.Builder.selectedEl.get(0));
-	}
+		}
+	//}
 };	
 
 
@@ -337,11 +341,6 @@ Vvveb.WysiwygEditor = {
 				return false;
 		});
 
-		$("#link-btn").on("click", function (e) {
-				doc.execCommand('createLink',false,"#");
-				e.preventDefault();
-				return false;
-		});
 	},
 	
 	undo: function(element) {
@@ -434,14 +433,11 @@ Vvveb.Builder = {
 /* iframe */
 	_loadIframe : function(url) {	
 	
-		//여기인거같은데 
-		
 		self.iframe = this.documentFrame.get(0);
 		self.iframe.src = url;
 
 	    return this.documentFrame.on("load", function() 
         {
-			
 				window.FrameWindow = self.iframe.contentWindow;
 				window.FrameDocument = self.iframe.contentWindow.document;
 			
@@ -451,28 +447,16 @@ Vvveb.Builder = {
                 return self._frameLoaded();
         });		
 
-	    
-	    
-	    
-	    
-	   
-	    
-        
 	},	
     
     _frameLoaded : function() {
     	
-    	/// 수정 의미 x
 		self.frameDoc = $(window.FrameDocument);
 		self.frameHtml = $(window.FrameDocument).find("html");
 		self.frameBody = $(window.FrameDocument).find("body");
 		this._initHightlight();
     },	
 	
-
-	
-	
-    
     _getElementType: function(el) {
 		
 		//search for component attribute
@@ -499,8 +483,7 @@ Vvveb.Builder = {
 		}
 		
 		if (componentName != '') return componentName;
-		//if (className) return componentName;
-		return el.tagName;
+		//return el.tagName; TagName
 	},
 	
 	loadNodeComponent:  function(node) {
@@ -542,7 +525,6 @@ Vvveb.Builder = {
 
 /* iframe highlight */    
     _initHightlight: function() {
-		
 		
 		moveEvent = {target:null, };
 		
@@ -596,9 +578,9 @@ Vvveb.Builder = {
 					self.isDragging == false;
 				} else
 				{
-					
 					jQuery("#highlight-box").css(
-						{"top": offset.top - self.frameDoc.scrollTop() , 
+						{
+							"top": offset.top - self.frameDoc.scrollTop() , 
 						 "left": offset.left - self.frameDoc.scrollLeft() , 
 						 "width" : width, 
 						 "height": height,
@@ -971,6 +953,7 @@ Vvveb.Gui = {
 				$("#vvveb-builder").attr("title",title);
 			});	
 			
+
 		}else{
 			$(function (){
 				$.ajax({
