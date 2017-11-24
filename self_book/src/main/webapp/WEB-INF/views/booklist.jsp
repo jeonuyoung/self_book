@@ -72,6 +72,12 @@
 
 
 <!-- Jquery start -->
+<script>
+ $(function () {
+
+ 
+ });
+</script>
 
 
 <!-- Header Section -->
@@ -88,62 +94,23 @@
 </section>
 
 
-       <!--========== PAGE LAYOUT ==========-->
-        <!-- Work -->
-        <div class="bg-color-sky-light">
-            <div class="content-md container">
-                <!-- Masonry Grid -->
-                <div class="masonry-grid">
-                    <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-6"></div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-6">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="./resources/img/595x483/01.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">My page</h3>
-                                <p class="color-white margin-b-0">修正・会員脱退</p>
-                            </div>
-                            <a class="content-wrapper-link" href="mypage"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-6">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="./resources/img/595x240/01.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Make a book</h3>
-                                <p class="color-white margin-b-0">本作り</p>
-                            </div>
-                            <a class="content-wrapper-link" href="booklist"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-6">
-                        <!-- Work -->
-                        <div class="work">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="./resources/img/595x240/02.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Saved Books</h3>
-                                <p class="color-white margin-b-0">保存された本</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                </div>
-                <!-- End Masonry Grid -->
-            </div>
-        </div>
-        <!-- End Work -->
+  <!--========== PAGE LAYOUT ==========-->
+  <!-- Work -->
+   <div class="bg-color-sky-light">
+    <div class="content-md container">
+  <!-- Masonry Grid -->
+    <div class="masonry-grid">
 
-
+    </div>
+   <!-- End Masonry Grid -->
+     </div>
+    </div>
+  <!-- End Work -->
+  <a href="firstmakebook">새로 만들기</a>
+  <c:forEach var="item" items="${booklist}">
+	<a href="loadbook?title=${item}">  제목 : ${item} </a> <a href="deletebook?title=${item}">삭제</a>
+		
+	</c:forEach>
 </body>
 
 <!-- footer section -->
@@ -155,8 +122,7 @@
     </div>
     <div class="col-md-2 left">
       <h4>Contact</h4>
-
-        Email : <a href="mailto:hello@ascom.com.co"> hello@ascom.com.co</a></p>
+        Email : <a href="mailto:hello@agency.com"> hello@agency.com </a></p>
     </div>
     <div class="col-md-6 right">
       <p>© 2015 All rights reserved. All Rights Reserved<br>

@@ -19,6 +19,7 @@ https://github.com/givan/VvvebJs
 
 // Simple JavaScript Templating
 // John Resig - https://johnresig.com/ - MIT Licensed
+
 (function(){
   var cache = {};
   
@@ -451,11 +452,8 @@ Vvveb.Builder = {
     _frameLoaded : function() {
     	
 		self.frameDoc = $(window.FrameDocument);
-		console.log(self.frameDoc);
 		self.frameHtml = $(window.FrameDocument).find("html");
-		console.log(self.frameHtml);
 		self.frameBody = $(window.FrameDocument).find("body");
-		console.log(self.frameBody);
 		this._initHightlight();
     },	
 	
@@ -924,46 +922,62 @@ Vvveb.Gui = {
 		}
 		Vvveb.Builder.selectNode();
 	},
-	
-	save : function () {
 		
-		$('#textarea-modal textarea').val(Vvveb.Builder.getHtml());
+	savebook : function (){
 		
-		$('#textarea-modal').modal();
+		var saveflag = $("#vvveb-builder").attr("saveflag");
+		alert(saveflag);
 		
-		
-	},
-	
-	save2 : function () {
-		    
-			var a = Vvveb.Builder.getHtml();
-			alert(a);
-		   
+		if(saveflag=="firstsavebook"){
+			var title;
+			title=prompt("제목을 입력해주세요","입력");
+			
 			$(function (){
 				$.ajax({
-					url:"inserthtml",
+					url:"savebook",
 					type:"post",
-					data :{
-						id : "coolpark93@gmail.com",
-						html : Vvveb.Builder.getHtml()
-					}
+					data:{
+						id:"coolpark93@gmail.com",
+						title:title,
+						html: Vvveb.Builder.getHtml(),
+						saveflag:saveflag
+					},
+					
+					success : function(data){
+	                     alert(data);
+	                     
+		               }
 				})
 				
+				$("#vvveb-builder").attr("saveflag","savebook");
+				$("#vvveb-builder").attr("title",title);
+			});	
+			
+
+		}else{
+			$(function (){
+				$.ajax({
+					url:"savebook",
+					type:"post",
+					data:{
+						id:"coolpark93@gmail.com",
+						title:$("#vvveb-builder").attr("title"),
+						html: Vvveb.Builder.getHtml(),
+						saveflag:saveflag
+					},
+					
+					success : function(data){
+	                     alert(data);
+	                     
+		               }
+				})
 			});
-			
-		    //데이터로 연결 
-			
-			
-		},
+		}
+
 		
-		
-	test : function (){
-		
-		Vvveb.Builder.init('./resources/demo/index.html', function() {
-			//load code after page is loaded here
-			Vvveb.Gui.init();
-		});
-		
+	/*	$("#save-btn").attr("data-vvveb-action","savebook");
+		notfirstpageload("coolpark93@gmail.com",title);
+		alert("load");*/
 		
 	},
 	

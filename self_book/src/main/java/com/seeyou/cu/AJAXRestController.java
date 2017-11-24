@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.seeyou.cu.DAO.DataDAO2;
+import com.seeyou.cu.DAO.BookDAO;
 import com.seeyou.cu.DAO.MemberDAO;
 import com.seeyou.cu.Service.MemberServiceImpl;
 import com.seeyou.cu.VO.DataVO;
@@ -28,7 +28,7 @@ public class AJAXRestController {
 	private static final Logger logger = LoggerFactory.getLogger(AJAXRestController.class);
 
 	@Autowired
-	private DataDAO2 dao;
+	private BookDAO Bdao;
 
 	@Autowired
 	MemberDAO mdao;
