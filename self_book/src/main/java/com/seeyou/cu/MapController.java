@@ -9,10 +9,6 @@ import com.seeyou.cu.DAO.MapDAO;
 
 @Controller
 public class MapController {
-
-	/*@Autowired
-	MapDAO mapDao;*/
-	
 	
 	@RequestMapping(value = "makeabook1", method = RequestMethod.GET)
 	public String makeabook() {

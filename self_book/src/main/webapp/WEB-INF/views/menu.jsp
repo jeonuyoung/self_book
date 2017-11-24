@@ -72,12 +72,6 @@
 
 
 <!-- Jquery start -->
-<script>
- $(function () {
-
- 
- });
-</script>
 
 
 <!-- Header Section -->

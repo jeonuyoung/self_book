@@ -84,8 +84,6 @@ Vvveb.Components.add("components/products", {
 	{
 		$('.form-group[class*="group-"]').hide();
 		current = $('.form-group input[name="type"]:checked').val();
-		//console.log(current);
-		//console.log(this.el);
 		$('.form-group[class*="group-' + current + '"]').show();
 		
 		jQuery("input.product_autocomplete", this.el).autocomplete("/?module=ajax&action=product_autocomplete", {json_key:'products'});		

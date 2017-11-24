@@ -1,5 +1,4 @@
  
-
 function initMap() {
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -7,6 +6,7 @@ function initMap() {
           zoom: 12,
           center: {lat: 41.85, lng: -87.65}
         });
+        
         directionsDisplay.setMap(map);
         
         /* 현재 위치 반환 */
@@ -24,7 +24,6 @@ function initMap() {
           // Browser doesn't support Geolocation
           handleLocationError(false, map.getCenter());
         }
-        
         
         //keyup 
         function auto(input){
@@ -58,12 +57,7 @@ function initMap() {
 			 auto(input);
 			 
 		 });
-		 $("#waypoints").focusin(function(){
-			 input = document.getElementById('waypoints');
-			 autocomplete=new google.maps.places.Autocomplete(input);
-			 auto(input);
-		 });
-		 
+				 
 		  /* 장소검색 場所検索 */
 		 $("#search").focusin(function(){
 			 input = document.getElementById('search');
@@ -104,16 +98,11 @@ function initMap() {
 	              });
 		 	});
      });
-
-	        
 				
         var onChangeHandler = function() {
           calculateAndDisplayRoute(directionsService, directionsDisplay);
         };
-
           document.getElementById('searchMap').addEventListener('click', onChangeHandler);
-		  //document.getElementById('searchPlace').addEventListener('click', onChangeHandler);
-			
 		}
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -125,19 +114,16 @@ function initMap() {
 				        departureTime: new Date(Date.now()),  
 				        trafficModel: 'pessimistic'
 				      },
-			      transitOptions: {
-			    	    departureTime: new Date(Date.now()),
-			    	    routingPreference: 'LESS_WALKING'
-			    	  },
 			      unitSystem: google.maps.UnitSystem.IMPERIAL,
 			    avoidHighways: false,
 			    avoidTolls: false
-			    
         }, function(response, status) {
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
+            console.log(response);
           } else {
             window.alert('Directions request failed due to ' + status);
           }
         });
       }
+

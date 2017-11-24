@@ -8923,8 +8923,8 @@ body {
   #vvveb-builder #left-panel:hover {
     width: 275px; }
   #vvveb-builder #left-panel #components-list {
-    height: 98%;
-    overflow-y: auto;
+    height: 86%;
+    overflow-y: scroll;
     overflow-x: hidden;
     width: 275px; }
 
@@ -9395,7 +9395,7 @@ body {
 } */
 
 .map_row{
-    display: inline-grid;
+    display: block;
     flex-wrap: wrap;
     margin-right: 15px;
     margin-left: 15px;

@@ -68,8 +68,453 @@ function changeNodeName(node, newNodeName)
 	return newNode;
 }
 
-Vvveb.ComponentsGroup['Bootstrap 4'] =
-["html/products", "html/categories", "html/search", "html/user", "html/product_gallery", "html/cart", "html/checkout", "html/filters", "html/product", "html/slider", "html/gridrow", "html/heading", "html/image", "html/jumbotron", "html/card", "html/hr", "html/taglabel", "html/progress", "html/textinput", "html/textareainput", "html/checkbox","html/table", "html/container","html/googlemaps"];
+Vvveb.ComponentsGroup['Elements'] =
+["html/products", "html/categories", "html/search", "html/user", "html/product_gallery", "html/cart", "html/checkout", "html/filters", "html/product", "html/slider", "html/heading", "html/image", "html/jumbotron", "html/card", "html/hr", "html/taglabel", "html/progress", "html/textinput", "html/textareainput", "html/checkbox","html/table", "html/container","html/googlemaps"];
+
+
+Vvveb.ComponentsGroup['Information'] = 	["jp","kr","tw","eng","th","phil","nz","sg","au","hk"];
+
+Vvveb.Components.extend("_base", "jp", {
+    name: "日本",
+   image: "icons/japan.svg",
+    html: '<img src="../info/mapa-metro-seul.png" style="width:100%">\
+    	<img src="../info/incheon-metro-map.jpg" style="width:100%">\
+    	<img src="../info/busan.png" style="width:100%">\
+    	<img src="../info/daegu.jpg" style="width:100%">\
+    	<img src="../info/daejeon.jpg" style="width:100%">\
+    	<img src="../info/busan.png" style="width:100%">\
+    	<img src="../info/daegu.jpg" style="width:100%">\
+    	<img src="../info/daejeon.jpg" style="width:100%">\
+    	'
+});
+
+
+Vvveb.Components.extend("_base", "kr", {
+    name: "韓国",
+   image: "icons/south-korea.svg",
+    html: '<span id="ko_em_num" class="wf-notosansjapanese">大使館番号 - (+82)02-2170-5200</span><br>\
+    	<span id="ko_em_add" class="wf-notosansjapanese">大使館位置 - Twin Tree Tower A, 6, Yulgok-ro 2-gil, Jongno-gu, Seoul, Republic of Korea</span><br>\
+    	<span id="ko_currency" class="wf-notosansjapanese">為替 - ￥100 = ￦976.9</span><br>\
+    	<span id="ko_toilet" class="wf-notosansjapanese">トイレ - 無料</span><br>\
+    	<span id="ko_voltage" class="wf-notosansjapanese">電圧 - 220V/60Hz</span><br>\
+    	<span id="ko_police" class="wf-notosansjapanese">救急/火災 - 112/119</span><br>\
+    	<span id="ko_basic" class="wf-notosansjapanese" style:"text-align:center;">\
+    	== 挨拶 ==<br>\
+    	挨拶：アンニョンハセヨ<br>\
+    	ありがとうございます：カムサハムニダ<br>\
+    	嫌です: シロヨ<br>\
+    	いいえ：アニヨ<br>\
+    	はい：ネ<br>\
+    	すみません：チェソンハムニダ <br>\
+    	お願いします： ブタクハムニダ<br></span>\
+    	<span id="ko_number" class="wf-notosansjapanese">\
+    	== 数字の読み方 ==<br>\
+    	1 - ハナ<br>\
+    	2 - トゥル<br>\
+    	3 - セトゥ<br>\
+    	4 - ネトゥ<br>\
+    	5 - タソトゥ<br>\
+    	6 - ヨソトゥ <br>\
+    	7 - イルゴプ <br>\
+    	8 - ヨドル <br>\
+    	9 - アホプ<br>\
+    	10 - ヨル</span><br>\
+    	<span id="ko_word" class="wf-notosansjapanese">\
+    	==基本単語==<br>\
+    	トイレ：ファザンシル<br>\
+    	レシート: けサンソ<br>\
+    	どこ：オディ<br>\
+    	いくら：オルマ<br>\
+    	出発：チュルバル<br>\
+    	到着：ドチャク<br>\
+    	入口：イブぐ<br>\
+    	出口：チュルグ<br>\
+    	駅：ヨク<br>\
+    	</span><br>\
+    	<img src="../info/mapa-metro-seul.png" style="width:100%">\
+    	<img src="../info/incheon-metro-map.jpg" style="width:100%">\
+    	<img src="../info/busan.png" style="width:100%">\
+    	<img src="../info/daegu.jpg" style="width:100%">\
+    	<img src="../info/daejeon.jpg" style="width:100%">\
+    	'
+});
+
+Vvveb.Components.extend("_base", "tw", {
+    name: "台湾",
+   image: "icons/taiwan.svg",
+    html: '<span id="tw_em_num" class="wf-notosansjapanese">大使館番号 - (+886) 2 2713-8000</span><br>\
+    	<span id="tw_em_add" class="wf-notosansjapanese">大使館位置 - Representative Office of Japan in Taipei, Interchange Association 28 Qingcheng Street, Taipei 10547, Taiwan</span><br>\
+    	<span id="tw_currency" class="wf-notosansjapanese">為替 - ￥100 = 26.48台湾ドル</span><br>\
+    	<span id="tw_toilet" class="wf-notosansjapanese">トイレ - 無料</span><br>\
+    	<span id="tw_voltage" class="wf-notosansjapanese">電圧 - 110V/60Hz</span><br>\
+    	<span id="tw_police" class="wf-notosansjapanese">救急/火災 - 110/119</span><br>\
+    	<span id="tw_basic" class="wf-notosansjapanese" style:"text-align:center;">\
+    	== 挨拶 ==<br>\
+    	挨拶：您好　リゥーホゥー\
+    	ありがとうございます：謝謝　セーセー\
+    	嫌です:討厭　タオイェン\
+    	いいえ：不是 プシープー\
+    	はい：是　プー\
+    	すみません：不好意思　ブーハオイースー\
+    	お願いします：拝托パイトゥオ<br></span>\
+    	<span id="tw_number" class="wf-notosansjapanese">\
+    	== 数字の読み方 ==<br>\
+    	1 - Yi<br>\
+    	2 - Er<br>\
+    	3 - San<br>\
+    	4 - Si<br>\
+    	5 - Wu<br>\
+    	6 - Liu<br>\
+    	7 - Qi<br>\
+    	8 - Ba<br>\
+    	9 - Jiu<br>\
+    	10 - Shi</span><br>\
+    	<span id="tw_word" class="wf-notosansjapanese">\
+    	==基本単語==<br>\
+    	トイレ：シーソウジェン<br>\
+    	レシート：りょーしゅー<br>\
+    	どこ：ザイナーリ<br>\
+    	いくら：ドゥオシャオチエン<br>\
+    	出発：チゥーファー　<br>\
+    	到着：ダァォダァー　<br>\
+    	入口：ルゥーコォゥ　<br>\
+    	出口：チゥーコォゥ　<br>\
+    	駅：ヂァン<br>\
+    	</span><br>\
+    	<img src="../info/Kaohsiung-Mass-Rapid-Transit.jpg" style="width:100%">\
+    	<img src="../info/metro-taipei-map.jpg" style="width:100%">\
+    	'
+});
+
+Vvveb.Components.extend("_base", "eng", {
+    name: "イギリス",
+   image: "icons/united-kingdom.svg",
+    html: '<span id="eng_em_num" class="wf-notosansjapanese">大使館番号 - (+44)020-7465-6500</span><br>\
+    	<span id="eng_em_add" class="wf-notosansjapanese">大使館位置 - 101-104 Piccadilly London W1J 7JT</span><br>\
+    	<span id="eng_currency" class="wf-notosansjapanese">為替 - ￥100 = £0.66</span><br>\
+    	<span id="eng_toilet" class="wf-notosansjapanese">トイレ - 場合によって有料・無料</span><br>\
+    	<span id="eng_voltage" class="wf-notosansjapanese">電圧 - 240V,50Hz</span><br>\
+    	<span id="eng_police" class="wf-notosansjapanese">救急/火災 - 112/999</span><br>\
+    	<span id="eng_basic" class="wf-notosansjapanese" style:"text-align:center;">\
+    	== 挨拶 ==<br>\
+    	挨拶：Hi<br>\
+    	ありがとうございます：Thank you<br>\
+    	嫌です: I don＇t like it<br>\
+    	いいえ：No<br>\
+    	はい：Yes<br>\
+    	すみません：Sorry<br>\
+    	お願いします： Please<br></span>\
+    	<span id="eng_number" class="wf-notosansjapanese">\
+    	== 数字の読み方 ==<br>\
+    	1 - One <br>\
+    	2 - Two<br>\
+    	3 - Three <br>\
+    	4 - Four <br>\
+    	5 - Five <br>\
+    	6 - Six <br>\
+    	7 - Seven <br>\
+    	8 - Eight <br>\
+    	9 - Nine<br>\
+    	10 - Ten</span><br>\
+    	<span id="eng_word" class="wf-notosansjapanese">\
+    	==基本単語==<br>\
+    	トイレ: Toilet <br>\
+    	レシート: Bill <br>\
+    	どこ：Where is it?<br>\
+    	いくら：How much is it? <br>\
+    	出発：Start <br>\
+    	到着：Arrive <br>\
+    	入口：Entrance <br>\
+    	出口：Exit<br>\
+    	駅：Station<br>\
+    	</span><br>\
+    	<img src="../info/mapa-metro-londres.jpg" style="width:100%">\
+    	<img src="../info/newcastle-metro-plan.jpg" style="width:100%">\
+    	<img src="../info/docklands_light_railway.jpg" style="width:100%">\
+    	<img src="../info/Manchester_Route_Map.jpg" style="width:100%">\
+    	'
+});
+
+Vvveb.Components.extend("_base", "th", {
+    name: "タイ",
+   image: "icons/thailand.svg",
+    html: '<span id="th_em_num" class="wf-notosansjapanese">大使館番号 - (+66)02-207-8500 </span><br>\
+    	<span id="th_em_add" class="wf-notosansjapanese">大使館位置 - T177 Witthayu Road, Lumphini, Pathum Wan, Bangkok 10330</span><br>\
+    	<span id="th_currency" class="wf-notosansjapanese">為替 - ￥100 = 29.05バーツ</span><br>\
+    	<span id="th_toilet" class="wf-notosansjapanese">トイレ - 場合によって有料・無料</span><br>\
+    	<span id="th_voltage" class="wf-notosansjapanese">電圧 - 220V/50Hz</span><br>\
+    	<span id="th_police" class="wf-notosansjapanese">救急/火災 - 1669/199</span><br>\
+    	<span id="th_basic" class="wf-notosansjapanese" style:"text-align:center;">\
+    	== 挨拶 ==<br>\
+    	挨拶：サワディー　クラッ（プ） / カー<br>\
+    	ありがとうございます：コップ クン　クラッ（プ） / カー<br>\
+    	嫌です:マイサバーイ<br>\
+    	いいえ：マイダーイ<br>\
+    	はい：ダーイ<br>\
+    	すみません：コートートゥッ　クラッ（プ） / カー<br>\
+    	お願いします：カムクワームウォーン<br><br>\
+    	</span>\
+    	<span id="th_number" class="wf-notosansjapanese">\
+    	== 数字の読み方 ==<br>\
+    	1 - ヌン<br>\
+    	2 - ソーン<br>\
+    	3 - サーム<br>\
+    	4 - スィー<br>\
+    	5 - ハー<br>\
+    	6 - ホック<br>\
+    	7 - ヂェット<br>\
+    	8 - ペート<br>\
+    	9 - ガーオ <br>\
+    	10 - スイップ<br>\
+    	</span><br>\
+    	<span id="th_word" class="wf-notosansjapanese">\
+    	==基本単語==<br>\
+    	トイレ：ホン（グ）ナーム<br>\
+    	レシート:バイセット<br>\
+    	どこ：ナイ<br>\
+    	いくら：タウライ<br>\
+    	出発：ワンオーク<br>\
+    	到着：トゥン<br>\
+    	入口：ターング カオ<br>\
+    	出口：ターング オーク<br>\
+    	駅：サターニー<br>\
+    	</span><br>\
+    	<img src="../info/mapa-metro-bangkok.jpg" style="width:100%">\
+    	'
+});
+
+
+Vvveb.Components.extend("_base", "phil", {
+    name: "フィリピン",
+   image: "icons/philippines.svg",
+    html: '<span id="phil_em_num" class="wf-notosansjapanese">大使館番号 - (+63-2) 551-5710</span><br>\
+    	<span id="phil_em_add" class="wf-notosansjapanese">大使館位置 - 2627 Roxas Blvd., Pasay City, Metro Manila, 1300, Philippines</span><br>\
+    	<span id="phil_currency" class="wf-notosansjapanese">為替 - ￥100 = PHP 2.15~2.5</span><br>\
+    	<span id="phil_toilet" class="wf-notosansjapanese">トイレ - 場合によって有料・無料</span><br>\
+    	<span id="phil_voltage" class="wf-notosansjapanese">電圧 - 115/200v</span><br>\
+    	<span id="phil_police" class="wf-notosansjapanese">救急/火災 - 166/166</span><br>\
+    	<span id="phil_basic" class="wf-notosansjapanese" style:"text-align:center;">\
+    	== 挨拶 ==<br>\
+    	挨拶：Hi / Hello<br>\
+    	ありがとうございます：Salamat<br>\
+    	嫌です: Hindi ko gusto ito<br>\
+    	いいえ：Hindi<br>\
+    	はい：Oo<br>\
+    	すみません：Paumanhin <br>\
+    	お願いします： Mangyaring<br></span>\
+    	<span id="phil_number" class="wf-notosansjapanese">\
+    	== 数字の読み方 ==<br>\
+    	1 - isa<br>\
+    	2 - dalawa<br>\
+    	3 - tatlo<br>\
+    	4 - apat<br>\
+    	5 - lima<br>\
+    	6 - anim<br>\
+    	7 - pitong<br>\
+    	8 - walong<br>\
+    	9 - siyam<br>\
+    	10 - sampung</span><br>\
+    	<span id="phil_word" class="wf-notosansjapanese">\
+    	==基本単語==<br>\
+    	トイレ：Mga Banyo<br>\
+    	レシート: Pahayag<br>\
+    	どこ：Saan<br>\
+    	いくら：Magkano<br>\
+    	出発：Pag-alis<br>\
+    	到着：Pagdating<br>\
+    	入口：Pasukan<br>\
+    	出口：Lumabas<br>\
+    	駅：Station <br>\
+    	</span><br>\
+    	<img src="../info/mapa-mettro-manila2.png" style="width:100%">\
+    	'
+});
+
+Vvveb.Components.extend("_base", "nz", {
+    name: "ニュージーランド",
+   image: "icons/new-zealand.svg",
+    html: '<span id="nz_em_num" class="wf-notosansjapanese">大使館番号 - (+04) 473-1540</span><br>\
+    	<span id="nz_em_add" class="wf-notosansjapanese">大使館位置 - Level 18, The Majestic Centre 100 Willis Street Wellington 6011 New Zealand </span><br>\
+    	<span id="nzo_currency" class="wf-notosansjapanese">為替 - ￥100 = NZD 79~83</span><br>\
+    	<span id="nz_toilet" class="wf-notosansjapanese">トイレ - 場合によって有料・無料</span><br>\
+    	<span id="nz_voltage" class="wf-notosansjapanese">電圧 - 230V~240V,50Hz</span><br>\
+    	<span id="nz_police" class="wf-notosansjapanese">救急/火災 - 116/116</span><br>\
+    	<span id="nz_basic" class="wf-notosansjapanese" style:"text-align:center;">\
+    	== 挨拶 ==<br>\
+    	挨拶：Hi<br>\
+    	ありがとうございます：Thank you<br>\
+    	嫌です: I don＇t like it<br>\
+    	いいえ：No<br>\
+    	はい：Yes<br>\
+    	すみません：Sorry<br>\
+    	お願いします： Please<br></span>\
+    	<span id="nz_number" class="wf-notosansjapanese">\
+    	== 数字の読み方 ==<br>\
+    	1 - One <br>\
+    	2 - Two<br>\
+    	3 - Three <br>\
+    	4 - Four <br>\
+    	5 - Five <br>\
+    	6 - Six <br>\
+    	7 - Seven <br>\
+    	8 - Eight <br>\
+    	9 - Nine<br>\
+    	10 - Ten</span><br>\
+    	<span id="nz_word" class="wf-notosansjapanese">\
+    	==基本単語==<br>\
+    	トイレ: Toilet <br>\
+    	レシート: Bill <br>\
+    	どこ：Where is it?<br>\
+    	いくら：How much is it? <br>\
+    	出発：Start <br>\
+    	到着：Arrive <br>\
+    	入口：Entrance <br>\
+    	出口：Exit<br>\
+    	駅：Station<br>\
+    	</span><br>\
+    	'
+});
+
+Vvveb.Components.extend("_base", "sg", {
+    name: "シンガポール",
+   image: "icons/singapore.svg",
+    html: '<span id="sg_em_num" class="wf-notosansjapanese">大使館番号 -  (+65) 6235-8855</span><br>\
+    	<span id="sg_em_add" class="wf-notosansjapanese">大使館位置 - 16 Nassim Road, Singapore 258390</span><br>\
+    	<span id="sg_currency" class="wf-notosansjapanese">為替 - ￥100 = SGD 77~81</span><br>\
+    	<span id="sg_toilet" class="wf-notosansjapanese">トイレ - 場合によって有料・無料</span><br>\
+    	<span id="sg_voltage" class="wf-notosansjapanese">電圧 - 220V~240V,50Hz</span><br>\
+    	<span id="sg_police" class="wf-notosansjapanese">救急/火災 - 999/995</span><br>\
+    	<span id="sg_basic" class="wf-notosansjapanese" style:"text-align:center;">\
+    	== 挨拶 ==<br>\
+    	挨拶：Hi<br>\
+    	ありがとうございます：Thank you<br>\
+    	嫌です: I don＇t like it<br>\
+    	いいえ：No<br>\
+    	はい：Yes<br>\
+    	すみません：Sorry<br>\
+    	お願いします： Please<br></span>\
+    	<span id="sg_number" class="wf-notosansjapanese">\
+    	== 数字の読み方 ==<br>\
+    	1 - One <br>\
+    	2 - Two<br>\
+    	3 - Three <br>\
+    	4 - Four <br>\
+    	5 - Five <br>\
+    	6 - Six <br>\
+    	7 - Seven <br>\
+    	8 - Eight <br>\
+    	9 - Nine<br>\
+    	10 - Ten</span><br>\
+    	<span id="sg_word" class="wf-notosansjapanese">\
+    	==基本単語==<br>\
+    	トイレ: Restroom <br>\
+    	レシート: Bill <br>\
+    	どこ：Where is it?<br>\
+    	いくら：How much is it? <br>\
+    	出発：Start <br>\
+    	到着：Arrive <br>\
+    	入口：Entrance <br>\
+    	出口：Exit<br>\
+    	駅：Station<br>\
+    	</span><br>\
+    	<img src="../info/mapa-metro-singapur.png" style="width:100%">\
+    	'
+});
+
+Vvveb.Components.extend("_base", "au", {
+    name: "オーストラリア",
+   image: "icons/australia.svg",
+    html: '<span id="au_em_num" class="wf-notosansjapanese">大使館番号 - (+02) 6273-3244</span><br>\
+    	<span id="au_em_add" class="wf-notosansjapanese">大使館位置 - 112 Empire Circuit, Yarralumla ACT 2600, Australia</span><br>\
+    	<span id="au_currency" class="wf-notosansjapanese">為替 - ￥100 = AUD 82~86</span><br>\
+    	<span id="au_toilet" class="wf-notosansjapanese">トイレ - 無料</span><br>\
+    	<span id="au_voltage" class="wf-notosansjapanese">電圧 - 240V/50Hz</span><br>\
+    	<span id="au_police" class="wf-notosansjapanese">救急/火災 - 000/000</span><br>\
+    	<span id="au_basic" class="wf-notosansjapanese" style:"text-align:center;">\
+    	== 挨拶 ==<br>\
+    	挨拶：Hi<br>\
+    	ありがとうございます：Thank you<br>\
+    	嫌です: I don＇t like it<br>\
+    	いいえ：No<br>\
+    	はい：Yes<br>\
+    	すみません：Sorry<br>\
+    	お願いします： Please<br></span>\
+    	<span id="au_number" class="wf-notosansjapanese">\
+    	== 数字の読み方 ==<br>\
+    	1 - One <br>\
+    	2 - Two<br>\
+    	3 - Three <br>\
+    	4 - Four <br>\
+    	5 - Five <br>\
+    	6 - Six <br>\
+    	7 - Seven <br>\
+    	8 - Eight <br>\
+    	9 - Nine<br>\
+    	10 - Ten</span><br>\
+    	<span id="au_word" class="wf-notosansjapanese">\
+    	==基本単語==<br>\
+    	トイレ: Restroom <br>\
+    	レシート: Bill <br>\
+    	どこ：Where is it?<br>\
+    	いくら：How much is it? <br>\
+    	出発：Start <br>\
+    	到着：Arrive <br>\
+    	入口：Entrance <br>\
+    	出口：Exit<br>\
+    	駅：Station<br>\
+    	</span><br>\
+    	<img src="../info/brisbane.png" style="width:100%">\
+    	<img src="../info/melbourne-subway-map.jpg" style="width:100%">\
+    	<img src="../info/sydney_map.jpg" style="width:100%">\
+    	'
+});
+
+Vvveb.Components.extend("_base", "hk", {
+    name: " ホンコン",
+   image: "icons/hong-kong.svg",
+    html: '<span id="hk_em_num" class="wf-notosansjapanese">大使館番号 - (+852) 2522-1184 </span><br>\
+    	<span id="hk_em_add" class="wf-notosansjapanese">大使館位置 - 46-47/F, One Exchange Square, 8 Connaught Place, Central, Hong Kong</span><br>\
+    	<span id="hk_currency" class="wf-notosansjapanese">為替 - ￥100 = HKD 13~15</span><br>\
+    	<span id="hk_toilet" class="wf-notosansjapanese">トイレ - 場合によって有料・無料</span><br>\
+    	<span id="hk_voltage" class="wf-notosansjapanese">電圧 - 220V/50Hz</span><br>\
+    	<span id="hk_police" class="wf-notosansjapanese">救急/火災 - 999/999</span><br>\
+    	<span id="hk_basic" class="wf-notosansjapanese" style:"text-align:center;">\
+    	== 挨拶 ==<br>\
+    	挨拶：問候 (Wènhòu)<br>\
+    	ありがとうございます：謝謝 (Xièxiè)<br>\
+    	嫌です: 我不想 (Wǒ bùxiǎng)<br>\
+    	いいえ：編號 (Biānhào)<br>\
+    	はい：是 (Shì)<br>\
+    	すみません：對不起 (Duìbùqǐ)<br>\
+    	お願いします： 請做 (Qǐng zuò)<br></span>\
+    	<span id="hk_number" class="wf-notosansjapanese">\
+    	== 数字の読み方 ==<br>\
+    	1 - 一 (Yī)\
+    	2 - 二 (èr)\
+    	3 - 三 (sān)\
+    	4 - 四 (sì)\
+    	5 - 五 (wǔ)\
+    	6 - 六 (liù)\
+    	7 - 七 (qī)\
+    	8 - 八 (bā)\
+    	9 - 九 (jiǔ)\
+    	10 - 十 (shí)\
+    	</span><br>\
+    	<span id="hk_word" class="wf-notosansjapanese">\
+    	==基本単語==<br>\
+    	トイレ：聲明 (shēngmíng)<br>\
+    	レシート: 聲明 (shēngmíng)<br>\
+    	どこ：其中 (qízhōng)<br>\
+    	いくら：多少錢 (duōshǎo qián)<br>\
+    	出発：出發 (chūfā)<br>\
+    	到着：要 (yào)<br>\
+    	入口：入口 (rùkǒu)<br>\
+    	出口：退出 (tuìchū)<br>\
+    	駅：站 (zhàn)<br>\
+    	</span><br>\
+    	<img src="../info/hong-kong.gif" style="width:100%">\
+    	'
+});
 
 
 Vvveb.Components.add("html/googlemaps", {
@@ -99,7 +544,7 @@ Vvveb.Components.add("html/googlemaps", {
     //use an image for dragging for performance reasons, iframes elements don't drag well
     afterDrop: function (node)
 	{
-		newnode = $('<div data-component-maps><iframe frameborder="0" src="https://maps.google.com/maps?&z=1&t=q&output=embed" width="100" height="100" style="width:100%;height:100%;pointer-events:none"></iframe></div>')
+		newnode = $('<div id="map" data-component-maps><iframe frameborder="0" src="https://maps.google.com/maps?&z=1&t=q&output=embed" width="600" height="300" style="width:100% height="100%";pointer-events:none"></iframe></div>')
 		node.replaceWith(newnode);
 		return newnode;
 	},
@@ -131,13 +576,10 @@ Vvveb.Components.add("html/googlemaps", {
 			min:1,
 			step:1
        },
-    },
-    {
-        name: "Address",
-        key: "q",
-        inputtype: TextInput
     }]
 });
+
+/*
 
 Vvveb.Components.add("_base", {
     name: "Element",
@@ -152,7 +594,7 @@ Vvveb.Components.add("_base", {
         htmlAttr: "class",
         inputtype: TextInput
     }]
-});    
+});    */
 
 Vvveb.Components.extend("_base", "html/container", {
     classes: ["container", "container-fluid"],
@@ -457,51 +899,7 @@ Vvveb.Components.extend("_base", "html/buttontoolbar", {
 		  </div>\
 		</div>'
 });
-Vvveb.Components.extend("_base","html/alert", {
-    classes: ["alert"],
-    name: "Alert",
-    image: "icons/alert.svg",
-    html: '<div class="alert alert-warning alert-dismissible fade show" role="alert">\
-		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">\
-			<span aria-hidden="true">&times;</span>\
-		  </button>\
-		  <strong>Holy guacamole!</strong> You should check in on some of those fields below.\
-		</div>',
-    properties: [{
-        name: "Type",
-        key: "type",
-        htmlAttr: "class",
-        validValues: ["alert-primary", "alert-secondary", "alert-success", "alert-danger", "alert-warning", "alert-info", "alert-light", "alert-dark"],
-        inputtype: SelectInput,
-        data: {
-            options: [{
-                value: "alert-primary",
-                text: "Default"
-            }, {
-                value: "alert-secondary",
-                text: "Secondary"
-            }, {
-                value: "alert-success",
-                text: "Success"
-            }, {
-                value: "alert-danger",
-                text: "Danger"
-            }, {
-                value: "alert-warning",
-                text: "Warning"
-            }, {
-                value: "alert-info",
-                text: "Info"
-            }, {
-                value: "alert-light",
-                text: "Light"
-            }, {
-                value: "alert-dark",
-                text: "Dark"
-            }]
-        }
-    }]
-});
+
 Vvveb.Components.extend("_base", "html/badge", {
     classes: ["badge"],
     image: "icons/badge.svg",
@@ -554,7 +952,6 @@ Vvveb.Components.extend("_base", "html/card", {
 		  <div class="card-body">\
 			<h4 class="card-title">Card title</h4>\
 			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content.</p>\
-			<a href="#" class="btn btn-primary">Go somewhere</a>\
 		  </div>\
 		</div>'
 });
@@ -753,9 +1150,6 @@ Vvveb.Components.extend("_base", "html/jumbotron", {
 		  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>\
 		  <hr class="my-4">\
 		  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>\
-		  <p class="lead">\
-			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>\
-		  </p>\
 		</div>'
 });
 Vvveb.Components.extend("_base", "html/navbar", {
@@ -881,7 +1275,7 @@ Vvveb.Components.extend("_base", "html/textinput", {
     name: "Text Input",
 	attributes: {"type":"text"},
     image: "icons/text_input.svg",
-    html: '<div class="form-group"><label>Text</label><input type="text" class="form-control"></div></div>',
+    html: '<div class="form-group"><label>Text</label><input type="text" class="form-control" style="background-color:transparent;"></div></div>',
     properties: [{
         name: "Value",
         key: "value",
@@ -895,89 +1289,16 @@ Vvveb.Components.extend("_base", "html/textinput", {
     }]
 });
 
-Vvveb.Components.extend("_base", "html/selectinput", {
-	nodes: ["select"],
-    name: "Select Input",
-    image: "icons/select_input.svg",
-    html: '<div class="form-group"><label>Choose an option </label><select class="form-control"><option value="value1">Text 1</option><option value="value2">Text 2</option><option value="value3">Text 3</option></select></div>',
 
-	beforeInit: function (node)
-	{
-		properties = [];
-		var i = 0;
-		
-		$(node).find('option').each(function() {
 
-			data = {"value": this.value, "text": this.text};
-			
-			i++;
-			properties.push({
-				name: "Option " + i,
-				key: "option" + i,
-				//index: i - 1,
-				optionNode: this,
-				inputtype: TextValueInput,
-				data: data,
-				onChange: function(node, value, input) {
-					
-					option = $(this.optionNode);
-					
-					//if remove button is clicked remove option and render row properties
-					if (input.nodeName == 'BUTTON')
-					{
-						option.remove();
-						Vvveb.Components.render("html/selectinput");
-						return node;
-					}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-					if (input.name == "value") option.attr("value", value); 
-					else if (input.name == "text") option.text(value);
-					
-					return node;
-				},	
-			});
-		});
-		
-		//remove all option properties
-		this.properties = this.properties.filter(function(item) {
-			return item.key.indexOf("option") === -1;
-		});
-		
-		//add remaining properties to generated column properties
-		properties.push(this.properties[0]);
-		
-		this.properties = properties;
-		return node;
-	},
-    
-    properties: [{
-        name: "Option",
-        key: "option1",
-        inputtype: TextValueInput
-	}, {
-        name: "Option",
-        key: "option2",
-        inputtype: TextValueInput
-	}, {
-        name: "",
-        key: "addChild",
-        inputtype: ButtonInput,
-        data: {text:"Add option"},
-        onChange: function(node)
-        {
-			 $(node).append('<option value="value">Text</option>');
-			 
-			 //render component properties again to include the new column inputs
-			 Vvveb.Components.render("html/selectinput");
-			 
-			 return node;
-		}
-	}]
-});
+
+
 Vvveb.Components.extend("_base", "html/textareainput", {
     name: "Text Area",
     image: "icons/text_area.svg",
-    html: '<div class="form-group"><label>Your response:</label><textarea class="form-control"></textarea></div>'
+    html: '<div class="form-group"><label>Your response:</label><textarea class="form-control" style="background-color:transparent;"></textarea></div>'
 });
 Vvveb.Components.extend("_base", "html/radiobutton", {
     name: "Radio Button",
@@ -1381,3 +1702,5 @@ Vvveb.Components.add("html/gridrow", {
 		}
 	}]
 });
+
+
