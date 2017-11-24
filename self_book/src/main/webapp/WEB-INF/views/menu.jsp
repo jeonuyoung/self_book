@@ -119,7 +119,7 @@
                                 <h3 class="color-white margin-b-5">Make a book</h3>
                                 <p class="color-white margin-b-0">本作り</p>
                             </div>
-                            <a class="content-wrapper-link" href="booklist"></a>
+                            <a class="content-wrapper-link" href="makeabook1"></a>
                         </div>
                         <!-- End Work -->
                     </div>
@@ -133,7 +133,7 @@
                                 <h3 class="color-white margin-b-5">Saved Books</h3>
                                 <p class="color-white margin-b-0">保存された本</p>
                             </div>
-                            <a class="content-wrapper-link" href="#"></a>
+                            <a class="content-wrapper-link" href="booklist"></a>
                         </div>
                         <!-- End Work -->
                     </div>

@@ -161,14 +161,8 @@
 				</button>
 
 				<button class="btn btn-light" title="Export (Ctrl + E)"
-					id="save-btn" data-vvveb-action="save2"
+					id="save-btn" data-vvveb-action="savebook"
 					data-vvveb-shortcut="ctrl+e">
-					<i class="la la-save"></i>
-					<!--  여긴그냥 이미지-->
-				</button>
-
-				<button class="btn btn-light" title="test" id="save-btn"
-					data-vvveb-action="test" data-vvveb-shortcut="ctrl+e">
 					<i class="la la-save"></i>
 					<!--  여긴그냥 이미지-->
 				</button>
@@ -261,11 +255,12 @@
 					<iframe src="about:none" id="iframe1"></iframe>
 				</div>
 			</div>
-
+		
 			<div id="right-panel">
 				<div id="component-properties"></div>
 			</div>
 			<div id="bottom-panel"></div>
+			<div id="forsavebook" title=${title} saveflag=${saveflag}></div>
 		</div>
 
 
@@ -464,12 +459,42 @@
 
 
 		<script>
-			$(document).ready(function() {
-				Vvveb.Builder.init('./resources/demo/index2.html', function() {
-					//load code after page is loaded here
-					Vvveb.Gui.init();
-				});
-			});
+		var id = "${id}";
+		var title = "${title}";
+
+		$(document).ready(function() 
+		{
+		   
+
+		   if(title=="first"){
+		      
+		      firstpageload();
+		      
+		   } else{
+		      
+		      notfirstpageload(id,title);
+		      
+		   }
+
+		   
+		});
+
+		function firstpageload (){
+
+		      Vvveb.Builder.init('./resources/demo/firstpage/firstpage.html', function() {
+		         //load code after page is loaded here
+		         Vvveb.Gui.init();
+		   
+		      });   
+		   
+		}
+
+		function notfirstpageload(id,title){
+		   Vvveb.Builder.init('./resources/demo/'+id+'/'+title+'.html', function() {
+		      Vvveb.Gui.init();
+		   });      
+		   
+		}
 		</script>
 		<script
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1SXZMCJFk4dRd7MZCDWHk0jINUtI9v2Y&libraries=places&callback=initMap"

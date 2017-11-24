@@ -37,18 +37,17 @@ public class BookController {
 
 	@RequestMapping(value = "mypage", method = RequestMethod.GET)
 	public String mypage() {
-		return "mypage";
+		return "mypage";      
 	}
 
-	/*初めて本を作る時*/
-	@RequestMapping(value = "firstmakebook", method = RequestMethod.GET)
-	public String firstmakebook(Model model) {
-		//セッションを使ってデータベースでせセッション
-		model.addAttribute("title","first");
-		model.addAttribute("saveflag", "firstsavebook");
-		return "loadbookpage";
-	}
-	
+	  /*初めて本を作る時*/
+	   @RequestMapping(value = "makeabook1", method = RequestMethod.GET)
+	   public String firstmakebook(Model model) {
+	      //セッションを使ってデータベースでせセッション
+	      model.addAttribute("title","first");
+	      model.addAttribute("saveflag", "firstsavebook");
+	      return "makeabook1";
+	   }
 	
 	/*作った本がある時に本の目録をリターン*/
 	@RequestMapping(value = "booklist", method = RequestMethod.GET)

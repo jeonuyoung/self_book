@@ -14,6 +14,6 @@ DEFAULT COLLATE utf8mb4_unicode_ci;
 );
 
 create table book(
- id varchar(80) primary key,
+ id varchar(80),
  title varchar(200) not null
 );
