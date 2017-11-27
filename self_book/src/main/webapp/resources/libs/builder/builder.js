@@ -205,15 +205,12 @@ Vvveb.Components = {
 	},
 	
 	render: function(type) {
-			
-
 		component = this._components[type];
-		//if (component.type == "html/googlemaps" || component.type == "html/progress") {
-			
+		
 		rightPanel = jQuery("#right-panel #component-properties").html('');
 		
-		//rightPanel.append('<h6 class="header">&ensp;' + component.name + '</h6><div class="p-1">');
-		console.log(component);
+		rightPanel.append('<h6 class="header">&ensp;' + component.name + '</h6><div class="p-1">');
+	
 		if (component.beforeInit) component.beforeInit(Vvveb.Builder.selectedEl.get(0));
 		
 		fn = function(component, property) {
@@ -301,6 +298,249 @@ Vvveb.Components = {
 		}
 		
 		if (component.init) component.init(Vvveb.Builder.selectedEl.get(0));
+	},
+	/*		
+
+		component = this._components[type];
+		//if (component.type == "html/googlemaps" || component.type == "html/progress") {
+			
+		rightPanel = jQuery("#right-panel #component-properties").html('');
+		
+		//rightPanel.append('<h6 class="header">&ensp;' + component.name + '</h6><div class="p-1">');
+		if (component.beforeInit) component.beforeInit(Vvveb.Builder.selectedEl.get(0));
+		
+		fn = function(component, property) {
+			return property.input.on('propertyChange', function (event, value, input) {
+					element = Vvveb.Builder.selectedEl;
+					if (property.child) element = element.find(property.child);
+					
+					if (property.onChange)
+					{
+						element = property.onChange(element, value, input);
+					} else if (property.htmlAttr)
+					{
+						oldValue = element.attr(property.htmlAttr);
+						
+						if (property.htmlAttr == "class") 
+						{
+							if (property.validValues) element.removeClass(property.validValues.join(" "));
+							element = element.addClass(value);
+						}
+						else
+						{
+							element = element.attr(property.htmlAttr, value);
+						}
+						
+						Vvveb.Undo.addMutation({type: 'attributes', 
+												target: element.get(0), 
+												attributeName: property.htmlAttr, 
+												oldValue: oldValue, 
+												newValue: element.attr(property.htmlAttr)});
+					}
+
+					if (component.onChange) 
+					{
+						element = component.onChange(element, property, value, input);
+					}
+					
+					if (!property.child) Vvveb.Builder.selectNode(element);
+			});				
+		};			
+	
+		element = Vvveb.Builder.selectedEl;
+
+		for (var i in component.properties)
+		{
+			property = component.properties[i];
+			
+			if (property.beforeInit) property.beforeInit(element.get(0)) 
+			
+			if (property.child) element = element.find(property.child);
+			
+			
+			if (property.data) {
+				property.data["key"] = property.key;
+			} else
+			{
+				property.data = {"key" : property.key};
+			}
+			
+			property.input = property.inputtype.init(property.data);
+			
+			if (property.init)
+			{
+				property.inputtype.setValue(property.init(element.get(0)));
+			} else if (property.htmlAttr)
+			{
+				value = element.attr(property.htmlAttr);
+
+				//if attribute is class check if one of valid values is included as class to set the select
+				if (value && property.htmlAttr == "class" && property.validValues)
+				{
+					value = value.split(" ").filter(function(el) {
+						return property.validValues.indexOf(el) != -1
+					});
+				} 
+
+				property.inputtype.setValue(value);
+			}
+			
+			fn(component, property);
+			
+			row = $(tmpl('vvveb-property', property)); 
+			row.find('.input').append(property.input);
+			
+			rightPanel.append(row);
+		}
+		
+		if (component.init) component.init(Vvveb.Builder.selectedEl.get(0));
+		},
+		
+		render2: function(type) {
+			component = this._components[type];
+			
+			rightPanel = jQuery("#right-panel #component-properties").html('');
+			rightPanel.append('<h6 class="header">&ensp;' + component.name + '</h6><div class="p-1">');
+		
+			if (component.beforeInit) component.beforeInit(Vvveb.Builder.selectedEl.get(0));
+			
+			fn = function(component, property) {
+				return property.input.on('propertyChange', function (event, value, input) {
+						element = Vvveb.Builder.selectedEl;
+						if (property.child) element = element.find(property.child);
+						
+						if (property.onChange)
+						{
+							element = property.onChange(element, value, input);
+						} else if (property.htmlAttr)
+						{
+							oldValue = element.attr(property.htmlAttr);
+							
+							if (property.htmlAttr == "class") 
+							{
+								if (property.validValues) element.removeClass(property.validValues.join(" "));
+								element = element.addClass(value);
+							}
+							else
+							{
+								element = element.attr(property.htmlAttr, value);
+							}
+							
+							Vvveb.Undo.addMutation({type: 'attributes', 
+													target: element.get(0), 
+													attributeName: property.htmlAttr, 
+													oldValue: oldValue, 
+													newValue: element.attr(property.htmlAttr)});
+						}
+
+						if (component.onChange) 
+						{
+							element = component.onChange(element, property, value, input);
+						}
+						
+						if (!property.child) Vvveb.Builder.selectNode(element);
+				});				
+			};			
+		
+			element = Vvveb.Builder.selectedEl;
+
+			for (var i in component.properties)
+			{
+				property = component.properties[i];
+				console.log(property);
+				
+				if (property.beforeInit) property.beforeInit(element.get(0)) 
+				
+				if (property.child) element = element.find(property.child);
+				
+				
+				if (property.data) {
+					property.data["key"] = property.key;
+				} else
+				{
+					property.data = {"key" : property.key};
+				}
+				
+				property.input = property.inputtype.init(property.data);
+				
+				if (property.init)
+				{
+					property.inputtype.setValue(property.init(element.get(0)));
+				} else if (property.htmlAttr)
+				{
+					value = element.attr(property.htmlAttr);
+
+					//if attribute is class check if one of valid values is included as class to set the select
+					if (value && property.htmlAttr == "class" && property.validValues)
+					{
+						value = value.split(" ").filter(function(el) {
+							return property.validValues.indexOf(el) != -1
+						});
+					} 
+
+					property.inputtype.setValue(value);
+				}
+				
+				fn(component, property);
+				
+				row = $(tmpl('vvveb-property', property)); 
+				row.find('.input').append(property.input);
+				
+				rightPanel.append(row);
+			}
+			
+			if (component.init) component.init(Vvveb.Builder.selectedEl.get(0));
+		},*/
+		
+		
+		replace_image: function(type){
+			element = Vvveb.Builder.selectedEl;
+			
+			Vvveb.Undo.addMutation({type: 'attributes', 
+									target: element.get(0).attributes.src.value, 
+									value: 'pexels-photo-297755.jpeg'});
+			
+			
+//			fn = function(component, property) {
+//				return property.input.on('propertyChange', function (event, value, input) {
+//						element = Vvveb.Builder.selectedEl;
+//						if (property.child) element = element.find(property.child);
+//						
+//						if (property.onChange)
+//						{
+//							element = property.onChange(element, value, input);
+//						} else if (property.htmlAttr)
+//						{
+//							oldValue = element.attr(property.htmlAttr);
+//							
+//							if (property.htmlAttr == "class") 
+//							{
+//								console.log('모르겠다class');
+//								if (property.validValues) element.removeClass(property.validValues.join(" "));
+//							}
+//							else
+//							{
+//								console.log(property.htmlAttr);
+//								element = element.attr(property.htmlAttr, value);
+//								console.log(value);
+//							}
+//							
+//							Vvveb.Undo.addMutation({type: 'attributes', 
+//													target: element.get(0), 
+//													attributeName: property.htmlAttr, 
+//													oldValue: oldValue, 
+//													newValue: element.attr(property.htmlAttr)});
+//						}
+	//
+//						if (component.onChange) 
+//						{
+//							element = component.onChange(element, property, value, input);
+//						}
+//						
+//						if (!property.child) Vvveb.Builder.selectNode(element);
+//				});				
+//			};	
+			console.log(element);
 		}
 	//}
 };	
@@ -522,6 +762,41 @@ Vvveb.Builder = {
 			 });
 			 
 		jQuery("#highlight-name").html(self._getElementType(node));
+		
+		var imgtrigger = self._getElementType(node);
+		if(imgtrigger=="IMG"){
+			alert("!");
+			
+			abc = self.selectedEl;
+			console.log();
+			
+			var title_img;
+			title_img=prompt("제목을 입력해주세요","입력");
+			
+			if(title_img==0){
+				console.log('1111')
+				
+				Vvveb.Components.v('src');
+			}
+			else {
+				alert('하지마')
+;				}
+/*				jQuery("#select-box").css(
+				{"top": offset.top - self.frameDoc.scrollTop() , 
+				 "left": offset.left - self.frameDoc.scrollLeft() , 
+				 "width" : self.selectedEl.outerWidth(), 
+				 "height": self.selectedEl.outerHeight(),
+				 //"display": "block"
+				 });	*/		
+			
+/*				data = Vvveb.Components.matchNode(node);
+			Vvveb.Components.render2(data.type);
+			console.log("???");*/
+			
+			
+			
+			
+		}
 		
 	},
 

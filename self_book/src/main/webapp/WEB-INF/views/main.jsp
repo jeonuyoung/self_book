@@ -34,7 +34,7 @@
 
 <style>
   .modal-header, .close, .h5bold {
-      background-color: #422700;
+      background-color: #007bff;
       color:white !important;
       text-align: center;
       font-size: 30px;
@@ -231,7 +231,7 @@
             <label for="psw">Password</label>
             <input type="password" class="form-control" id="loginPw" name="pw" placeholder="パソワード">
           </div>
-            <button type="submit" id="login_submit" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">ログイン</button>
+            <button type="submit" id="login_submit" class="btn btn-success btn-block" style="background-color:white; border-color: #ccc; color: black">ログイン</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -274,7 +274,7 @@
             <label for="psw">Nickname</label>
             <input type="text" class="form-control" name="nickname" id="joinNickname" placeholder="ニックネーム">
           </div>          
-            <button type="submit" id ="joinSubmit" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">新規取得</button>
+            <button type="submit" id ="joinSubmit" class="btn btn-success btn-block" style="background-color:white; border-color: #ccc; color: black">新規取得</button>
         </form>
       </div>
     </div>
@@ -299,7 +299,7 @@
             <label for="username">ID</label>
             <input type="text" class="form-control" name = "id" id="findId" placeholder="メールアドレス">
           </div>
-            <button type="button" id ="findbtn" class="btn btn-success btn-block" style="background: #FFECB4; border-color: transparent; color: #422700">臨時の暗証番号をもらえる</button>
+            <button type="button" id ="findbtn" class="btn btn-success btn-block" style="background-color:white; border-color: #ccc; color: black">臨時の暗証番号をもらえる</button>
       </div>
     </div>
       

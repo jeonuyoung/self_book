@@ -38,6 +38,7 @@
 <script src="./resources/js/information.js"></script>
 <script src="./resources/js/jquery.auroramenu.js"></script>
 <script src="./resources/js/colorPick.js"></script>
+<script src="./resources/js/intro.js"></script>
 
 <!-- bootstrap-->
 <script src="./resources/js/popper.min.js"></script>
@@ -58,53 +59,9 @@
 <script>
 	$(function() {
 		$('#menu1').tendina();
-		close_sub();
-		  function close_accordion_section() {
-		        $('.accordion .accordion-section-title').removeClass('active');
-		        $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
-		    }
-		 
-		    $('.accordion-section-title').click(function(e) {
-		        // Grab current anchor value
-		        var currentAttrValue = $(this).attr('href');
-		 
-		        if($(e.target).is('.active')) {
-		            close_accordion_section();
-		        }else {
-		            close_accordion_section();
-		 
-		            // Add active class to section title
-		            $(this).addClass('active');
-		            // Open up the hidden content panel
-		            $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
-		        }
-		 
-		        e.preventDefault();
-		    });
-		    
-		    function close_sub() {
-		        $('.accordion_content').removeClass('active');
-		        $('.accordion_sub').slideUp(300).removeClass('open');
-		    }
-		    
-		    $('.accordion_content').click(function(e) {
-		        // Grab current anchor value
-		        var currentAttrValue = $(this).attr('href');
-		 
-		        if($(e.target).is('.active')) {
-		        	close_sub();
-		        }else {
-		        	close_sub();
-		            // Add active class to section title
-		            $(this).addClass('active');
-		            // Open up the hidden content panel
-		            $('.accordion_sub' + currentAttrValue).slideDown(300).addClass('open'); 
-		        }
-		        e.preventDefault();
-		    });
-		    
-		    
-		    	
+		//close_sub();
+		
+			
 		    $(".picker").colorPick();
 		 
 });
@@ -119,8 +76,11 @@
 		document.getElementById(tab).style.display = "block";
 	}
 	
-	
-	
+	/* document.getElementById('infobtn').onclick = function() {
+        introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
+          window.location.href = 'second.html?multipage=true';
+        });
+      }; */
 </script>
 
 </head>
@@ -131,8 +91,8 @@
 
 		<div id="top-panel">
 
-			<div alt="Vvveb" class="float-left" id="logo">Self Tour Guide Book</div>
-
+			<div alt="Vvveb" class="float-left" id="logo" data-step="1" data-intro="This is a tooltip!">Self Tour Guide Book</div>
+			<buttons href="#" class = "btn btn-primary" id="infobtn">도움말 보기</a>
 			<div class="btn-group mr-3" role="group">
 				<button class="btn btn-light" title="Undo (Ctrl/Cmd + Z)"
 					id="undo-btn" data-vvveb-action="undo" data-vvveb-shortcut="ctrl+z">
@@ -145,7 +105,6 @@
 					<i class="la la-undo la-flip-horizontal"></i>
 				</button>
 			</div>
-
 
 			<div class="btn-group mr-3" role="group">
 				<button class="btn btn-light" title="Fullscreen (F11)"
@@ -168,6 +127,7 @@
 				</button>
 			</div>
 		</div>
+		
 		<!--왼쪽 사이드바 시작  -->
 		<div id="left-panel">
 			<div id="components">
@@ -195,8 +155,8 @@
 						</div>
 						<div class="tab-panels tab wf-roundedmplus1c" id="MapDiv"
 							style="display: none">
-							<div id="map" style="margin: 1px;"></div>
-							<div class="map_row" id="map_div">
+							<div id="map" style="margin: 1px;" data-step="2" data-intro="Ok, wasn't that fundfdf?"></div>
+							<div class="map_row" id="map_div" >
 								<span id="result"></span>
 								<p class="wf-roundedmplus1c"
 									style="margin: 10px; font-weight: bold;">経路を探す</p>
@@ -262,7 +222,6 @@
 			<div id="bottom-panel"></div>
 			<div id="forsavebook" title=${title} saveflag=${saveflag}></div>
 		</div>
-
 
 
 		<!-- templates -->

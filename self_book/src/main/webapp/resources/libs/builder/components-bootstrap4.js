@@ -77,14 +77,14 @@ Vvveb.ComponentsGroup['Information'] = 	["jp","kr","tw","eng","th","phil","nz","
 Vvveb.Components.extend("_base", "jp", {
     name: "日本",
    image: "icons/japan.svg",
-    html: '<img src="../info/mapa-metro-seul.png" style="width:100%">\
-    	<img src="../info/incheon-metro-map.jpg" style="width:100%">\
-    	<img src="../info/busan.png" style="width:100%">\
-    	<img src="../info/daegu.jpg" style="width:100%">\
-    	<img src="../info/daejeon.jpg" style="width:100%">\
-    	<img src="../info/busan.png" style="width:100%">\
-    	<img src="../info/daegu.jpg" style="width:100%">\
-    	<img src="../info/daejeon.jpg" style="width:100%">\
+    html:  '<img src="../../info/mapa-metro-seul.png" style="width:100%">\
+    		<img src="../../info/incheon-metro-map.jpg" style="width:100%">\
+	    	<img src="../../info/busan.png" style="width:100%">\
+	    	<img src="../../info/daegu.jpg" style="width:100%">\
+	    	<img src="../../info/daejeon.jpg" style="width:100%">\
+	    	<img src="../../info/busan.png" style="width:100%">\
+	    	<img src="../../info/daegu.jpg" style="width:100%">\
+	    	<img src="../../info/daejeon.jpg" style="width:100%">\
     	'
 });
 
@@ -131,11 +131,11 @@ Vvveb.Components.extend("_base", "kr", {
     	出口：チュルグ<br>\
     	駅：ヨク<br>\
     	</span><br>\
-    	<img src="../info/mapa-metro-seul.png" style="width:100%">\
-    	<img src="../info/incheon-metro-map.jpg" style="width:100%">\
-    	<img src="../info/busan.png" style="width:100%">\
-    	<img src="../info/daegu.jpg" style="width:100%">\
-    	<img src="../info/daejeon.jpg" style="width:100%">\
+    	<img src="../../info/mapa-metro-seul.png" style="width:100%">\
+    	<img src="../../info/incheon-metro-map.jpg" style="width:100%">\
+    	<img src="../../info/busan.png" style="width:100%">\
+    	<img src="../../info/daegu.jpg" style="width:100%">\
+    	<img src="../../info/daejeon.jpg" style="width:100%">\
     	'
 });
 
@@ -181,8 +181,8 @@ Vvveb.Components.extend("_base", "tw", {
     	出口：チゥーコォゥ　<br>\
     	駅：ヂァン<br>\
     	</span><br>\
-    	<img src="../info/Kaohsiung-Mass-Rapid-Transit.jpg" style="width:100%">\
-    	<img src="../info/metro-taipei-map.jpg" style="width:100%">\
+    	<img src="../../info/Kaohsiung-Mass-Rapid-Transit.jpg" style="width:100%">\
+    	<img src="../../info/metro-taipei-map.jpg" style="width:100%">\
     	'
 });
 
@@ -228,10 +228,10 @@ Vvveb.Components.extend("_base", "eng", {
     	出口：Exit<br>\
     	駅：Station<br>\
     	</span><br>\
-    	<img src="../info/mapa-metro-londres.jpg" style="width:100%">\
-    	<img src="../info/newcastle-metro-plan.jpg" style="width:100%">\
-    	<img src="../info/docklands_light_railway.jpg" style="width:100%">\
-    	<img src="../info/Manchester_Route_Map.jpg" style="width:100%">\
+    	<img src="../../info/mapa-metro-londres.jpg" style="width:100%">\
+    	<img src="../../info/newcastle-metro-plan.jpg" style="width:100%">\
+    	<img src="../../info/docklands_light_railway.jpg" style="width:100%">\
+    	<img src="../../info/Manchester_Route_Map.jpg" style="width:100%">\
     	'
 });
 
@@ -279,7 +279,7 @@ Vvveb.Components.extend("_base", "th", {
     	出口：ターング オーク<br>\
     	駅：サターニー<br>\
     	</span><br>\
-    	<img src="../info/mapa-metro-bangkok.jpg" style="width:100%">\
+    	<img src="../../info/mapa-metro-bangkok.jpg" style="width:100%">\
     	'
 });
 
@@ -326,7 +326,7 @@ Vvveb.Components.extend("_base", "phil", {
     	出口：Lumabas<br>\
     	駅：Station <br>\
     	</span><br>\
-    	<img src="../info/mapa-mettro-manila2.png" style="width:100%">\
+    	<img src="../../info/mapa-mettro-manila2.png" style="width:100%">\
     	'
 });
 
@@ -417,7 +417,7 @@ Vvveb.Components.extend("_base", "sg", {
     	出口：Exit<br>\
     	駅：Station<br>\
     	</span><br>\
-    	<img src="../info/mapa-metro-singapur.png" style="width:100%">\
+    	<img src="../../info/mapa-metro-singapur.png" style="width:100%">\
     	'
 });
 
@@ -463,9 +463,9 @@ Vvveb.Components.extend("_base", "au", {
     	出口：Exit<br>\
     	駅：Station<br>\
     	</span><br>\
-    	<img src="../info/brisbane.png" style="width:100%">\
-    	<img src="../info/melbourne-subway-map.jpg" style="width:100%">\
-    	<img src="../info/sydney_map.jpg" style="width:100%">\
+    	<img src="../../info/brisbane.png" style="width:100%">\
+    	<img src="../../info/melbourne-subway-map.jpg" style="width:100%">\
+    	<img src="../../info/sydney_map.jpg" style="width:100%">\
     	'
 });
 
@@ -512,7 +512,7 @@ Vvveb.Components.extend("_base", "hk", {
     	出口：退出 (tuìchū)<br>\
     	駅：站 (zhàn)<br>\
     	</span><br>\
-    	<img src="../info/hong-kong.gif" style="width:100%">\
+    	<img src="../../info/hong-kong.gif" style="width:100%">\
     	'
 });
 
@@ -688,7 +688,7 @@ Vvveb.Components.extend("_base", "html/link", {
 Vvveb.Components.extend("_base", "html/image", {
     nodes: ["img"],
     name: "Image",
-    html: '<img src="../libs/builder/icons/image.svg" height="128" width="128">',
+    html: '<img src="../../libs/builder/icons/image.svg" height="128" width="128">',
     /*
     afterDrop: function (node)
 	{
