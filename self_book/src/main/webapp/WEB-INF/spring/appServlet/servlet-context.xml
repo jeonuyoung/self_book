@@ -19,17 +19,15 @@
   <interceptors>
   	<interceptor>
   		<mapping path="/**"/>
-  		<exclude-mapping path="/resources/**"/>
-  		<exclude-mapping path="/resources/**/**"/>
-  		<exclude-mapping path="/"/>
-  		<exclude-mapping path="cu/"/>
-  		<exclude-mapping path="cu/main"/>
-  		<exclude-mapping path="/join_member"/>
-  		<exclude-mapping path="/approval_member"/>
-  		<exclude-mapping path="/login"/>
-  		<exclude-mapping path="cu/#services"/>
-  		<exclude-mapping path="/find_pw"/>
-  		<exclude-mapping path="/**/*.js"/>
+        <exclude-mapping path="/resources/**/"/>
+        <exclude-mapping path="/"/>
+        <exclude-mapping path="cu/"/>
+        <exclude-mapping path="cu/main"/>
+        <exclude-mapping path="/join_member"/>
+        <exclude-mapping path="/approval_member"/>
+        <exclude-mapping path="/login"/>
+        <exclude-mapping path="cu/#services"/>
+        <exclude-mapping path="/find_pw"/>
   		<beans:bean id="sessionInterCeptor" class="com.seeyou.cu.util.SessionInterceptor"></beans:bean>
   	</interceptor>
   </interceptors>
