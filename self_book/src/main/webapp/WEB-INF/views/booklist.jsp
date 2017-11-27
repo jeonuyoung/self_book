@@ -106,7 +106,7 @@
      </div>
     </div>
   <!-- End Work -->
-  <a href="firstmakebook">새로 만들기</a>
+  <a href="makeabook1">새로 만들기</a>
   <c:forEach var="item" items="${booklist}">
 	<a href="loadbook?title=${item}">  제목 : ${item} </a> <a href="deletebook?title=${item}">삭제</a>
 		
