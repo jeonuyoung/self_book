@@ -1,0 +1,808 @@
+@CHARSET "UTF-8";
+
+    .maingwd-img-2vw0 {
+      display: block;
+      height: 575.675px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+    }
+    .maingwd-div-1usz {
+      background-color: rgb(193, 184, 184);
+      height: 424.325px;
+      left: 0px;
+      position: absolute;
+      top: 575.667px;
+      width: 100%;
+    }
+    .maingwd-div-1cle {
+      background-color: rgba(239, 237, 237, 0.19);
+      border-color: rgb(255, 253, 253);
+      border-style: solid;
+      border-width: 4px;
+      height: 902.5px;
+      left: 23px;
+      position: absolute;
+      top: 44.5px;
+      width: 690px;
+    }
+    .maingwd-h1-14bc {
+      border-color: rgb(56, 44, 44);
+      color: rgb(56, 44, 44);
+      font-family: "Times New Roman";
+      font-size: 70px;
+      height: 167px;
+      left: 100px;
+      outline-color: rgb(56, 44, 44);
+      position: absolute;
+      text-align: center;
+      text-decoration: none solid rgb(56, 44, 44);
+      top: 613px;
+      width: 571px;
+      column-rule-color: rgb(56, 44, 44);
+      -webkit-text-emphasis-color: rgb(56, 44, 44);
+      -webkit-text-fill-color: rgb(56, 44, 44);
+      -webkit-text-stroke-color: rgb(56, 44, 44);
+      transform-origin: 247.77px -22.6399px 0px;
+      caret-color: rgb(56, 44, 44);
+    }
+    .maingwd-p-1cro {
+      border-color: rgb(104, 99, 99);
+      color: rgb(104, 99, 99);
+      font-family: "Courier New";
+      font-size: 35px;
+      height: 85px;
+      left: 155px;
+      outline-color: rgb(104, 99, 99);
+      position: absolute;
+      text-decoration: none solid rgb(104, 99, 99);
+      top: 808px;
+      width: 492.5px;
+      column-rule-color: rgb(104, 99, 99);
+      -webkit-text-emphasis-color: rgb(104, 99, 99);
+      -webkit-text-fill-color: rgb(104, 99, 99);
+      -webkit-text-stroke-color: rgb(104, 99, 99);
+      caret-color: rgb(104, 99, 99);
+    }
+    
+    /*  */
+      .page2gwd-img-1hmx {
+      background-color: rgb(192, 161, 161);
+      border-color: rgb(243, 237, 237);
+      display: block;
+      height: 389.038px;
+      left: 0px;
+      position: absolute;
+      top: 106.575px;
+      width: 100%;
+    }
+    .page2gwd-span-4jy2 {
+      border-color: rgb(58, 41, 41);
+      color: rgb(58, 41, 41);
+      display: block;
+      font-family: "Noto Sans";
+      font-size: 51px;
+      font-weight: bold;
+      height: 104px;
+      left: 169px;
+      outline-color: rgb(58, 41, 41);
+      position: absolute;
+      text-decoration: none solid rgb(58, 41, 41);
+      top: 291px;
+      width: 280px;
+      column-rule-color: rgb(58, 41, 41);
+      -webkit-text-emphasis-color: rgb(58, 41, 41);
+      -webkit-text-fill-color: rgb(58, 41, 41);
+      -webkit-text-stroke-color: rgb(58, 41, 41);
+      transform-origin: 124.353px 54.7469px 0px;
+      caret-color: rgb(58, 41, 41);
+    }
+    
+    .page2gwd-ul-5b8s {
+      font-family: "Sawarabi Gothic";
+      font-size: 20px;
+      height: 430px;
+      left: 27px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding-left: 0px;
+      position: absolute;
+      top: 507px;
+      width: 249px;
+      transform-origin: 371.4px 156.477px 0px;
+    }
+    .page2gwd-ul-1yn2 {
+      font-family: "Sawarabi Gothic";
+      font-size: 20px;
+      height: 430px;
+      left: 540px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding-left: 0px;
+      position: absolute;
+      top: 507px;
+      width: 249px;
+      transform-origin: 371.4px 156.477px 0px;
+    }
+    ul li {
+      list-style-type: none;
+      counter-increment: item 1;
+      font-family: "Sawarabi Gothic";
+      font-size: 20px;
+    }
+    ul li::before {
+      content: counter(item, square)" ";
+      color: white;
+    }
+
+    .page2gwd-ul-1kod {
+      left: 267px;
+    }
+    .page2gwd-ul-3945 {
+      left: 16px;
+    }
+    .page2gwd-ul-3z1w {
+      left: 276px;
+    }
+    .page2gwd-ul-s3os {
+      left: 536px;
+    }    
+    
+    
+   
+	/*  */
+    .page3gwd-img-iv8l {
+      display: block;
+      height: 200px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+    }
+    .page3gwd-svg-je9b {
+      display: block;
+      height: 710px;
+      left: 50%;
+      position: absolute;
+      top: 273px;
+      width: 2px;
+      stroke: rgb(86, 68, 68);
+    }
+    .page3gwd-svg-1gu2 {
+      display: block;
+      height: 680.05px;
+      left: 104px;
+      position: absolute;
+      top: 293.94px;
+      width: 2px;
+      stroke: rgb(204, 191, 191);
+    }
+    .page3gwd-ul-5b8s {
+      font-family: "Sawarabi Gothic";
+      font-size: 26px;
+      height: 695px;
+      left: 130px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding-left: 0px;
+      position: absolute;
+      top: 275px;
+      width: 297px;
+      transform-origin: 371.378px 1609.31px 0px;
+    }
+    .page3 ul li {
+      list-style-type: none;
+      counter-increment: item 1;
+      font-family: "Sawarabi Gothic";
+      font-size: 25px;
+    }
+    .page3 li::before {
+      content: counter(item, disc)" ";
+      color: rgb(204, 191, 191);
+    }
+    .page3gwd-ul-1yn2 {
+      font-family: "Sawarabi Gothic";
+      font-size: 26px;
+      height: 695px;
+      left: 500px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding-left: 0px;
+      position: absolute;
+      top: 275px;
+      width: 280px;
+      transform-origin: 371.378px 1609.31px 0px;
+    }
+    .page3gwd-ul-8b3h {
+      border-color: rgb(104, 96, 96);
+      color: rgb(104, 96, 96);
+      font-family: "Sawarabi Gothic";
+      font-size: 26px;
+      height: 705px;
+      left: 10px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      outline-color: rgb(104, 96, 96);
+      padding-left: 0px;
+      position: absolute;
+      text-decoration: none solid rgb(104, 96, 96);
+      width: 104px;
+      column-rule-color: rgb(104, 96, 96);
+      -webkit-text-emphasis-color: rgb(104, 96, 96);
+      -webkit-text-fill-color: rgb(104, 96, 96);
+      -webkit-text-stroke-color: rgb(104, 96, 96);
+      transform-origin: 383.4px 571.675px 0px;
+      caret-color: rgb(104, 96, 96);
+      top: 275px;
+    }
+    .page3gwd-li-xfx4 {
+      border-color: rgb(104, 96, 96);
+      color: rgb(104, 96, 96);
+      outline-color: rgb(104, 96, 96);
+      text-decoration: none solid rgb(104, 96, 96);
+      column-rule-color: rgb(104, 96, 96);
+      -webkit-text-emphasis-color: rgb(104, 96, 96);
+      -webkit-text-fill-color: rgb(104, 96, 96);
+      -webkit-text-stroke-color: rgb(104, 96, 96);
+      caret-color: rgb(104, 96, 96);
+    }
+    .page3gwd-ul-10da {
+      border-color: rgb(104, 96, 96);
+      color: rgb(104, 96, 96);
+      font-family: "Sawarabi Gothic";
+      font-size: 26px;
+      height: 705px;
+      left: 380px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      outline-color: rgb(104, 96, 96);
+      padding-left: 0px;
+      position: absolute;
+      text-decoration: none solid rgb(104, 96, 96);
+      top: 275px;
+      width: 104px;
+      column-rule-color: rgb(104, 96, 96);
+      -webkit-text-emphasis-color: rgb(104, 96, 96);
+      -webkit-text-fill-color: rgb(104, 96, 96);
+      -webkit-text-stroke-color: rgb(104, 96, 96);
+      transform-origin: 383.4px 571.675px 0px;
+      caret-color: rgb(104, 96, 96);
+    }
+    .page3gwd-li-oa1h {
+      border-color: rgb(104, 96, 96);
+      color: rgb(104, 96, 96);
+      outline-color: rgb(104, 96, 96);
+      text-decoration: none solid rgb(104, 96, 96);
+      column-rule-color: rgb(104, 96, 96);
+      -webkit-text-emphasis-color: rgb(104, 96, 96);
+      -webkit-text-fill-color: rgb(104, 96, 96);
+      -webkit-text-stroke-color: rgb(104, 96, 96);
+      caret-color: rgb(104, 96, 96);
+    }
+    .page3gwd-ul-1adp {
+      border-color: rgb(63, 59, 59);
+      color: rgb(63, 59, 59);
+      font-family: "Sawarabi Gothic";
+      font-size: 34px;
+      height: 53px;
+      left: 66px;
+      margin-bottom: 34px;
+      margin-top: 34px;
+      outline-color: rgb(63, 59, 59);
+      position: absolute;
+      text-decoration: none solid rgb(63, 59, 59);
+      top: 191px;
+      width: 205px;
+      column-rule-color: rgb(63, 59, 59);
+      -webkit-text-emphasis-color: rgb(63, 59, 59);
+      -webkit-text-fill-color: rgb(63, 59, 59);
+      -webkit-text-stroke-color: rgb(63, 59, 59);
+      transform-origin: 877.378px 1679.29px 0px;
+      caret-color: rgb(63, 59, 59);
+    }
+    .page3gwd-ul-pkmp {
+      border-color: rgb(63, 59, 59);
+      color: rgb(63, 59, 59);
+      font-family: "Sawarabi Gothic";
+      font-size: 34px;
+      height: 53px;
+      left: 450px;
+      margin-bottom: 34px;
+      margin-top: 34px;
+      outline-color: rgb(63, 59, 59);
+      position: absolute;
+      text-decoration: none solid rgb(63, 59, 59);
+      top: 191px;
+      width: 205px;
+      column-rule-color: rgb(63, 59, 59);
+      -webkit-text-emphasis-color: rgb(63, 59, 59);
+      -webkit-text-fill-color: rgb(63, 59, 59);
+      -webkit-text-stroke-color: rgb(63, 59, 59);
+      transform-origin: 877.378px 1679.29px 0px;
+      caret-color: rgb(63, 59, 59);
+    }
+    .page3gwd-ul-1n0i {
+      left: 130px;
+    }
+    .page3gwd-svg-skr6 {
+      left: 490px;
+    }
+    .page3gwd-svg-12p9 {
+      left: 119px;
+    }
+    
+    /*  */	
+	
+    .page4gwd-p-vuq1 {
+      background-color: rgb(104, 88, 88);
+      border-color: rgb(250, 247, 247);
+      border-style: dashed;
+      border-width: 1.33333px;
+      color: rgb(253, 250, 250);
+      font-family: "Sawarabi Gothic";
+      font-size: 40px;
+      height: 58px;
+      left: 0px;
+      outline-color: rgb(253, 250, 250);
+      position: absolute;
+      text-align: center;
+      text-decoration: none solid rgb(253, 250, 250);
+      top: 45px;
+      width: 100%;
+      column-rule-color: rgb(253, 250, 250);
+      -webkit-text-emphasis-color: rgb(253, 250, 250);
+      -webkit-text-fill-color: rgb(253, 250, 250);
+      -webkit-text-stroke-color: rgb(253, 250, 250);
+      transform-origin: -178.781px 55.7112px 0px;
+      caret-color: rgb(253, 250, 250);
+    }
+    
+    .page4gwd-div-1eic {
+      background-color: rgb(104, 88, 88);
+      height: 71.925px;
+      left: 0px;
+      position: absolute;
+      top: 67.7193px;
+      width: 100%;
+    }
+    
+    
+    .page4gwd-svg-1yck {
+      display: block;
+      height: 816px;
+      left: 50%;
+      position: absolute;
+      top: 150px;
+      width: 1px;
+      stroke: rgb(204, 191, 191);
+    }
+    .page4gwd-img-1pcr {
+      display: block;
+      height: 203.5px;
+      left: 30px;
+      position: absolute;
+      top: 166.667px;
+      width: 300px;
+    }
+    .page4gwd-img-fshz {
+      display: block;
+      height: 203.5px;
+      left: 412px;
+      position: absolute;
+      top: 166.667px;
+      width: 300px;
+    }
+    .page4gwd-div-ynla {
+      border-color: rgb(74, 68, 68);
+      color: rgb(74, 68, 68);
+      height: 139px;
+      left: 35px;
+      outline-color: rgb(74, 68, 68);
+      position: absolute;
+      text-decoration: none solid rgb(74, 68, 68);
+      top: 390px;
+      width: 324px;
+      column-rule-color: rgb(74, 68, 68);
+      -webkit-text-emphasis-color: rgb(74, 68, 68);
+      -webkit-text-fill-color: rgb(74, 68, 68);
+      -webkit-text-stroke-color: rgb(74, 68, 68);
+      transform-origin: 162.025px 101.778px 0px;
+      caret-color: rgb(74, 68, 68);
+    }
+    .page4gwd-span-1594 {
+      border-color: rgb(74, 68, 68);
+      color: rgb(74, 68, 68);
+      font-family: "Sawarabi Gothic";
+      font-size: 32px;
+      outline-color: rgb(74, 68, 68);
+      text-align: center;
+      text-decoration: none solid rgb(74, 68, 68);
+      column-rule-color: rgb(74, 68, 68);
+      -webkit-text-emphasis-color: rgb(74, 68, 68);
+      -webkit-text-fill-color: rgb(74, 68, 68);
+      -webkit-text-stroke-color: rgb(74, 68, 68);
+      caret-color: rgb(74, 68, 68);
+    }
+    .page4gwd-span-1s98 {
+      border-color: rgb(74, 68, 68);
+      color: rgb(74, 68, 68);
+      font-family: "Sawarabi Gothic";
+      font-size: 21px;
+      outline-color: rgb(74, 68, 68);
+      text-decoration: none solid rgb(74, 68, 68);
+      column-rule-color: rgb(74, 68, 68);
+      -webkit-text-emphasis-color: rgb(74, 68, 68);
+      -webkit-text-fill-color: rgb(74, 68, 68);
+      -webkit-text-stroke-color: rgb(74, 68, 68);
+      caret-color: rgb(74, 68, 68);
+    }
+    .page4gwd-div-1r4m {
+      border-color: rgb(74, 68, 68);
+      color: rgb(74, 68, 68);
+      height: 139px;
+      left: 419px;
+      outline-color: rgb(74, 68, 68);
+      position: absolute;
+      text-decoration: none solid rgb(74, 68, 68);
+      top: 390px;
+      width: 324px;
+      column-rule-color: rgb(74, 68, 68);
+      -webkit-text-emphasis-color: rgb(74, 68, 68);
+      -webkit-text-fill-color: rgb(74, 68, 68);
+      -webkit-text-stroke-color: rgb(74, 68, 68);
+      transform-origin: 162.025px 101.778px 0px;
+      caret-color: rgb(74, 68, 68);
+    }
+    .page4gwd-span-1wn7 {
+      border-color: rgb(74, 68, 68);
+      color: rgb(74, 68, 68);
+      font-family: "Sawarabi Gothic";
+      font-size: 32px;
+      outline-color: rgb(74, 68, 68);
+      text-align: center;
+      text-decoration: none solid rgb(74, 68, 68);
+      column-rule-color: rgb(74, 68, 68);
+      -webkit-text-emphasis-color: rgb(74, 68, 68);
+      -webkit-text-fill-color: rgb(74, 68, 68);
+      -webkit-text-stroke-color: rgb(74, 68, 68);
+      caret-color: rgb(74, 68, 68);
+    }
+    .page4gwd-img-1ebf {
+      display: block;
+      height: 203.5px;
+      left: 412px;
+      position: absolute;
+      top: 580.667px;
+      width: 300px;
+    }
+    .page4gwd-div-zb5v {
+      border-color: rgb(74, 68, 68);
+      color: rgb(74, 68, 68);
+      height: 139px;
+      left: 419px;
+      outline-color: rgb(74, 68, 68);
+      position: absolute;
+      text-decoration: none solid rgb(74, 68, 68);
+      top: 804px;
+      width: 324px;
+      column-rule-color: rgb(74, 68, 68);
+      -webkit-text-emphasis-color: rgb(74, 68, 68);
+      -webkit-text-fill-color: rgb(74, 68, 68);
+      -webkit-text-stroke-color: rgb(74, 68, 68);
+      transform-origin: 162.025px 101.778px 0px;
+      caret-color: rgb(74, 68, 68);
+    }
+    .page4gwd-span-tmkt {
+      border-color: rgb(74, 68, 68);
+      color: rgb(74, 68, 68);
+      font-family: "Sawarabi Gothic";
+      font-size: 32px;
+      outline-color: rgb(74, 68, 68);
+      text-align: center;
+      text-decoration: none solid rgb(74, 68, 68);
+      column-rule-color: rgb(74, 68, 68);
+      -webkit-text-emphasis-color: rgb(74, 68, 68);
+      -webkit-text-fill-color: rgb(74, 68, 68);
+      -webkit-text-stroke-color: rgb(74, 68, 68);
+      caret-color: rgb(74, 68, 68);
+    }
+    .page4gwd-br-c7zq {
+      border-color: rgb(74, 68, 68);
+      color: rgb(74, 68, 68);
+      outline-color: rgb(74, 68, 68);
+      text-decoration: none solid rgb(74, 68, 68);
+      column-rule-color: rgb(74, 68, 68);
+      -webkit-text-emphasis-color: rgb(74, 68, 68);
+      -webkit-text-fill-color: rgb(74, 68, 68);
+      -webkit-text-stroke-color: rgb(74, 68, 68);
+      caret-color: rgb(74, 68, 68);
+    }
+    .page4gwd-img-5lqm {
+      display: block;
+      height: 203.5px;
+      left: 30px;
+      position: absolute;
+      top: 581px;
+      width: 300px;
+    }
+    .page4gwd-div-1ij7 {
+      border-color: rgb(74, 68, 68);
+      color: rgb(74, 68, 68);
+      height: 139px;
+      left: 35px;
+      outline-color: rgb(74, 68, 68);
+      position: absolute;
+      text-decoration: none solid rgb(74, 68, 68);
+      top: 804px;
+      width: 324px;
+      column-rule-color: rgb(74, 68, 68);
+      -webkit-text-emphasis-color: rgb(74, 68, 68);
+      -webkit-text-fill-color: rgb(74, 68, 68);
+      -webkit-text-stroke-color: rgb(74, 68, 68);
+      transform-origin: 162.025px 101.778px 0px;
+      caret-color: rgb(74, 68, 68);
+    }
+    .page4gwd-div-15cx {
+      border-color: rgb(206, 200, 200);
+      border-style: double;
+      border-width: 4px;
+      height: 391px;
+      left: 15px;
+      position: absolute;
+      top: 150px;
+      width: 330px;
+    }
+    .page4gwd-div-kq4p {
+      border-color: rgb(206, 200, 200);
+      border-style: double;
+      border-width: 4px;
+      height: 391px;
+      left: 395px;
+      position: absolute;
+      top: 150px;
+      width: 330px;
+    }
+    
+      .page4gwd-p-1f86 {
+      border-color: rgb(248, 240, 240);
+      color: rgb(248, 240, 240);
+      font-family: "Sawarabi Gothic";
+      font-size: 40px;
+      height: 72px;
+      left: 280px;
+      outline-color: rgb(248, 240, 240);
+      position: absolute;
+      text-decoration: none solid rgb(248, 240, 240);
+      top: 90px;
+      width: 446px;
+      column-rule-color: rgb(248, 240, 240);
+      -webkit-text-emphasis-color: rgb(248, 240, 240);
+      -webkit-text-fill-color: rgb(248, 240, 240);
+      -webkit-text-stroke-color: rgb(248, 240, 240);
+      transform-origin: 217.803px 35.947px 0px;
+      caret-color: rgb(248, 240, 240);
+    }
+    .page4gwd-div-y3fq {
+      border-color: rgb(206, 200, 200);
+      border-style: double;
+      border-width: 4px;
+      height: 391px;
+      left: 395px;
+      position: absolute;
+      top: 565px;
+      width: 330px;
+    }
+    .page4gwd-div-1f63 {
+      border-color: rgb(206, 200, 200);
+      border-style: double;
+      border-width: 4px;
+      height: 391px;
+      left: 15px;
+      position: absolute;
+      top: 565px;
+      width: 330px;
+    }
+    
+    /*  */    
+    
+    .page5gwd-div-1eic {
+      background-color: rgb(104, 88, 88);
+      height: 71.925px;
+      left: 0px;
+      position: absolute;
+      top: 67.7193px;
+      width: 100%;
+    }
+    .page5gwd-img-xwf8 {
+      display: block;
+      height: 71.925px;
+      left: 239.263px;
+      position: absolute;
+      top: 67.7193px;
+      width: 70.175px;
+    }
+    .page5gwd-p-1f86 {
+      border-color: rgb(248, 240, 240);
+      color: rgb(248, 240, 240);
+      font-family: "Sawarabi Gothic";
+      font-size: 40px;
+      height: 72px;
+      left: 300px;
+      outline-color: rgb(248, 240, 240);
+      position: absolute;
+      text-decoration: none solid rgb(248, 240, 240);
+      top: 90px;
+      width: 446px;
+      column-rule-color: rgb(248, 240, 240);
+      -webkit-text-emphasis-color: rgb(248, 240, 240);
+      -webkit-text-fill-color: rgb(248, 240, 240);
+      -webkit-text-stroke-color: rgb(248, 240, 240);
+      transform-origin: 217.803px 35.947px 0px;
+      caret-color: rgb(248, 240, 240);
+    }
+    .page5gwd-span-z7vf {
+      border-color: rgb(248, 240, 240);
+      color: rgb(248, 240, 240);
+      display: block;
+      font-family: "Sawarabi Gothic";
+      font-size: 40px;
+      left: 1076px;
+      outline-color: rgb(248, 240, 240);
+      position: absolute;
+      text-decoration: none solid rgb(248, 240, 240);
+      top: 375px;
+      column-rule-color: rgb(248, 240, 240);
+      -webkit-text-emphasis-color: rgb(248, 240, 240);
+      -webkit-text-fill-color: rgb(248, 240, 240);
+      -webkit-text-stroke-color: rgb(248, 240, 240);
+      caret-color: rgb(248, 240, 240);
+    }
+    .page5gwd-br-17q7 {
+      border-color: rgb(248, 240, 240);
+      color: rgb(248, 240, 240);
+      font-family: "Sawarabi Gothic";
+      font-size: 40px;
+      outline-color: rgb(248, 240, 240);
+      text-decoration: none solid rgb(248, 240, 240);
+      column-rule-color: rgb(248, 240, 240);
+      -webkit-text-emphasis-color: rgb(248, 240, 240);
+      -webkit-text-fill-color: rgb(248, 240, 240);
+      -webkit-text-stroke-color: rgb(248, 240, 240);
+      caret-color: rgb(248, 240, 240);
+    }
+
+    .page5gwd-div-1cst {
+      border-color: rgb(169, 158, 158);
+      border-style: dashed;
+      border-width: 2.4px;
+      height: 286px;
+      left: 40.8px;
+      position: absolute;
+      top: 644px;
+      width: 649px;
+    }
+    .page5gwd-img-14k1 {
+      display: block;
+      height: 286px;
+      left: 40px;
+      position: absolute;
+      top: 243px;
+      width: 650px;
+    }
+    .page5gwd-img-ans3 {
+      display: block;
+      height: 286px;
+      position: absolute;
+      width: 650px;
+      left: 40px;
+      top: 647px;
+    }
+    .page5gwd-img-w1z7 {
+      display: block;
+      height: 51.2px;
+      left: 40px;
+      position: absolute;
+      top: 191px;
+      width: 51.2px;
+    }
+    .page5gwd-img-40hb {
+      display: block;
+      height: 51.2px;
+      left: 40px;
+      position: absolute;
+      top: 586px;
+      width: 51.2px;
+    }
+    .page5gwd-p-u8ql {
+      border-color: rgb(65, 62, 62);
+      color: rgb(65, 62, 62);
+      font-family: "Sawarabi Gothic";
+      font-size: 31px;
+      height: 40.6px;
+      left: 100px;
+      outline-color: rgb(65, 62, 62);
+      position: absolute;
+      text-decoration: none solid rgb(65, 62, 62);
+      top: 193px;
+      width: 174.962px;
+      column-rule-color: rgb(65, 62, 62);
+      -webkit-text-emphasis-color: rgb(65, 62, 62);
+      -webkit-text-fill-color: rgb(65, 62, 62);
+      -webkit-text-stroke-color: rgb(65, 62, 62);
+      caret-color: rgb(65, 62, 62);
+    }
+    .page5gwd-p-1eec {
+      border-color: rgb(65, 62, 62);
+      color: rgb(65, 62, 62);
+      font-family: "Sawarabi Gothic";
+      font-size: 31px;
+      height: 40.6px;
+      left: 100px;
+      outline-color: rgb(65, 62, 62);
+      position: absolute;
+      text-decoration: none solid rgb(65, 62, 62);
+      top: 596px;
+      width: 174.962px;
+      column-rule-color: rgb(65, 62, 62);
+      -webkit-text-emphasis-color: rgb(65, 62, 62);
+      -webkit-text-fill-color: rgb(65, 62, 62);
+      -webkit-text-stroke-color: rgb(65, 62, 62);
+      caret-color: rgb(65, 62, 62);
+    }
+    .gwd-img-tc5m {
+      top: 185px;
+    }
+    .gwd-img-sgpf {
+      top: 241px;
+      left: 75px;
+    }
+
+    .page7gwd-img-hmye {
+      display: block;
+      height: 267px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      transform-origin: 400px 133.665px 0px;
+    }
+    .page7gwd-div-itp4 {
+      height: 650px;
+      position: absolute;
+      right:1px;
+      top: 318px;
+      width: 100%;
+    }    
+    
+    .page8gwd-img-2vw0 {
+      display: block;
+      height: 575.675px;
+      left: 0px;
+      position: absolute;
+      top: 424px;
+      width: 800px;
+    }
+    .page8gwd-div-1usz {
+      background-color: rgb(193, 184, 184);
+      position: absolute;
+      top: -4px;
+      left: 0px;
+      width: 100%;
+      height: 1000px;
+    }
+    .page8gwd-div-1cle {
+      background-color: rgba(239, 237, 237, 0.19);
+      border-color: rgb(255, 253, 253);
+      border-style: solid;
+      border-width: 4px;
+      height: 902.5px;
+      left:24px;
+      position: absolute;
+      width: 690px;
+      top: 44.5px;
+    }
+        
+    .note {
+    	width: 736px;
+    }
