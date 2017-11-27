@@ -1,13 +1,15 @@
 package com.seeyou.cu.util;
 
-import java.util.Enumeration;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import com.seeyou.cu.VO.MemberVO;
 
 public class SessionInterceptor extends HandlerInterceptorAdapter{
 	
@@ -17,17 +19,15 @@ public class SessionInterceptor extends HandlerInterceptorAdapter{
 	  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 	      throws Exception {
 	 
-	    logger.info("===========================          START         ===========================");
-	    logger.info(" Request URI \t:  " + request.getRequestURI());
-	     
-	    Enumeration<String> paramNames = request.getParameterNames();
-	    while (paramNames.hasMoreElements()) {
-	      String key = (String) paramNames.nextElement();
-	      String value = request.getParameter(key);
-	      logger.debug(" RequestParameter Data ==>  " + key + " : " + value + "");
-	    }
-	       
-	    return super.preHandle(request, response, handler);
+		  HttpSession session = request.getSession();
+		  MemberVO member = (MemberVO) session.getAttribute("member");
+		  if (member == null) {
+			response.sendRedirect(request.getContextPath()+"/");
+			return false;
+			
+		}else{
+			return super.preHandle(request, response, handler);
+		}
 	 
 	  }
 	 
@@ -35,7 +35,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter{
 	  public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 	      ModelAndView modelAndView) throws Exception {
 	 
-	    logger.info("===========================          END           ===========================");
+	   System.out.println("postHandle");
 	   
 	  }
 
