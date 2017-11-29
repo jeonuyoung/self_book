@@ -115,7 +115,7 @@ public class MemberServiceImpl implements MemberService {
 				System.out.println("メール発送失敗 : " + e);
 			}
 		} else if (div.equals("find_pw")) {
-			subject = "Spring Homepage 臨時パスワードです。";
+			subject = "Self Tour Guide Book 臨時パスワードです。";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
 			msg += member.getId() + "様の臨時パスワードです。パソワードを変更して使用して下さい。</h3>";
