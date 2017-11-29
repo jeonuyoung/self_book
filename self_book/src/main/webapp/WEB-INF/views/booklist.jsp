@@ -126,7 +126,7 @@
 					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
 						
 						<%-- 	<a href="loadbook?title=${item}> --%><img src="./resources/images/work_2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<a href="loadbook?title=${item}"><h3 class="fh5co-work-title" style="color: #2457BD;">title:${item}</h3></a>
+							<a href="loadbook?title=${item}&first=notyes"><h3 class="fh5co-work-title" style="color: #2457BD;">title:${item}</h3></a>
 							<a href="deletebook?title=${item}">delete</a>
 						
 					</div>

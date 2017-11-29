@@ -12,6 +12,7 @@
 
 
 function exits() {
+opener.document.location.reload();
 self.close();  }
 
 

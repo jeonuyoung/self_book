@@ -25,6 +25,8 @@
 <link href="./resources/css/style.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
 <link href="./resources/css/colorPick.css" rel="stylesheet" />
+<link href="./resources/css/introjs.css" rel="stylesheet">
+<link rel="stylesheet" href="./resources/css/avgrund.css"> 
 
 <!-- jquery-->
 <script
@@ -36,12 +38,12 @@
 <script src="./resources/js/modernizr.js"></script>
 <script src="./resources/js/main.js"></script>
 <script src="./resources/js/information.js"></script>
-<script src="./resources/js/jquery.auroramenu.js"></script>
 <script src="./resources/js/colorPick.js"></script>
 <script src="./resources/js/intro.js"></script>
 <script src="./resources/js/html2canvas.js"></script>
 <script src="./resources/js/FileSaver.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+<script src="./resources/js/jquery.avgrund.min.js"></script>
 
 <!-- bootstrap-->
 <script src="./resources/js/popper.min.js"></script>
@@ -57,15 +59,46 @@
 <script src="./resources/js/mapKanren.js"></script>
 <!-- components-->
 <script src="./resources/libs/builder/components-bootstrap4.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script> -->
 
 
 <script>
 	$(function() {
+		 $(document).avgrund({
+		    openOnEvent: false
+		});
+			
 		$('#menu1').tendina();
-	    $(".picker").colorPick();
+		
+		$('#show').avgrund({
+			height : 350,
+			width : 640,
+		    holderClass : 'custom',
+			showClose : true,
+			showCloseText : 'CLOSE',
+			enableStackAnimation : true,
+		 	closeByDocument : true,
+		 	openOnEvent : false,
+		 	onBlurContainer : '.container',
+		 	template : '<br><div style="font-size:15px;">'
+		 	+'<h5 style="color:#007bff;">&nbsp;Elements</h5>'
+		 	+'<p style="font-weight:bold;">&nbsp;&nbsp;&nbsp;サイドバーでドラッグアンドドロップに多様な要素を追加することができます。</p>'
+		 	+'<h5 style="color:#007bff;">&nbsp;Information</h5>'
+		 	+'<p style="font-weight:bold;">&nbsp;&nbsp;&nbsp;サイドバーで簡単な国家情報を追加することができます。</p>'
+		 	+'<h5 style="color:#007bff;">&nbsp;Map</h5>'
+		 	+'<p style="font-weight:bold;">&nbsp;&nbsp;&nbsp;MAPで簡単に経路を検索できます。</p>'
+		 	+'<h5 style="color:#007bff;">&nbsp;Save</h5>'
+		 	+'<p style="font-weight:bold;">&nbsp;&nbsp;&nbsp;作りながら保存を行うことができます。</p>'
+		 	+'<h5 style="color:#007bff;">&nbsp;Download</h5>'
+		 	+'<p style="font-weight:bold;">&nbsp;&nbsp;&nbsp;作った本をイメージでダウンロードができます。</p>'
+		 	+'</div>',
+		 	onUnload: function () {
+		 		$("#infobtn").trigger('click');
+		 	 } 
+ 
+		});
 		 
 });
+	
 	function openTab(tab) {
 		var i;
 		var x = document.getElementsByClassName("tab");
@@ -74,14 +107,8 @@
 		}
 		document.getElementById(tab).style.display = "block";
 	}
-	
-	/* document.getElementById('infobtn').onclick = function() {
-        introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
-          window.location.href = 'second.html?multipage=true';
-        });
-      }; */
-      
-    function imgConverter(){
+
+	function imgConverter(){
     		  $(function(){
 				$("#save-btn").trigger("click");
     			var docu = document.getElementById('iframe1').contentWindow.document;
@@ -121,9 +148,12 @@
 		<div id="top-panel">
 
 			<div alt="Vvveb" class="float-left" id="logo">
-			<a href = "menu">Self Tour Guide Book</a></div>
+			<a href = "menu" style="color:gray;">Self Tour Guide Book</a></div>
 			<!-- <button class = "btn btn-primary" id="infobtn" style="width:100px; height:100px" >도움말 보기</button> -->
 			<div class="btn-group mr-3" role="group">
+			
+			<!-- <button class = "btn btn-light" data-toggle="modal" data-target="#myModal" style="font-size: 15px;" id="infobtn" onclick="">Help</button> -->
+			
 				<button class="btn btn-light" title="Undo (Ctrl/Cmd + Z)"
 					id="undo-btn" data-vvveb-action="undo" data-vvveb-shortcut="ctrl+z">
 					<i class="la la-undo"></i>
@@ -134,15 +164,15 @@
 					data-vvveb-shortcut="ctrl+shift+z">
 					<i class="la la-undo la-flip-horizontal"></i>
 				</button>
-			</div>
+			<!-- </div>
 
-			<div class="btn-group mr-3" role="group">
+			<div class="btn-group mr-3" role="group"> -->
 				<button class="btn btn-light" title="Fullscreen (F11)"
 					id="fullscreen-btn" data-toggle="button" aria-pressed="false"
 					data-vvveb-action="fullscreen">
 					<i class="la la-arrows"></i>
 				</button>
-
+				
 				<!-- <button class="btn btn-light" title="Preview" id="preview-btn"
 					type="button" data-toggle="button" aria-pressed="false"
 					data-vvveb-action="preview">
@@ -168,7 +198,7 @@
 		<!--왼쪽 사이드바 시작  -->
 		<div id="left-panel">
 			<div id="components">
-				<div class="header">
+			<!-- 	<div class="header">
 					<input class="form-control form-control-sm" placeholder=""
 						type="text" id="component-search"
 						data-vvveb-action="componentSearch" data-vvveb-on="keyup">
@@ -176,7 +206,7 @@
 						data-vvveb-action="clearComponentSearch">
 						<i class="ion-backspace"></i>
 					</button>
-				</div>
+				</div> -->
 
 				<div class="tabset">
 					<input type="radio" name="tabset" id="tab1"
@@ -192,7 +222,7 @@
 						</div>
 						<div class="tab-panels tab wf-roundedmplus1c" id="MapDiv"
 							style="display: none">
-							<div id="map" style="margin: 1px;" data-step="2" data-intro="Ok, wasn't that fundfdf?"></div>
+							<div id="map" style="margin: 1px; height:200px;" ></div>
 							<div class="map_row" id="map_div" >
 								<span id="result"></span>
 								<p class="wf-roundedmplus1c"
@@ -256,6 +286,7 @@
 			</div>
 			<div id="bottom-panel"></div>
 			<div id="forsavebook" title=${title} saveflag=${saveflag}></div>
+			<a href="#" id="show" class="button left"></a>
 		</div>
 
 

@@ -955,12 +955,37 @@ Vvveb.Builder = {
              	            	  data = Vvveb.Components.matchNode(node);
              	            	  /*Vvveb.Components.render2(data.type,"../../demo/"+data2);*/
             	            	 Vvveb.Components.render2(data.type,"../../demo/"+data2);  
+            	            	 
+            	       	      var saveflag = $("#forsavebook").attr("saveflag");
+            	       	      var title = $("#forsavebook").attr("title");
+		            	 	         $(function (){
+		            	 	        	 console.log("??");
+		            	 	            $.ajax({
+		            	 	               url:"savebook",
+		            	 	               type:"post",
+		            	 	               data:{
+		            	 	                  id:"coolpark93@gmail.com",
+		            	 	                  title:title,
+		            	 	                  html: Vvveb.Builder.getHtml(),
+		            	 	                  saveflag:saveflag
+		            	 	               },
+		            	 	               
+		            	 	               success : function(){
+		            	 	                     },
+		            	 	               error: function (){
+		            	 	                   alert("nope");
+		            	 	                    	 }      
+		            	 	            })
+		            	 	         });
+            	            	 
              	            	  
              	                     }
              	            })
              	            
              	         });   
              	         
+              	       
+              	         
                            
                      }
             }
@@ -1269,33 +1294,6 @@ Vvveb.Gui = {
 	 savebook : function (){
 	      
 	      var saveflag = $("#forsavebook").attr("saveflag");
-	      
-	      if(saveflag=="firstsavebook"){
-	         var title;
-	         title=prompt("제목을 입력해주세요","입력");
-	         
-	         $(function (){
-	            $.ajax({
-	               url:"savebook",
-	               type:"post",
-	               data:{
-	                  id:"coolpark93@gmail.com",
-	                  title:title,
-	                  html: Vvveb.Builder.getHtml(),
-	                  saveflag:saveflag
-	               },
-	               
-	               success : function(data){
-	                        alert(data);
-	                        
-	                     }
-	            })
-	            
-	            $("#forsavebook").attr("saveflag","savebook");
-	            $("#forsavebook").attr("title",title);
-	         });   
-	         
-	      }else{
 	         $(function (){
 	            $.ajax({
 	               url:"savebook",
@@ -1310,10 +1308,13 @@ Vvveb.Gui = {
 	               success : function(data){
 	                        alert(data);
 	                        
-	                     }
+	                     },
+	               error: function (){
+	                   alert("nope");
+	                    	 }      
 	            })
 	         });
-	      }
+	      
 
 	   }
 	,

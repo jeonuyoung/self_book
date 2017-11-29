@@ -68,6 +68,27 @@
   
 </style>
 </head>
+<script>
+function move(){
+	var title;
+    title=prompt("새로만들 책 제목을 입력해주세요","입력");
+    
+    $(function (){
+        $.ajax({
+           url:"savebooktitle",
+           type:"post",
+           data:{
+              title:title,
+           },
+           
+           success : function(){
+                    location.href="loadbook?title="+title+"&first=yes";
+                 }
+        })
+     });
+}
+</script>
+
 <body>
 
 
@@ -119,7 +140,7 @@
                                 <h3 class="color-white margin-b-5">Make a book</h3>
                                 <p class="color-white margin-b-0">本作り</p>
                             </div>
-                            <a class="content-wrapper-link" href="makeabook1"></a>
+                            <a class="content-wrapper-link" onclick="move();"></a>
                         </div>
                         <!-- End Work -->
                     </div>

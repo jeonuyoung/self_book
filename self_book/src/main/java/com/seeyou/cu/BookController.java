@@ -37,10 +37,13 @@ public class BookController {
 
 	  /*初めて本を作る時*/
 	   @RequestMapping(value = "makeabook1", method = RequestMethod.GET)
-	   public String firstmakebook(Model model) {
+	   public String firstmakebook(Model model,HttpSession session) {
 	      //セッションを使ってデータベースでせセッション
-	      model.addAttribute("title","first");
-	      model.addAttribute("saveflag", "firstsavebook");
+		  String title = (String) session.getAttribute("title");
+		  String saveflag = (String) session.getAttribute("title");
+		  model.addAttribute("first","first");
+	      model.addAttribute("title",title);
+	      model.addAttribute("saveflag", "savebook");
 	      return "makeabook1";
 	   }
 	
@@ -62,14 +65,28 @@ public class BookController {
 		return result;
 	}	
 	
+	@RequestMapping(value = "savebooktitle", method = RequestMethod.POST)
+	public String savebooktitle(String title,HttpSession session) {
+		
+		String id = (String) session.getAttribute("id");
+		session.setAttribute("title", title);
+		session.setAttribute("saveflag", "savebook");
+		String html = "<body><body>";
+		String result = Bdao.savebook(id, title, html,"savebook");
+		return "makeabook1";
+	}		
+	
 	/*作った本を選択した時本をロードする*/
 	@RequestMapping(value = "loadbook", method = RequestMethod.GET)
-	public String loadbook(String title,Model model,HttpSession session) {
+	public String loadbook(String title,String first,Model model,HttpSession session) {
+		if(first.equals("yes")){
+		model.addAttribute("first","first");
+		}
 		model.addAttribute("id", session.getAttribute("id"));
 		model.addAttribute("title",title);
 		session.setAttribute("title", title);
 		model.addAttribute("saveflag", "savebook");
-		return "loadbookpage";
+		return "makeabook1";
 	}	
 	
 	/*作った本を削除*/
@@ -85,16 +102,21 @@ public class BookController {
 	public String imagesave() {
 		return "imagesave";
 	}	
-
+	
+	@RequestMapping(value = "imagesave2", method = RequestMethod.GET)
+	public String imagesave2() {
+		return "imagesave2";
+	}	
+	
+	@ResponseBody
 	@RequestMapping(value = "saveimg", method = RequestMethod.POST)
-	public String saveimg(MultipartFile s_file,HttpSession session,Model model) {
+	public void saveimg(MultipartFile s_file,HttpSession session,Model model) {
 		String savedFile = null;
 		String id = (String) session.getAttribute("id");
 		if (!s_file.isEmpty()) {
 			   savedFile = FileService.saveFile(s_file, uploadPath,id);
 			   session.setAttribute("imgtest", savedFile);
 			  }
-		return "imagesave2";
 	
 	}	
 	
