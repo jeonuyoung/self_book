@@ -16,7 +16,7 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
  
-  <interceptors>
+  <!-- <interceptors>
   	<interceptor>
   		<mapping path="/**"/>
         <exclude-mapping path="/resources/**/"/>
@@ -30,7 +30,7 @@
         <exclude-mapping path="/find_pw"/>
   		<beans:bean id="sessionInterCeptor" class="com.seeyou.cu.util.SessionInterceptor"></beans:bean>
   	</interceptor>
-  </interceptors>
+  </interceptors> -->
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

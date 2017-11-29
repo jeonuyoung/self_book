@@ -44,8 +44,8 @@ public class MemberController {
 	@RequestMapping(value = "/menu", method = RequestMethod.GET)
 	public String menu(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response)
 			throws Exception {
-		member = service.login(member, response);
-		session.setAttribute("member", member);
+		/*member = service.login(member, response);
+		session.setAttribute("member", member);*/
 		return "menu";
 	}
 
@@ -68,7 +68,6 @@ public class MemberController {
 	public String login(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response) throws Exception {
 		member = service.login(member, response);
 		session.setAttribute("member", member);
-		System.out.println("login");
 		return "menu";
 	}
 

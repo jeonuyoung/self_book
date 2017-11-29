@@ -1,21 +1,25 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="../../../../favicon.ico">
 
     <title>SELF TOUR GUIDE BOOK</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../css/editor.css" rel="stylesheet">
-	<link href="../../template/gwdpage_style.css" rel="stylesheet" data-version="10" data-exports-type="gwd-page">
- 	<link href="../../template/gwdpagedeck_style.css" rel="stylesheet" data-version="10" data-exports-type="gwd-pagedeck">
- 	<link href="../../template/gwdimage_style.css" rel="stylesheet" data-version="10" data-exports-type="gwd-image">
+    <link href="./resources/css/editor.css" rel="stylesheet">
+	<link href="./resources/template/gwdpage_style.css" rel="stylesheet" data-version="10" data-exports-type="gwd-page">
+ 	<link href="./resources/template/gwdpagedeck_style.css" rel="stylesheet" data-version="10" data-exports-type="gwd-pagedeck">
+ 	<link href="./resources/template/gwdimage_style.css" rel="stylesheet" data-version="10" data-exports-type="gwd-image">
   	<link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet">
-  	<link href="../../template/template_make.css" rel="stylesheet">
+  	<link href="./resources/template/template_make.css" rel="stylesheet">
+    <link href="./resources/demo/narrow-jumbotron.css" rel="stylesheet">
   	
   <style type="text/css">
 
@@ -29,12 +33,93 @@
   </style>
 
     <!-- Custom styles for this template -->
-    <link href="../../demo/narrow-jumbotron.css" rel="stylesheet">
-  </head>
+	</script>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="favicon.ico">
+<link href="./resources/css/editor.css" rel="stylesheet">
+<link href="./resources/css/line-awesome.css" rel="stylesheet">
+<link href="./resources/css/mapCss.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css"rel="stylesheet" />
+<link href="./resources/css/auroramenu.css" rel="stylesheet" />
+<link href="./resources/css/style.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+<link href="./resources/css/colorPick.css" rel="stylesheet" />
+
+<!-- jquery-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+<script src="./resources/js/jquery.hotkeys.js"></script>
+<script src="./resources/js/tendina.js"></script>
+<script src="./resources/js/modernizr.js"></script>
+<script src="./resources/js/main.js"></script>
+<script src="./resources/js/information.js"></script>
+<script src="./resources/js/jquery.auroramenu.js"></script>
+<script src="./resources/js/colorPick.js"></script>
+<script src="./resources/js/intro.js"></script>
+<script src="./resources/js/html2canvas.js"></script>
+<script src="./resources/js/FileSaver.js"></script>
+
+<!-- bootstrap-->
+<script src="./resources/js/popper.min.js"></script>
+<script src="./resources/js/bootstrap.min.js"></script>
+
+<!-- builder code-->
+<script src="./resources/libs/builder/builder.js"></script>
+<!-- undo manager-->
+<script src="./resources/libs/builder/undo.js"></script>
+
+<!-- inputs-->
+<script src="./resources/libs/builder/inputs.js"></script>
+<script src="./resources/js/mapKanren.js"></script>
+<!-- components-->
+<script src="./resources/libs/builder/components-bootstrap4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+
+<script type="text/javascript">
+
+function pdfConverter(){
+	   $(function(){
+		   console.log($(".container"));
+		   var conList = $(".container");
+		   for (var i = 0; i < conList.length; i++) {
+			   html2canvas(conList[i], {
+					  letterRendering:true, 
+					  onrendered: function(canvas) {
+					    console.log(canvas);
+					    canvas.toBlob(function(blob){
+					    	saveAs(blob,"image.png");
+					    });
+					  },
+					  
+					}); 
+		}
+		
+	  }); 
+					   /*  var doc = new jsPDF();
+					    var imgData = canvas.toDataURL("image/jpeg", 1.0);
+					    doc.addImage(imgData, 'jpeg',15,15,736,1080);
+					    doc.save("pppp.pdf");  */
+			      	 	 /* canvas.toBlob(function(blob) {
+			      		  saveAs(blob, "image.png");
+			      		  });  */
+}
+</script>
+</head>
   <body>
+  <button onclick="javascript:pdfConverter()">Converter</button>
     <div class="container">
- 	 <img class="maingwd-img-2vw0" is="gwd-image" src="../../template/pexels-photo-297755.jpeg">
+ 	 <img class="maingwd-img-2vw0" is="gwd-image" src="./resources/template/pexels-photo-297755.jpeg">
  	 <div class="maingwd-div-1usz"></div><div class="maingwd-div-1usz"></div>
  	 <div class="maingwd-div-1cle"></div>
  	 <h1 class="maingwd-h1-14bc">MY FIRST TRAVEL</h1>
@@ -43,7 +128,7 @@
     
     
     <div class="container">
-	  <img class="page2gwd-img-1hmx" is="gwd-image" src="../../template/pexels-photo-270535.jpeg"><span class="page2gwd-span-4jy2" contenteditable="true" spellcheckker="false">Checklist</span>
+	  <img class="page2gwd-img-1hmx" is="gwd-image" src="./resources/template/pexels-photo-270535.jpeg"><span class="page2gwd-span-4jy2" contenteditable="true" spellcheckker="false">Checklist</span>
 	  <ul class="page2gwd-ul-5b8s page2gwd-ul-1yn2 page2gwd-ul-s3os">
 	    <li>パスポート</li>
 	    <li>飛行機のチケット</li>
@@ -94,7 +179,7 @@
     </div>
     
     <div class="container">
-   <img class="page3gwd-img-iv8l" is="gwd-image" src="../../template/scheduler.png">
+   <img class="page3gwd-img-iv8l" is="gwd-image" src="./resources/template/scheduler.png">
   <svg data-gwd-shape="line" preserveAspectRatio="none" viewBox="0 0 2 750" class="page3gwd-svg-je9b">
     <line x1="0.5" x2="1.5" y1="0.001" y2="749.999"></line>
   </svg>
@@ -242,8 +327,8 @@
 		  <div class="page4gwd-div-15cx page4gwd-div-kq4p page4gwd-div-y3fq"></div><div class="page4gwd-div-15cx page4gwd-div-kq4p page4gwd-div-y3fq"></div>
 		  <div class="page4gwd-div-15cx page4gwd-div-kq4p page4gwd-div-y3fq page4gwd-div-1f63"></div>
 		  
-		  <img class="page4gwd-img-1pcr" is="gwd-image" src="../../template/pexels-photo-376464.jpeg">
-		  <img class="page4gwd-img-fshz" is="gwd-image" src="../../template/pexels-photo-461198 (1).jpeg">
+		  <img class="page4gwd-img-1pcr" is="gwd-image" src="./resources/template/pexels-photo-376464.jpeg">
+		  <img class="page4gwd-img-fshz" is="gwd-image" src="./resources/template/pexels-photo-461198 (1).jpeg">
 		  <div class="page4gwd-div-ynla"><span class="page4gwd-span-tmkt">▶パンケーキ<br class="page4gwd-span-1s98"></span><span class="page4gwd-span-1s98">Tokyo, Shibuya, Jingumae, 1Chome−9−30　<br class="gwd-span-1s98">電話番号：03-6804-3399</span><br>
 
 		    <br>
@@ -253,12 +338,12 @@
 		    <br>
 		    
 		  </div>
-		  <img class="page4gwd-img-1ebf" is="gwd-image" src="../../template/pexels-photo-461198 (1).jpeg">
+		  <img class="page4gwd-img-1ebf" is="gwd-image" src="./resources/template/pexels-photo-461198 (1).jpeg">
 		  <div class="page4gwd-div-zb5v"><span class="page4gwd-span-tmkt">▶パンケーキ<br class="page4gwd-span-1s98"></span><span class="page4gwd-span-1s98">Tokyo, Shibuya, Jingumae, 1Chome−9−30　<br class="page4gwd-span-1s98">電話番号：03-6804-3399</span><br>
 		    <br>
 		    
 		  </div>
-		  <img class="page4gwd-img-5lqm" is="gwd-image" src="../../template/pexels-photo-461198 (1).jpeg">
+		  <img class="page4gwd-img-5lqm" is="gwd-image" src="./resources/template/pexels-photo-461198 (1).jpeg">
 		  <div class="page4gwd-div-1ij7"><span class="page4gwd-span-tmkt">▶パンケーキ<br class="page4gwd-span-1s98"></span><span class="page4gwd-span-1s98">Tokyo, Shibuya, Jingumae, 1Chome−9−30　<br class="page4gwd-span-1s98">電話番号：03-6804-3399</span><br>
 		    <br>
 		    
@@ -274,17 +359,17 @@
     <div class="container">
   <div class="page5gwd-div-1eic"></div>
   <p class="page5gwd-p-1f86" >チケット</p><span class="page5gwd-span-z7vf"><br class="page5gwd-br-17q7"></span>
-  <img class="page5gwd-img-14k1 page5gwd-img-sgpf" is="gwd-image" src="../../template/ticket.jpeg">
-  <img class="page5gwd-img-14k1 page5gwd-img-ans3" is="gwd-image" src="../../template/ticket.jpeg">
-  <img class="page5gwd-img-w1z7 page5gwd-img-40hb page5gwd-img-f8wx" is="gwd-image" src="../../template/arrivals.png">
-  <img class="page5gwd-img-w1z7 page5gwd-img-40hb page5gwd-img-t646 gwd-img-tc5m" is="gwd-image" src="../../template/plane-taking-off.png">
+  <img class="page5gwd-img-14k1 page5gwd-img-sgpf" is="gwd-image" src="./resources/template/ticket.jpeg">
+  <img class="page5gwd-img-14k1 page5gwd-img-ans3" is="gwd-image" src="./resources/template/ticket.jpeg">
+  <img class="page5gwd-img-w1z7 page5gwd-img-40hb page5gwd-img-f8wx" is="gwd-image" src="./resources/template/plane-taking-off.png">
+  <img class="page5gwd-img-w1z7 page5gwd-img-40hb page5gwd-img-t646 gwd-img-tc5m" is="gwd-image" src="./resources/template/arrivals.png">
   <p class="page5gwd-p-u8ql page5gwd-p-16pj">出発</p>
   <p class="page5gwd-p-u8ql page5gwd-p-1eec">到着</p>
     </div>
 
     
     <div class="container">
- 	   <img class="page7gwd-img-hmye" is="gwd-image" src="../../template/pexels-photo-270535.jpeg">
+ 	   <img class="page7gwd-img-hmye" is="gwd-image" src="./resources/template/pexels-photo-270535.jpeg">
  		 <div class="page7gwd-div-itp4"><br>
     
 	    <hr><br>

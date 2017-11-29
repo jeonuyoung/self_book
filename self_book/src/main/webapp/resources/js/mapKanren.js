@@ -101,15 +101,18 @@ function initMap() {
 				
         var onChangeHandler = function() {
           calculateAndDisplayRoute(directionsService, directionsDisplay);
-        };
-          document.getElementById('searchMap').addEventListener('click', onChangeHandler);
+        	};
+        document.getElementById('searchMap').addEventListener('click', onChangeHandler);
 		}
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+    	  console.log(document.getElementById("origin").value);
+    	  console.log(document.getElementById("destination").value);
+    	  console.log(document.getElementById("travelMode").value);
         directionsService.route({
-        	origin: $("#origin").val(),
-			  destination: $("#destination").val(),
-			    travelMode:$('#travelMode').val(),
+        	origin: document.getElementById("origin").value,
+			  destination: document.getElementById("destination").value,
+			    travelMode: document.getElementById('travelMode').value,
 			    	drivingOptions: {
 				        departureTime: new Date(Date.now()),  
 				        trafficModel: 'pessimistic'

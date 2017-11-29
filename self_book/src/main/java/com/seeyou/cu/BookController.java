@@ -27,7 +27,6 @@ public class BookController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-
 	@RequestMapping(value = "mypage", method = RequestMethod.GET)
 	public String mypage() {
 		return "mypage";      
@@ -46,13 +45,11 @@ public class BookController {
 	@RequestMapping(value = "booklist", method = RequestMethod.GET)
 	public String booklist(HttpSession session, Model model) {
 		String id = (String) session.getAttribute("id");
-		id = "coolpark93@gmail.com";
 		ArrayList<String> booklist = Bdao.booklist(id);
 		model.addAttribute("booklist", booklist);
 		
 		return "booklist";
 	}
-		
 	
 	@ResponseBody
 	@RequestMapping(value = "savebook", method = RequestMethod.POST)
@@ -65,24 +62,20 @@ public class BookController {
 	/*作った本を選択した時本をロードする*/
 	@RequestMapping(value = "loadbook", method = RequestMethod.GET)
 	public String loadbook(String title,Model model,HttpSession session) {
-		/*model.addAttribute("id", session.getAttribute("id"));*/
-		model.addAttribute("id", "coolpark93@gmail.com");
+		model.addAttribute("id", session.getAttribute("id"));
 		model.addAttribute("title",title);
 		session.setAttribute("title", title);
 		model.addAttribute("saveflag", "savebook");
 		return "loadbookpage";
 	}	
-
 	
 	/*作った本を削除*/
 	@RequestMapping(value = "deletebook", method = RequestMethod.GET)
 	public String deletebook(String title,HttpSession session) {
-		//String id = (String) session.getAttribute("id");
-		String id = "coolpark93@gmail.com";
+		String id = (String) session.getAttribute("id");
 		Bdao.deletebook(id, title);
 		
 		return "redirect:booklist";
 	}	
-
 
 }

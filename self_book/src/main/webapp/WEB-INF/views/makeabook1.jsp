@@ -39,6 +39,9 @@
 <script src="./resources/js/jquery.auroramenu.js"></script>
 <script src="./resources/js/colorPick.js"></script>
 <script src="./resources/js/intro.js"></script>
+<script src="./resources/js/html2canvas.js"></script>
+<script src="./resources/js/FileSaver.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
 
 <!-- bootstrap-->
 <script src="./resources/js/popper.min.js"></script>
@@ -54,19 +57,15 @@
 <script src="./resources/js/mapKanren.js"></script>
 <!-- components-->
 <script src="./resources/libs/builder/components-bootstrap4.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script> -->
 
 
 <script>
 	$(function() {
 		$('#menu1').tendina();
-		//close_sub();
-		
-			
-		    $(".picker").colorPick();
+	    $(".picker").colorPick();
 		 
 });
-	
-
 	function openTab(tab) {
 		var i;
 		var x = document.getElementsByClassName("tab");
@@ -81,6 +80,34 @@
           window.location.href = 'second.html?multipage=true';
         });
       }; */
+      
+    function pdfConverter(){
+    		   var docu = document.getElementById('iframe1').contentWindow.document;
+        	 // console.log(docu);
+    		   $(function(){
+				var conList = docu.getElementsByClassName("container");
+				console.log(conList);
+    			 for (var i = 0; i < conList.length; i++) {
+    			//	console.log(docu.head.innerHTML);
+    				docu.head.innerHTML = docu.head.innerHTML.replace(/\.\.\/\.\./gi,"./resources");
+    				 conList[i].innerHTML = conList[i].innerHTML.replace(/\.\.\/\.\./gi,"./resources");
+    				//  console.log(conList[i].innerHTML);
+    				    html2canvas(conList[i], {
+    					   useCORS: true,  
+    					   letterRendering:true, 
+    						  onrendered: function(canvas) {
+    						    //console.log(canvas);
+    						    canvas.toBlob(function(blob){
+    						    	saveAs(blob,"final.png");
+    						    });
+    						  },
+    						  
+    						});  
+    				    conList[i].innerHTML = conList[i].innerHTML.replace(/\.\/resources/gi,"../..");
+    			}
+    		  }); 
+      }
+     
 </script>
 
 </head>
@@ -91,8 +118,9 @@
 
 		<div id="top-panel">
 
-			<div alt="Vvveb" class="float-left" id="logo" data-step="1" data-intro="This is a tooltip!">Self Tour Guide Book</div>
-			<buttons href="#" class = "btn btn-primary" id="infobtn">도움말 보기</a>
+			<div alt="Vvveb" class="float-left" id="logo">
+			<a href = "menu">Self Tour Guide Book</a></div>
+			<!-- <button class = "btn btn-primary" id="infobtn" style="width:100px; height:100px" >도움말 보기</button> -->
 			<div class="btn-group mr-3" role="group">
 				<button class="btn btn-light" title="Undo (Ctrl/Cmd + Z)"
 					id="undo-btn" data-vvveb-action="undo" data-vvveb-shortcut="ctrl+z">
@@ -113,16 +141,23 @@
 					<i class="la la-arrows"></i>
 				</button>
 
-				<button class="btn btn-light" title="Preview" id="preview-btn"
+				<!-- <button class="btn btn-light" title="Preview" id="preview-btn"
 					type="button" data-toggle="button" aria-pressed="false"
 					data-vvveb-action="preview">
 					<i class="la la-eye"></i>
-				</button>
+				</button> -->
 
-				<button class="btn btn-light" title="Export (Ctrl + E)"
+				<button class="btn btn-light" title="Save"
 					id="save-btn" data-vvveb-action="savebook"
-					data-vvveb-shortcut="ctrl+e">
+					data-vvveb-shortcut="save">
 					<i class="la la-save"></i>
+					<!--  여긴그냥 이미지-->
+				</button>
+				
+				<button class="btn btn-light" title="Download"
+					id="download-btn" data-vvveb-action="download_book"
+				    onclick="javascript:pdfConverter()">
+					<i class="la la-download"></i>
 					<!--  여긴그냥 이미지-->
 				</button>
 			</div>
@@ -184,11 +219,9 @@
 
 						<div id="highlight-box">
 							<!-- <div id="highlight-name"></div> -->
-
 						</div>
 
 						<div id="select-box">
-
 							<div id="wysiwyg-editor">
 								<a id="bold-btn" href="" title="Bold"><i><strong>B</strong></i></a>
 								<a id="italic-btn" href="" title="Italic"><i>I</i></a> <a
