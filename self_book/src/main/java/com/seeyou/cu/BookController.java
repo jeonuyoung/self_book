@@ -50,7 +50,6 @@ public class BookController {
 		String id = (String) session.getAttribute("id");
 		ArrayList<String> booklist = Bdao.booklist(id);
 		model.addAttribute("booklist", booklist);
-		
 		return "booklist";
 	}
 	
