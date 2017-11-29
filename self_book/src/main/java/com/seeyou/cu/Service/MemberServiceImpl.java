@@ -275,6 +275,7 @@ public class MemberServiceImpl implements MemberService {
 		out.println("location.href='/cu/menu';");
 		out.println("</script>");
 		out.close();
+		System.out.println(member.getId());
 		return manager.login(member.getId());
 	}
 

@@ -77,7 +77,7 @@ Vvveb.ComponentsGroup['Information'] = 	["jp","kr","tw","eng","th","phil","nz","
 Vvveb.Components.extend("_base", "jp", {
     name: "日本",
    image: "icons/japan.svg",
-    html:  '<img src="../../info/mapa-metro-seul.png" style="width:100%">\
+    html:  '<img src="../../info/mapa-metro-seul.png" style="width:736px">\
     		<img src="../../info/800-kitakyushu-map.gif" style="width:100%">\
 	    	<img src="../../info/800-mappa-metro-hiroshima.gif" style="width:100%">\
 	    	<img src="../../info/800-mapa-metro-kobe.png" style="width:100%">\

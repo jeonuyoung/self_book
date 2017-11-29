@@ -1202,7 +1202,6 @@ Vvveb.Gui = {
 	 savebook : function (){
 	      
 	      var saveflag = $("#forsavebook").attr("saveflag");
-	      
 	      if(saveflag=="firstsavebook"){
 	         var title;
 	         title=prompt("제목을 입력해주세요","입력");
@@ -1212,7 +1211,7 @@ Vvveb.Gui = {
 	               url:"savebook",
 	               type:"post",
 	               data:{
-	                  id:"coolpark93@gmail.com",
+	                  id: id,
 	                  title:title,
 	                  html: Vvveb.Builder.getHtml(),
 	                  saveflag:saveflag
@@ -1221,7 +1220,10 @@ Vvveb.Gui = {
 	               success : function(data){
 	                        alert(data);
 	                        
-	                     }
+	               },
+	               error: function(e){
+	            	   console.log(e);
+	               }
 	            })
 	            
 	            $("#forsavebook").attr("saveflag","savebook");
@@ -1234,7 +1236,7 @@ Vvveb.Gui = {
 	               url:"savebook",
 	               type:"post",
 	               data:{
-	                  id:"coolpark93@gmail.com",
+	                  id: custid,
 	                  title:$("#forsavebook").attr("title"),
 	                  html: Vvveb.Builder.getHtml(),
 	                  saveflag:saveflag
