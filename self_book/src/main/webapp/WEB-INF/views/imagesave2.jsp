@@ -12,7 +12,6 @@
 
 
 function exits() {
-opener.document.location.reload();
 self.close();  }
 
 
@@ -21,9 +20,7 @@ self.close();  }
 
 <body>
 
-	<h1>파일첨부</h1>
-
-		<button value="보내기" onclick="exits();"/>
+	<button value="完了" onclick="exits();"/>
 
 </body>
 </html>

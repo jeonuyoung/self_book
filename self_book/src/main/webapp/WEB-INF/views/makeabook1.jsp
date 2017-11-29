@@ -69,6 +69,9 @@
 			
 		$('#menu1').tendina();
 		
+		var first =  ${first};
+		
+		
 		$('#show').avgrund({
 			height : 350,
 			width : 640,
@@ -285,7 +288,7 @@
 				<div id="component-properties"></div>
 			</div>
 			<div id="bottom-panel"></div>
-			<div id="forsavebook" title=${title} saveflag=${saveflag}></div>
+			<div id="forsavebook" title=${title} saveflag=${saveflag} memberid=${id}></div>
 			<a href="#" id="show" class="button left"></a>
 		</div>
 
@@ -486,20 +489,22 @@
 		<script>
 		var id = "${id}";
 		var title = "${title}";
+		var firstornot="${first}"
 
 		$(document).ready(function() 
 		{
 		   
 
-		   if(title=="first"){
-		      
-		      firstpageload();
-		      
-		   } else{
-		      
-		      notfirstpageload(id,title);
-		      
-		   }
+
+			   if(firstornot=="first"){
+			      
+			      firstpageload();
+			      
+			   } else{
+			      
+			      notfirstpageload(id,title);
+			      
+			   }
 
 		   
 		});

@@ -61,6 +61,7 @@ public class BookController {
 	@RequestMapping(value = "savebook", method = RequestMethod.POST)
 	public String savebook(String id, String title, String html,String saveflag,Model model) {
 		model.addAttribute("saveflag", "savebook");
+		model.addAttribute("first", "notfirst");
 		String result = Bdao.savebook(id, title, html,saveflag);
 		return result;
 	}	
@@ -103,20 +104,16 @@ public class BookController {
 		return "imagesave";
 	}	
 	
-	@RequestMapping(value = "imagesave2", method = RequestMethod.GET)
-	public String imagesave2() {
-		return "imagesave2";
-	}	
-	
-	@ResponseBody
+
 	@RequestMapping(value = "saveimg", method = RequestMethod.POST)
-	public void saveimg(MultipartFile s_file,HttpSession session,Model model) {
+	public String saveimg(MultipartFile s_file,HttpSession session,Model model) {
 		String savedFile = null;
 		String id = (String) session.getAttribute("id");
 		if (!s_file.isEmpty()) {
 			   savedFile = FileService.saveFile(s_file, uploadPath,id);
 			   session.setAttribute("imgtest", savedFile);
 			  }
+		return "imagesave2";
 	
 	}	
 	

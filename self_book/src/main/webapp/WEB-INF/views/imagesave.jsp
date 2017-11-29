@@ -16,13 +16,13 @@
 
 <body>
 
-	<h1>파일첨부</h1>
+	<h1>ファイルを添付します。</h1>
 
 	<form action="/cu/saveimg" method="post" enctype="multipart/form-data">
 
-		첨부파일:<input type="file" name="s_file"/><br/>
+		添付ファイル:<input type="file" name="s_file"/><br/>
 
-		<input type="submit" value="보내기"/>
+		<input type="submit" value="送る"/>
 
 </body>
 </html>

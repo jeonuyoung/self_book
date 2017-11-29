@@ -787,21 +787,19 @@ Vvveb.Builder = {
 		
 		var imgtrigger = self._getElementType(node);
 		if(imgtrigger=="IMG"){
-			alert("!");
 			
 			abc = self.selectedEl;
 			console.log();
 			
 			var title_img;
-			title_img=prompt("제목을 입력해주세요","입력");
+			title_img=prompt("本のタイトルを入力してください。","入力");
 			
 			if(title_img==0){
-				console.log('1111')
 				
 				Vvveb.Components.v('src');
 			}
 			else {
-				alert('하지마')
+				alert('問題があります。')
 ;				}
 /*				jQuery("#select-box").css(
 				{"top": offset.top - self.frameDoc.scrollTop() , 
@@ -958,19 +956,21 @@ Vvveb.Builder = {
             	            	 
             	       	      var saveflag = $("#forsavebook").attr("saveflag");
             	       	      var title = $("#forsavebook").attr("title");
+            	       	      var memberid = $("#forsavebook").attr("memberid");
 		            	 	         $(function (){
 		            	 	        	 console.log("??");
 		            	 	            $.ajax({
 		            	 	               url:"savebook",
 		            	 	               type:"post",
 		            	 	               data:{
-		            	 	                  id:"coolpark93@gmail.com",
+		            	 	                  id:id,
 		            	 	                  title:title,
 		            	 	                  html: Vvveb.Builder.getHtml(),
 		            	 	                  saveflag:saveflag
 		            	 	               },
 		            	 	               
 		            	 	               success : function(){
+		            	 	            	  location.href="http://localhost:8888/cu/loadbook?title="+title+"&first=notyes";
 		            	 	                     },
 		            	 	               error: function (){
 		            	 	                   alert("nope");
