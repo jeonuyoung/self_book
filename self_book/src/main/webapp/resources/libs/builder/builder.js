@@ -298,6 +298,28 @@ Vvveb.Components = {
 		}
 		
 		if (component.init) component.init(Vvveb.Builder.selectedEl.get(0));
+	},	
+	
+	render2: function(type,title_img) {
+
+		component = this._components[type];
+		element = Vvveb.Builder.selectedEl;
+		property = component.properties[0];
+		
+		if (component.beforeInit) component.beforeInit(Vvveb.Builder.selectedEl.get(0));
+			
+					element = Vvveb.Builder.selectedEl;
+					if (property.child) element = element.find(property.child);
+						element = element.attr(property.htmlAttr, title_img);
+						Vvveb.Undo.addMutation({type: 'attributes', 
+												target: element.get(0), 
+												attributeName: property.htmlAttr, 
+												oldValue: element.attr(property.htmlAttr), 
+												newValue: element.attr(property.htmlAttr)});
+
+					if (!property.child) Vvveb.Builder.selectNode(element);
+		if (component.init) component.init(Vvveb.Builder.selectedEl.get(0));
+
 	},
 	/*		
 
@@ -900,7 +922,52 @@ Vvveb.Builder = {
 		
 
 		this.frameBody.on("dblclick", function(event) {
+			var imgtrigger = self.selectedEl.get(0).localName;
+			if(imgtrigger=="img"){		
+				var check_interval;
+				
+				function findPrntproject() {
 
+     				var flag;
+					var theURL="/cu/imagesave";
+					var winName="이름";
+
+					flag = "left=200, "; //창뜨는위치
+					flag += "top=200, "; //창뜨는위치
+					flag += "width=400, "; //창크기
+					flag += "height=250"; //창크기
+					windowObj = window.open(theURL, winName, flag);
+					windowObj.focus();
+					check = setInterval(tkae, 100);
+				}
+				
+				function tkae(){
+                    if (!windowObj || windowObj.closed) {
+                           clearInterval(check);
+                           
+              	         $(function (){
+             	            $.ajax({
+             	               url:"imagetest",
+             	               type:"post",               	               
+             	               success : function(data2){
+             	            	   console.log(data2);
+             	            	  node = self.dragElement.get(0);
+             	            	  data = Vvveb.Components.matchNode(node);
+             	            	  /*Vvveb.Components.render2(data.type,"../../demo/"+data2);*/
+            	            	 Vvveb.Components.render2(data.type,"../../demo/"+data2);  
+             	            	  
+             	                     }
+             	            })
+             	            
+             	         });   
+             	         
+                           
+                     }
+            }
+				
+				findPrntproject();
+
+			}
 			self.texteditEl = target = jQuery(event.target);
 
 			Vvveb.WysiwygEditor.edit(self.texteditEl);
@@ -1202,6 +1269,7 @@ Vvveb.Gui = {
 	 savebook : function (){
 	      
 	      var saveflag = $("#forsavebook").attr("saveflag");
+	      
 	      if(saveflag=="firstsavebook"){
 	         var title;
 	         title=prompt("제목을 입력해주세요","입력");
@@ -1211,7 +1279,7 @@ Vvveb.Gui = {
 	               url:"savebook",
 	               type:"post",
 	               data:{
-	                  id: id,
+	                  id:"coolpark93@gmail.com",
 	                  title:title,
 	                  html: Vvveb.Builder.getHtml(),
 	                  saveflag:saveflag
@@ -1220,10 +1288,7 @@ Vvveb.Gui = {
 	               success : function(data){
 	                        alert(data);
 	                        
-	               },
-	               error: function(e){
-	            	   console.log(e);
-	               }
+	                     }
 	            })
 	            
 	            $("#forsavebook").attr("saveflag","savebook");
@@ -1236,7 +1301,7 @@ Vvveb.Gui = {
 	               url:"savebook",
 	               type:"post",
 	               data:{
-	                  id: custid,
+	                  id:"coolpark93@gmail.com",
 	                  title:$("#forsavebook").attr("title"),
 	                  html: Vvveb.Builder.getHtml(),
 	                  saveflag:saveflag
