@@ -81,30 +81,32 @@
         });
       }; */
       
-    function pdfConverter(){
-    		   var docu = document.getElementById('iframe1').contentWindow.document;
-        	 // console.log(docu);
-    		   $(function(){
+    function imgConverter(){
+    		  $(function(){
+				$("#save-btn").trigger("click");
+    			var docu = document.getElementById('iframe1').contentWindow.document;
 				var conList = docu.getElementsByClassName("container");
 				console.log(conList);
     			 for (var i = 0; i < conList.length; i++) {
-    			//	console.log(docu.head.innerHTML);
     				docu.head.innerHTML = docu.head.innerHTML.replace(/\.\.\/\.\./gi,"./resources");
     				 conList[i].innerHTML = conList[i].innerHTML.replace(/\.\.\/\.\./gi,"./resources");
-    				//  console.log(conList[i].innerHTML);
     				    html2canvas(conList[i], {
     					   useCORS: true,  
     					   letterRendering:true, 
     						  onrendered: function(canvas) {
-    						    //console.log(canvas);
     						    canvas.toBlob(function(blob){
     						    	saveAs(blob,"final.png");
     						    });
     						  },
-    						  
-    						});  
-    				    conList[i].innerHTML = conList[i].innerHTML.replace(/\.\/resources/gi,"../..");
-    			}
+    					});
+	    				    conList[i].innerHTML = conList[i].innerHTML.replace(/\.\/resources/gi,"../..");
+    						}  
+    				    
+    				    setTimeout( function() {
+    				    	console.log('time out');
+						    location.reload();
+    				    } , 4000);
+    			 
     		  }); 
       }
      
@@ -156,7 +158,7 @@
 				
 				<button class="btn btn-light" title="Download"
 					id="download-btn" data-vvveb-action="download_book"
-				    onclick="javascript:pdfConverter()">
+				    onclick="javascript:imgConverter()">
 					<i class="la la-download"></i>
 					<!--  여긴그냥 이미지-->
 				</button>
