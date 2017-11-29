@@ -68,6 +68,7 @@ public class MemberController {
 	public String login(@ModelAttribute MemberVO member, HttpSession session, HttpServletResponse response) throws Exception {
 		member = service.login(member, response);
 		session.setAttribute("member", member);
+		session.setAttribute("id", member.getId());
 		return "menu";
 	}
 

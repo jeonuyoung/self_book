@@ -24,7 +24,7 @@ public class BookController {
 
 	@Autowired
 	BookDAO Bdao;
-
+	
 	final String uploadPath = "/boardfile";
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -50,6 +50,7 @@ public class BookController {
 		String id = (String) session.getAttribute("id");
 		ArrayList<String> booklist = Bdao.booklist(id);
 		model.addAttribute("booklist", booklist);
+		
 		return "booklist";
 	}
 	
@@ -88,8 +89,7 @@ public class BookController {
 	@RequestMapping(value = "saveimg", method = RequestMethod.POST)
 	public String saveimg(MultipartFile s_file,HttpSession session,Model model) {
 		String savedFile = null;
-		/*String id = (String) session.getAttribute("id");*/
-		String id = "coolpark93@gmail.com";
+		String id = (String) session.getAttribute("id");
 		if (!s_file.isEmpty()) {
 			   savedFile = FileService.saveFile(s_file, uploadPath,id);
 			   session.setAttribute("imgtest", savedFile);
@@ -102,7 +102,6 @@ public class BookController {
 	@RequestMapping(value = "imagetest", method = RequestMethod.POST)
 	public String imagetest(HttpSession session) {
 		String imgtest1 = (String)session.getAttribute("id");
-		imgtest1="coolpark93@gmail.com";
 		String imgtest2 = (String)session.getAttribute("imgtest");
 		String imgtest3 =imgtest1+"/"+imgtest2; 
 		return imgtest3;

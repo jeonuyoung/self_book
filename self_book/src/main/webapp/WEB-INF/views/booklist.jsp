@@ -72,12 +72,6 @@
 
 
 <!-- Jquery start -->
-<script>
- $(function () {
-
- 
- });
-</script>
 
 
 <!-- Header Section -->
@@ -94,23 +88,62 @@
 </section>
 
 
-  <!--========== PAGE LAYOUT ==========-->
-  <!-- Work -->
-   <div class="bg-color-sky-light">
-    <div class="content-md container">
-  <!-- Masonry Grid -->
-    <div class="masonry-grid">
+       <!--========== PAGE LAYOUT ==========-->
+        <!-- Work -->
+        <div class="bg-color-sky-light">
+            <div class="content-md container">
+                <!-- Masonry Grid -->
+                <div class="masonry-grid">
+ <%--                    <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-6"></div>
+                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-6">
+                        <!-- Work -->
+                        <div class="work">
+                            <div class="work-overlay">
+                                <img class="full-width img-responsive" src="./resources/img/595x483/01.jpg" alt="Portfolio Image">
+                            </div>
+                            <div class="work-content">
+                                <h3 class="color-white margin-b-5">My page</h3>
+                                <p class="color-white margin-b-0">修正・会員脱退</p>
+                            </div>
+                            <a class="content-wrapper-link" href="mypage"></a>
+                        </div>
+                        <!-- End Work -->
+                    </div>
+                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-6">
+                    <div style="height: 500px">
+						<c:forEach var="item" items="${booklist}">
+						<a href="loadbook?title=${item}">  제목 : ${item} </a><br> <a href="deletebook?title=${item}">삭제</a><br>
+									
+							</c:forEach>
+                        </div>
+                    </div> --%>
+                    
+                    
+                <div class="fh5co-narrow-content">
+				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft" style="font-size: 25px;color: #003399;">▶Loadbook <span>See Your Book</span></h2>
+				<div class="row animate-box" data-animate-effect="fadeInLeft">
+				<c:forEach var="item" items="${booklist}">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+						
+						<%-- 	<a href="loadbook?title=${item}> --%><img src="./resources/images/work_2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+							<a href="loadbook?title=${item}"><h3 class="fh5co-work-title" style="color: #2457BD;">title:${item}</h3></a>
+							<a href="deletebook?title=${item}">delete</a>
+						
+					</div>
+					
+				</c:forEach>	
 
-    </div>
-   <!-- End Masonry Grid -->
-     </div>
-    </div>
-  <!-- End Work -->
-  <a href="makeabook1">새로 만들기</a>
-  <c:forEach var="item" items="${booklist}">
-	<a href="loadbook?title=${item}">  제목 : ${item} </a> <a href="deletebook?title=${item}">삭제</a>
-		
-	</c:forEach>
+
+					
+				</div>
+			</div>
+                </div>
+                <!-- End Masonry Grid -->
+            </div>
+        </div>
+        <!-- End Work -->
+
+
 </body>
 
 <!-- footer section -->
