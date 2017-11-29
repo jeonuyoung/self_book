@@ -82,6 +82,7 @@ public class MemberController {
 	// 비밀번호 찾기 パスワード忘れ
 	@RequestMapping(value = "/find_pw", method = RequestMethod.POST)
 	public void find_pw(@ModelAttribute MemberVO member, HttpServletResponse response) throws Exception {
+		System.out.println(member);
 		service.find_pw(response, member);
 	}
 
