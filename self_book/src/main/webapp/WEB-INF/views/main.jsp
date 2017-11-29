@@ -128,6 +128,7 @@
 
 	$(function(){
 		$("#findbtn").click(function(){
+		console.log( $("#findId").val());
 			$.ajax({
 				url : "find_pw",
 				type : "POST",

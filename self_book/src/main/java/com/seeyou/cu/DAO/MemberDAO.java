@@ -44,6 +44,7 @@ public class MemberDAO {
 	// 비밀번호 변경　暗証番号変更
 	@Transactional
 	public int update_pw(MemberVO member) throws Exception {
+		System.out.println(member+"dao");
 		return sqlsession.update("update_pw", member);
 	}
 

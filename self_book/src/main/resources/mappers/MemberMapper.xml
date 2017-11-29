@@ -53,6 +53,11 @@
 		approval_status = 'true' where id = #{id} and approval_key =
 		#{approval_key}
 	</update>
+	
+	<!-- 비밀번호 변경  パソワード修正-->
+	<update id="update_pw" parameterType="MemberVO">
+		update member set pw = #{pw} where id = #{id}
+	</update>
 
 </mapper>
 
