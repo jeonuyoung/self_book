@@ -114,9 +114,9 @@
 	function imgConverter(){
     		  $(function(){
 				$("#save-btn").trigger("click");
-    			var docu = document.getElementById('iframe1').contentWindow.document;
+				
+    			/* var docu = document.getElementById('iframe1').contentWindow.document;
 				var conList = docu.getElementsByClassName("container");
-				console.log(conList);
     			 for (var i = 0; i < conList.length; i++) {
     				docu.head.innerHTML = docu.head.innerHTML.replace(/\.\.\/\.\./gi,"./resources");
     				 conList[i].innerHTML = conList[i].innerHTML.replace(/\.\.\/\.\./gi,"./resources");
@@ -129,15 +129,15 @@
     						    });
     						  },
     					});
-	    				    conList[i].innerHTML = conList[i].innerHTML.replace(/\.\/resources/gi,"../..");
     						}  
     				    
     				    setTimeout( function() {
     				    	console.log('time out');
+	    				    conList[i].innerHTML = conList[i].innerHTML.replace(/\.\/resources/gi,"../..");
 						    location.reload();
-    				    } , 100000);
+    				    } , 100000);*/
     			 
-    		  }); 
+    		  });  
       }
      
 </script>
