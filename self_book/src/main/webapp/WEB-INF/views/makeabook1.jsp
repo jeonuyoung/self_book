@@ -63,16 +63,16 @@
 
 <script>
 	$(function() {
-		 $(document).avgrund({
+		/*  $(document).avgrund({
 		    openOnEvent: false
-		});
+		}); */
 			
 		$('#menu1').tendina();
 		
 		var first =  ${first};
 		
 		
-		$('#show').avgrund({
+		/* $('#show').avgrund({
 			height : 350,
 			width : 640,
 		    holderClass : 'custom',
@@ -98,7 +98,7 @@
 		 		$("#infobtn").trigger('click');
 		 	 } 
  
-		});
+		}); */
 		 
 });
 	
@@ -135,7 +135,7 @@
     				    setTimeout( function() {
     				    	console.log('time out');
 						    location.reload();
-    				    } , 4000);
+    				    } , 100000);
     			 
     		  }); 
       }
@@ -289,7 +289,7 @@
 			</div>
 			<div id="bottom-panel"></div>
 			<div id="forsavebook" title=${title} saveflag=${saveflag} memberid=${id}></div>
-			<a href="#" id="show" class="button left"></a>
+			<!-- <a href="#" id="show" class="button left"></a> -->
 		</div>
 
 

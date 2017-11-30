@@ -877,7 +877,7 @@ Vvveb.Builder = {
 				{
 					jQuery("#highlight-box").css(
 						{
-							"top": offset.top - self.frameDoc.scrollTop() , 
+						"top": offset.top - self.frameDoc.scrollTop() , 
 						 "left": offset.left - self.frameDoc.scrollLeft() , 
 						 "width" : width, 
 						 "height": height,
@@ -1294,6 +1294,7 @@ Vvveb.Gui = {
 	 savebook : function (){
 	      
 	      var saveflag = $("#forsavebook").attr("saveflag");
+	      console.log(Vvveb.Builder.getHtml());
 	         $(function (){
 	            $.ajax({
 	               url:"savebook",

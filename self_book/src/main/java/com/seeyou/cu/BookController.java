@@ -59,7 +59,8 @@ public class BookController {
 	
 	@ResponseBody
 	@RequestMapping(value = "savebook", method = RequestMethod.POST)
-	public String savebook(String id, String title, String html,String saveflag,Model model) {
+	public String savebook(String id, String title, String html,String saveflag,Model model,HttpSession session) {
+		id = (String) session.getAttribute("id");
 		model.addAttribute("saveflag", "savebook");
 		model.addAttribute("first", "notfirst");
 		String result = Bdao.savebook(id, title, html,saveflag);
@@ -67,13 +68,16 @@ public class BookController {
 	}	
 	
 	@RequestMapping(value = "savebooktitle", method = RequestMethod.POST)
-	public String savebooktitle(String title,HttpSession session) {
+	public String savebooktitle(String title,HttpSession session,Model model) {
 		
 		String id = (String) session.getAttribute("id");
+		model.addAttribute("saveflag", "savebook");
+		model.addAttribute("first", "first");
 		session.setAttribute("title", title);
 		session.setAttribute("saveflag", "savebook");
-		String html = "<body><body>";
-		String result = Bdao.savebook(id, title, html,"savebook");
+		
+/*		String html = "<body><body>";
+		String result = Bdao.savebook(id, title, html,"savebook");*/
 		return "makeabook1";
 	}		
 	

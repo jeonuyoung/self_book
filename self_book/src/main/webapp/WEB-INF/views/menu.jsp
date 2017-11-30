@@ -71,7 +71,7 @@
 <script>
 function move(){
 	var title;
-    title=prompt("새로만들 책 제목을 입력해주세요","입력");
+    title=prompt("本のタイトルを入力してください。","入力");
     
     $(function (){
         $.ajax({

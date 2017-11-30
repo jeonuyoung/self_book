@@ -496,16 +496,16 @@ Vvveb.Components.extend("_base", "hk", {
     	お願いします： 請做 (Qǐng zuò)<br></span>\
     	<span id="hk_number" class="wf-notosansjapanese">\
     	== 数字の読み方 ==<br>\
-    	1 - 一 (Yī)\
-    	2 - 二 (èr)\
-    	3 - 三 (sān)\
-    	4 - 四 (sì)\
-    	5 - 五 (wǔ)\
-    	6 - 六 (liù)\
-    	7 - 七 (qī)\
-    	8 - 八 (bā)\
-    	9 - 九 (jiǔ)\
-    	10 - 十 (shí)\
+    	1 - 一 (Yī)<br>\
+    	2 - 二 (èr)<br>\
+    	3 - 三 (sān)<br>\
+    	4 - 四 (sì)<br>\
+    	5 - 五 (wǔ)<br>\
+    	6 - 六 (liù)<br>\
+    	7 - 七 (qī)<br>\
+    	8 - 八 (bā)<br>\
+    	9 - 九 (jiǔ)<br>\
+    	10 - 十 (shí)<br>\
     	</span><br>\
     	<span id="hk_word" class="wf-notosansjapanese">\
     	==基本単語==<br>\
@@ -519,7 +519,7 @@ Vvveb.Components.extend("_base", "hk", {
     	出口：退出 (tuìchū)<br>\
     	駅：站 (zhàn)<br>\
     	</span><br>\
-    	<img src="../../info/hong-kong.gif" style="width:736px">\
+    	<img src="../../info/hong-kong.gif" style="width:700px; z-index:130;">\
     	'
 });
 
@@ -551,7 +551,7 @@ Vvveb.Components.add("html/googlemaps", {
     //use an image for dragging for performance reasons, iframes elements don't drag well
     afterDrop: function (node)
 	{
-		newnode = $('<div id="map" data-component-maps><iframe frameborder="0" src="https://maps.google.com/maps?&z=1&t=q&output=embed" width="600" height="300" style="width:100% height="100%";pointer-events:none"></iframe></div>')
+		newnode = $('<div id="map" data-component-maps><iframe frameborder="0" src="https://maps.google.com/maps?&z=1&t=q&output=embed" width="700" height="300" style="width:100% height="100%";pointer-events:none"></iframe></div>')
 		node.replaceWith(newnode);
 		return newnode;
 	},
