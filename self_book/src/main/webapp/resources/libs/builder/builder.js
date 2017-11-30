@@ -1307,7 +1307,6 @@ Vvveb.Gui = {
 	                  html: Vvveb.Builder.getHtml(),
 	                  saveflag:saveflag
 	               },
-	               
 	               success : function(data){
 	            	   if (confirm("Saved")){
 	            		   var docu = document.getElementById('iframe1').contentWindow.document;
@@ -1327,7 +1326,7 @@ Vvveb.Gui = {
 	           					});
 	           						}  
 	           			 
-	           				    setTimeout( function() {
+	           				    /*setTimeout( function() {
 	           				    	console.log('time out');
 	           				    	for (var i = 0; i < conList.length; i++) {
 	           				    		conList[i].innerHTML = conList[i].innerHTML.replace(/\.\/resources/gi,"../..");
@@ -1344,7 +1343,7 @@ Vvveb.Gui = {
 	      	    	                  saveflag:saveflag
 	      	    	               },success: function(){}});
 	       						    location.reload();
-	           				    } , 40000);
+	           				    } , 40000);*/
 	            		}
 	            	   
 	            	   
